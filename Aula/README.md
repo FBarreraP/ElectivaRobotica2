@@ -8,6 +8,10 @@ ROS es un sistema operativo de robots creado en el 2007 en el laboratorio de Int
 
 <h2>Instalación de Ubuntu 20.04</h2>
 
+Descargar ubuntu 20.04 
+
+Descargar la máquina virtual Virtual Box
+
 <h2>Instalación de ROS Noetic</h2>
 
 https://wiki.ros.org/noetic/Installation/Ubuntu
