@@ -8,15 +8,21 @@ ROS es un sistema operativo de robots creado en el 2007 en el laboratorio de Int
 
 <h2>Instalación de Ubuntu 20.04</h2>
 
-Descargar ubuntu 20.04 
+Descargar ubuntu 20.04 y Virtual Box
 
-Descargar la máquina virtual Virtual Box
+Crear la máquina virtual con Ubuntu 20.04 de formato .iso en el Virtual Box
 
 <h2>Instalación de ROS Noetic</h2>
 
 https://wiki.ros.org/noetic/Installation/Ubuntu
 
-Inicialemnte se debe configurar el computador para que acepte software de packages.ros.org, por tanto, en un terminal en Ubuntu correr el siguiente comando:
+Abrir una terminal en Ubuntu y conceder permisos de super usuario (administrador)
+
+```
+su root
+```
+
+Inicialemnte se debe configurar el computador para que acepte software de packages.ros.org, por tanto, en un terminal en Ubuntu correr los siguientes comandos:
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -28,6 +34,30 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 sudo apt update
 
 sudo apt install ros-noetic-desktop-full
+
+source /opt/ros/noetic/setup.bash
+
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+
+source ~/.bashrc
+
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+
+sudo apt install python3-rosdep
+
+sudo rosdep init
+
+rosdep update
+```
+
+Para validar la instalación de ROS, ejecutar los siguientes comandos en terminales independientes:
+
+```
+roscore
+```
+
+```
+rosrun roscpp_tutorials talker
 ```
 
 
