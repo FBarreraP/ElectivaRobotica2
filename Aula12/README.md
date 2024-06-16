@@ -12,8 +12,46 @@ Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/
 
 <h3>Talker - Listener</h3>
 
+![Talker-Listener](image-1.png)
 
+Fuente: https://www.oreilly.com/library/view/ros-robotics-projects/9781838649326/0375b997-95dc-48c6-9738-49a4eb1a9f62.xhtml
 
+En cada terminal correr los siguientes comandos:
+
+Nodo maestro
+
+```
+roscore
+```
+Nodo publicador
+```
+rosrun roscpp_tutorials talker
+```
+Nodo suscriptor
+```
+rosrun roscpp_tutorials listener
+```
+Topic
+
+*Para depurar la comunicación entre dos nodos:
+
+Muestra la lista de topics activos
+```
+rostopic list
+```
+Muestra la información de un topic espcífico, en relación al tipo de mensaje, los nodos publishers y los nodos subscribers activos a dicho topic.
+```
+rostopic info /chatter
+```
+Si se desea recibir el mensaje de un topic específico, es decir, es crear un nodo subscriber de dicho topic; para esto se debe estar ejecutando el nodo publisher.
+```
+rostopic echo /chatter
+```
+Si se desea enviar un mensaje a un topic específico, es decir, es crear un nodo publisher de dicho topic; para esto se debe estar ejecutando el nodo subscriber.
+
+```
+rostopic pub /chatter std_msgs/String "data: ''Bom dia, tudo bem?'"
+```
 
 <h3>Turtle</h3>
 
