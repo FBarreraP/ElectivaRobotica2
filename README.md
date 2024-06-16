@@ -3,7 +3,7 @@ Materia: Electiva de robótica 2 🦿<br>
 Universidad: ECCI 🏫<br>
 Año: 2024 📅</h1><br>
 
-La electiva de robótica está enfocada a la adquisición y procesamiento de datos de Unidades de Medición Inerical (IMUs) con `Python` a través de Raspberry Pi 3B, 3B+ o 4B integrando una interfaz gráfica.
+La electiva de robótica está enfocada a la adquisición y procesamiento de datos de Unidades de Medición Inerical (IMUs) con `Python` a través de Raspberry Pi 3B, 3B+ o 4B integrando ROS.
 
 <h1>Aula 1</h1>
 
@@ -13,157 +13,120 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 
 <h3>TEMAS 🤓</h3>
 
-<h4>Primer corte 8AN</h4>
+<h4>Primer corte</h4>
 
 <table>
 	<tr>
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>01/02/2024</td> <td>2<br>2</td> <td>1<br>2</td> <td>1</td> <td>Presentación de la materia<br>Repositorio GitHub</td>
+		<td>30/07/2024</td> <td>2</td> <td>1</td> <td>1</td> <td>Presentación de la materia</td>
 	</tr>
 	<tr>
-		<td>08/02/2024</td> <td>2<br>2</td> <td>3<br>4</td> <td>2</td> <td>Introducción a Raspberry y Python (toolbox Peter Corke)</td>
+		<td>31/07/2024</td> <td>2</td> <td>2</td> <td>1</td> <td>Adquisición de datos IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>15/02/2024</td> <td>2<br>2</td> <td>5<br>6</td> <td>3</td> <td>Traslación y rotación de un sistema coordenado<br>Matriz de transformación homogénea (MTH)</td>
+		<td>06/08/2024</td> <td>2</td> <td>3</td> <td>2</td> <td>Calibración de datos IMU (MPU6050)</td>
+	</tr>
+	<tr>
+		<td>07/08/2024</td> <td>2</td> <td>4</td> <td>2</td> <td>FESTIVO</td>
 	</tr>
     <tr>
-		<td>22/02/2024</td> <td>2<br>2</td> <td>7<br>8</td> <td>4</td> <td>Desarrollo de Laboratorio</td>
+		<td>13/08/2024</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>29/02/2024</td> <td>2<br>2</td> <td>9<br>10</td> <td>5</td> <td>Parcial primer corte<br>Retroalimentación del parcial primer corte y entrega de notas primer corte</td>
+		<td>14/08/2024</td> <td>2</td> <td>6</td> <td>3</td> <td>Conexión RPi-STM32-IMU (MPU6050)</td>
+	</tr>
+	<tr>
+		<td>20/08/2024</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo de laboratorio</td>
+	</tr>
+	<tr>
+		<td>21/08/2024</td> <td>2</td> <td>8</td> <td>4</td> <td>Filtro complementario</td>
+	</tr>
+	<tr>
+		<td>27/08/2024</td> <td>2</td> <td>9</td> <td>5</td> <td>RPi con IoT</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del primer corte-->
-
+	<tr>
+		<td>28/08/2024</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo de laboratorio</td>
+	</tr>
 </table>
 
-<h4>Primer corte 8BN</h4>
+<h4>Segundo corte</h4>
 
 <table>
 	<tr>
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>03/02/2024</td> <td>2<br>2</td> <td>1<br>2</td> <td>1</td> <td>Presentación de la materia<br>Repositorio GitHub</td>
+		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>Introducción a ROS</td>
 	</tr>
 	<tr>
-		<td>10/02/2024</td> <td>2<br>2</td> <td>3<br>4</td> <td>2</td> <td>Introducción a Raspberry y Python (toolbox Peter Corke)</td>
+		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>ejemplos de ROS</td>
 	</tr>
 	<tr>
-		<td>17/02/2024</td> <td>2<br>2</td> <td>5<br>6</td> <td>3</td> <td>Traslación y rotación de un sistema coordenado<br>Matriz de transformación homogénea (MTH)</td>
+		<td>10/09/2024</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos</td>
+	</tr>
+	<tr>
+		<td>11/09/2024</td> <td>2</td> <td>14</td> <td>7</td> <td>Desarrollo de laboratorio</td>
 	</tr>
     <tr>
-		<td>24/02/2024</td> <td>2<br>2</td> <td>7<br>8</td> <td>4</td> <td>Desarrollo de Laboratorio</td>
+		<td>17/09/2024</td> <td>2</td> <td>15</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>02/03/2024</td> <td>2<br>2</td> <td>9<br>10</td> <td>5</td> <td>Parcial primer corte<br>Retroalimentación del parcial primer corte y entrega de notas primer corte</td>
-	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del primer corte-->
-
-</table>
-
-<h4>Segundo corte 8AN</h4>
-
-<table>
-	<tr>
-		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
+		<td>18/09/2024</td> <td>2</td> <td>16</td> <td>8</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>07/03/2024</td> <td>2<br>2</td> <td>11<br>12</td> <td>6</td> <td>Propuesta de proyecto<br>GUI Python</td>
+		<td>24/09/2024</td> <td>2</td> <td>17</td> <td>9</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>14/03/2024</td> <td>2<br>2</td> <td>13<br>14</td> <td>7</td> <td>Introducción a la cinemática directa<br>Paso 1 DH (asignación de sistemas coordenados)</td>
+		<td>25/09/2024</td> <td>2</td> <td>18</td> <td>9</td> <td></td>
 	</tr>
 	<tr>
-		<td>21/03/2024</td> <td>2<br>2</td> <td>15<br>16</td> <td>8</td> <td>Paso 2 DH (tabla DH)<br>Paso 3 DH (matriz MTH (Peter Corke))</td>
-	</tr>
-    <tr>
-		<td>28/03/2024</td> <td></td> <td></td> <td></td> <td>SEMANA SANTA</td>
-	</tr>
-    <tr>
-		<td>04/04/2024</td> <td>2<br>2</td> <td>17<br>18</td> <td>9</td> <td>Desarrollo de Laboratorio</td>
-	</tr>
-    <tr>
-		<td>11/04/2024</td> <td>2<br>2</td> <td>19<br>20</td> <td>10</td> <td>Parcial segundo corte<br>Retroalimentación del parcial segundo corte y entrega de notas segundo corte</td>
+		<td>01/10/2024</td> <td>2</td> <td>19</td> <td>10</td> <td></td>
 	</tr><!--semana de parciales del segundo corte--><!--semana de registro de notas del segundo corte-->
+	<tr>
+		<td>02/10/2024</td> <td>2</td> <td>20</td> <td>10</td> <td>Desarrollo de laboratorio</td>
+	</tr>
 </table>
 
-<h4>Segundo corte 8BN</h4>
+<h4>Tercer corte</h4>
 
 <table>
 	<tr>
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>09/03/2024</td> <td>2<br>2</td> <td>11<br>12</td> <td>6</td> <td>Propuesta de proyecto<br>GUI Python</td>
+		<td>30/07/2024</td> <td>2</td> <td>1</td> <td>1</td> <td>Introducción a Locobot</td>
 	</tr>
 	<tr>
-		<td>16/03/2024</td> <td>2<br>2</td> <td>13<br>14</td> <td>7</td> <td>Introducción a la cinemática directa<br>Paso 1 DH (asignación de sistemas coordenados)</td>
+		<td>31/07/2024</td> <td>2</td> <td>2</td> <td>1</td> <td>Locobot con Joystick</td>
 	</tr>
 	<tr>
-		<td>23/03/2024</td> <td>2<br>2</td> <td>15<br>16</td> <td>8</td> <td>Paso 2 DH (tabla DH)<br>Paso 3 DH (matriz MTH (Peter Corke))</td>
+		<td>06/08/2024</td> <td>2</td> <td>3</td> <td>2</td> <td></td>
+	</tr>
+	<tr>
+		<td>07/08/2024</td> <td>2</td> <td>4</td> <td>2</td> <td></td>
 	</tr>
     <tr>
-		<td>30/03/2024</td> <td></td> <td></td> <td></td> <td>SEMANA SANTA</td>
+		<td>13/08/2024</td> <td>2</td> <td>5</td> <td>3</td> <td></td>
 	</tr>
-    <tr>
-		<td>06/04/2024</td> <td>2<br>2</td> <td>17<br>18</td> <td>9</td> <td>Desarrollo de Laboratorio</td>
+	<tr>
+		<td>14/08/2024</td> <td>2</td> <td>6</td> <td>3</td> <td>Desarrollo de laboratorio</td>
 	</tr>
-    <tr>
-		<td>13/04/2024</td> <td>2<br>2</td> <td>19<br>20</td> <td>10</td> <td>Parcial segundo corte<br>Retroalimentación del parcial segundo corte y entrega de notas segundo corte</td>
-	</tr><!--semana de parciales del segundo corte--><!--semana de registro de notas del segundo corte-->
+	<tr>
+		<td>20/08/2024</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo de laboratorio</td>
+	</tr>
+	<tr>
+		<td>21/08/2024</td> <td>2</td> <td>8</td> <td>4</td> <td></td>
+	</tr>
+	<tr>
+		<td>27/08/2024</td> <td>2</td> <td>9</td> <td>5</td> <td></td>
+	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del segundo corte-->
+	<tr>
+		<td>28/08/2024</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo de laboratorio</td>
+	</tr>
 </table>
 
-<h4>Tercer corte 8AN</h4>
-
-<table>
-	<tr>
-		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
-	</tr>
-	<tr>
-		<td>18/04/2024</td> <td>2<br>2</td> <td>21<br>22</td> <td>11</td> <td>Avance de proyecto<br>Introducción a la cinemática Inversa y 2R</td>
-	</tr>
-	<tr>
-		<td>25/04/2024</td> <td>2<br>2</td> <td>23<br>24</td> <td>12</td> <td>Cinemática Inversa 3R y trayectorias del robot 3R<br>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>02/05/2024</td> <td>2<br>2</td> <td>25<br>26</td> <td>13</td> <td>Desacople cinemático 6R<br>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>09/05/2024</td> <td>2<br>2</td> <td>27<br>28</td> <td>14</td> <td>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>16/05/2024</td> <td>2<br>2</td> <td>29<br>30</td> <td>15</td> <td>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>23/05/2024</td> <td>2<br>2</td> <td>31<br>32</td> <td>16</td> <td>Examen final<br>Entrega de proyecto</td>
-	</tr><!--Finalización de clases-->
-</table>
-
-<h4>Tercer corte 8BN</h4>
-
-<table>
-	<tr>
-		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
-	</tr>
-	<tr>
-		<td>20/04/2024</td> <td>2<br>2</td> <td>21<br>22</td> <td>11</td> <td>Avance de proyecto<br>Introducción a la cinemática Inversa y 2R</td>
-	</tr>
-	<tr>
-		<td>27/04/2024</td> <td>2<br>2</td> <td>23<br>24</td> <td>12</td> <td>Cinemática Inversa 3R y trayectorias del robot 3R<br>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>04/05/2024</td> <td>2<br>2</td> <td>25<br>26</td> <td>13</td> <td>Desacople cinemático 6R<br>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>11/05/2024</td> <td>2<br>2</td> <td>27<br>28</td> <td>14</td> <td>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>18/05/2024</td> <td>2<br>2</td> <td>29<br>30</td> <td>15</td> <td>Desarrollo de Laboratorio y proyecto</td>
-	</tr>
-    <tr>
-		<td>25/05/2024</td> <td>2<br>2</td> <td>31<br>32</td> <td>16</td> <td>Examen final<br>Entrega de proyecto</td>
-	</tr><!--Finalización de clases-->
-</table>
 
 <h3>MÉTODOS DE EVALUACIÓN ✍️</h3>
 
