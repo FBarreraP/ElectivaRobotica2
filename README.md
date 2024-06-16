@@ -58,10 +58,10 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>Introducción a ROS</td>
+		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>Introducción a ROS y presentación de proyecto</td>
 	</tr>
 	<tr>
-		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>ejemplos de ROS</td>
+		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Ejemplos de ROS</td>
 	</tr>
 	<tr>
 		<td>10/09/2024</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos</td>
@@ -76,10 +76,10 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>18/09/2024</td> <td>2</td> <td>16</td> <td>8</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>24/09/2024</td> <td>2</td> <td>17</td> <td>9</td> <td>Desarrollo de laboratorio</td>
+		<td>24/09/2024</td> <td>2</td> <td>17</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>25/09/2024</td> <td>2</td> <td>18</td> <td>9</td> <td></td>
+		<td>25/09/2024</td> <td>2</td> <td>18</td> <td>9</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
 		<td>01/10/2024</td> <td>2</td> <td>19</td> <td>10</td> <td></td>
@@ -96,34 +96,40 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>30/07/2024</td> <td>2</td> <td>1</td> <td>1</td> <td>Introducción a Locobot</td>
+		<td>08/10/2024</td> <td>2</td> <td>21</td> <td>11</td> <td>Introducción al Locobot px-100</td>
 	</tr>
 	<tr>
-		<td>31/07/2024</td> <td>2</td> <td>2</td> <td>1</td> <td>Locobot con Joystick</td>
+		<td>09/10/2024</td> <td>2</td> <td>22</td> <td>11</td> <td>Locobot con Joystick</td>
 	</tr>
 	<tr>
-		<td>06/08/2024</td> <td>2</td> <td>3</td> <td>2</td> <td></td>
+		<td>15/10/2024</td> <td>2</td> <td>23</td> <td>12</td> <td>Locobot con Python</td>
 	</tr>
 	<tr>
-		<td>07/08/2024</td> <td>2</td> <td>4</td> <td>2</td> <td></td>
+		<td>16/10/2024</td> <td>2</td> <td>24</td> <td>12</td> <td>Desarrollo de laboratorio</td>
 	</tr>
     <tr>
-		<td>13/08/2024</td> <td>2</td> <td>5</td> <td>3</td> <td></td>
+		<td>22/10/2024</td> <td>2</td> <td>25</td> <td>13</td> <td></td>
 	</tr>
 	<tr>
-		<td>14/08/2024</td> <td>2</td> <td>6</td> <td>3</td> <td>Desarrollo de laboratorio</td>
+		<td>23/10/2024</td> <td>2</td> <td>26</td> <td>13</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>20/08/2024</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo de laboratorio</td>
+		<td>29/10/2024</td> <td>2</td> <td>27</td> <td>14</td> <td></td>
 	</tr>
 	<tr>
-		<td>21/08/2024</td> <td>2</td> <td>8</td> <td>4</td> <td></td>
+		<td>30/10/2024</td> <td>2</td> <td>28</td> <td>14</td> <td></td>
 	</tr>
 	<tr>
-		<td>27/08/2024</td> <td>2</td> <td>9</td> <td>5</td> <td></td>
+		<td>05/10/2024</td> <td>2</td> <td>29</td> <td>15</td> <td>Desarrollo de proyecto</td>
+	</tr>
+	<tr>
+		<td>06/10/2024</td> <td>2</td> <td>30</td> <td>15</td> <td>Desarrollo de proyecto</td>
+	</tr>
+	<tr>
+		<td>12/10/2024</td> <td>2</td> <td>31</td> <td>16</td> <td>Desarrollo de proyecto</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del segundo corte-->
 	<tr>
-		<td>28/08/2024</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo de laboratorio</td>
+		<td>13/10/2024</td> <td>2</td> <td>32</td> <td>16</td> <td>Desarrollo de proyecto</td>
 	</tr>
 </table>
 
