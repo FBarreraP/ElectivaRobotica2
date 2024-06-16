@@ -44,7 +44,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>21/08/2024</td> <td>2</td> <td>8</td> <td>4</td> <td>Filtro complementario</td>
 	</tr>
 	<tr>
-		<td>27/08/2024</td> <td>2</td> <td>9</td> <td>5</td> <td>RPi con IoT</td>
+		<td>27/08/2024</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo de laboratorio</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del primer corte-->
 	<tr>
 		<td>28/08/2024</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo de laboratorio</td>
@@ -58,31 +58,31 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>Introducción a ROS y presentación de proyecto</td>
+		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>RPi con IoT y presentación de proyecto</td>
 	</tr>
 	<tr>
-		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Ejemplos de ROS</td>
+		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS</td>
 	</tr>
 	<tr>
-		<td>10/09/2024</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos</td>
+		<td>10/09/2024</td> <td>2</td> <td>13</td> <td>7</td> <td>Ejemplos de ROS</td>
 	</tr>
 	<tr>
-		<td>11/09/2024</td> <td>2</td> <td>14</td> <td>7</td> <td>Desarrollo de laboratorio</td>
+		<td>11/09/2024</td> <td>2</td> <td>14</td> <td>7</td> <td>Creación de nodos</td>
 	</tr>
     <tr>
-		<td>17/09/2024</td> <td>2</td> <td>15</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
+		<td>17/09/2024</td> <td>2</td> <td>15</td> <td>8</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>18/09/2024</td> <td>2</td> <td>16</td> <td>8</td> <td>Desarrollo de laboratorio</td>
+		<td>18/09/2024</td> <td>2</td> <td>16</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>24/09/2024</td> <td>2</td> <td>17</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
+		<td>24/09/2024</td> <td>2</td> <td>17</td> <td>9</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>25/09/2024</td> <td>2</td> <td>18</td> <td>9</td> <td>Desarrollo de laboratorio</td>
+		<td>25/09/2024</td> <td>2</td> <td>18</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>01/10/2024</td> <td>2</td> <td>19</td> <td>10</td> <td></td>
+		<td>01/10/2024</td> <td>2</td> <td>19</td> <td>10</td> <td>Desarrollo de laboratorio</td>
 	</tr><!--semana de parciales del segundo corte--><!--semana de registro de notas del segundo corte-->
 	<tr>
 		<td>02/10/2024</td> <td>2</td> <td>20</td> <td>10</td> <td>Desarrollo de laboratorio</td>
