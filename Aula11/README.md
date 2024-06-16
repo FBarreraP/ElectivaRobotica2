@@ -1,14 +1,16 @@
-<h1>Introducción a ROS</h1>
+<h1>Aula 11</h1>
 
 En esta clase se presenta un introducción a ROS
 
-<h2>Instalación de Ubuntu 20.04</h2>
+<h2>Introducción a ROS</h2>
+
+<h3>Instalación de Ubuntu 20.04</h3>
 
 Descargar ubuntu 20.04 y Virtual Box
 
 Crear la máquina virtual con Ubuntu 20.04 de formato .iso en el Virtual Box
 
-<h2>Instalación de ROS Noetic</h2>
+<h3>Instalación de ROS Noetic</h3>
 
 https://wiki.ros.org/noetic/Installation/Ubuntu
 
