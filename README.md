@@ -41,7 +41,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>20/08/2024</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>21/08/2024</td> <td>2</td> <td>8</td> <td>4</td> <td>Filtro complementario</td>
+		<td>21/08/2024</td> <td>2</td> <td>8</td> <td>4</td> <td>Filtro complementario IMU (MPU6050)</td>
 	</tr>
 	<tr>
 		<td>27/08/2024</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo de laboratorio</td>
