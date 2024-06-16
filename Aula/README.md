@@ -64,7 +64,7 @@ rosversion -d
 
 <h2>ROS</h2>
 
-ROS es un sistema operativo de robots. Actualmente, es una colección de frameworks, herramientas (visualizar datos, guardar datos sensores, depurar y simular) y librerías. Una de las principales justificaciones de ROS es crear proyectos complejos de robótica con alta compatibilidad con hardware (Raspberry, PC(Ubuntu), Intel NUC, entre otros) y que sean reutilizables entre diferentes robots, independizando la programación por subsistemas (visión, navegación (movimiento), sensores) y que a su vez se interconecten entre ellos.
+ROS es un sistema operativo de robots. Actualmente, es una colección de frameworks, herramientas (visualizar datos, guardar datos sensores, depurar y simular) y librerías. Una de las principales justificaciones de ROS es crear proyectos complejos de robótica con alta compatibilidad con hardware (Raspberry, PC(Ubuntu), Intel NUC, entre otros) y que sean reutilizables entre diferentes robots, independizando la programación por subsistemas (visión, navegación (movimiento), comunicación, sensores) y que a su vez se interconecten entre ellos.
 
 otra de las ventajas de ROS es que los subsistemas están interconectados como grafos (nodos) a través de flechas (mensajes), es decir, es posible ejecutar diferentes programas de manera simultanea (paralelo)
 
@@ -72,13 +72,23 @@ otra de las ventajas de ROS es que los subsistemas están interconectados como g
 
 Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/
 
-<h3>Catkin</h3>
+<h3>catkin</h3>
 
-`catkin` es el nuevo sistema compilado para las versiones de ROS más recientes (ej: Noetic).
+`catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estarán todo el código (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
+
+![catkin](image-6.png)
+
+Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
 
 <h3>Packages</h3>
 
-Los paquetes pueden contener ejecutables, librerías, códigos (scripts) y mucha más información. Para instalar los paquetes de tutoriales ejecutar el siguiente comando: 
+Los paquetes pueden contener ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta, en la cual se deben tener dos archivos (package.xml y CMakeLists.txt), los cuales brindan información sobre el paquete con respecto al propietario, objetivo, dependencias y librerías del paquete. Los paquetes deben estar dentro del área de trabajo.
+
+![Packages](image-5.png)
+
+Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
+
+Para instalar los paquetes de tutoriales ejecutar el siguiente comando: 
 
 ```
 sudo apt-get install ros-noetic-ros-tutorials
@@ -98,11 +108,25 @@ rospack find roscpp
 
 <h3>Nodes</h3>
 
-Son programas ejecutables que envían o reciben información a un topic, hay dos principales tipos de nodos, publicador y suscriptor.
+Son programas ejecutables que envían o reciben información a un topic, hay dos principales tipos de nodos, publicador y suscriptor. Los nodos deben estar dentro de los paquetes.
 
 <h3>Topics</h3>
 
 Son el punto intermedio entre el nodo publicador y el nodo suscriptor.
+
+<h3>Estructura de directorios</h3>
+
+![Estructura gráfica ROS](image-4.png)
+
+Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
+
+![Estructura nivel ROS](image-7.png)
+
+Fuente: https://blog.csdn.net/ck784101777/article/details/106297924
+
+
+
+
 
 ![ROS Master and Nodes](image.png)
 
