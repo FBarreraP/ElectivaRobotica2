@@ -4,6 +4,31 @@ En esta clase se crean nodos publisher y subscriber.
 
 Antes de crear cualquier nodo, se debe tener el espacio de trabajo y el paquete ya creado en el PC. Posteriormente, dirigirse a la ruta de dicho paquete con los comandos unix a través del terminal de Ubuntu.
 
+<h2>Crear un Workspace</h2>
+
+Ingresar en una terminal a la carpeta donde se quiere guardar el workspace y posteriormente ejecutar la siguiente línea de comando:
+
+```
+mkdir -p Aula13_ws/src
+
+cd Aula13_ws
+
+catkin_make
+```
+<h2>Crear un package</h2>
+
+Ingresar a la carpeta src del workspace previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
+
+```
+catkin_create_pkg ejemplos std_msgs rospy roscpp
+```
+
+Desde el terminal, retornar a la carpeta del workspace y compilarlo, a través de la siguiente línea de comando, el cual se debe ejecutar cuando se cree un nuevo paquete.
+
+```
+catkin_make
+```
+
 <h2>Crear un nodo publisher</h2>
 
 1. Crear una nueva carpeta con el nombre scripts
@@ -42,13 +67,13 @@ while not ropsy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mie
 #        pass
 ```
 
-Posteriormente, en una terminal dirigirse a la ruta del nodo y convertirlo en ejecutable a través de la siguiente línea de comando:
+Posteriormente, en la terminal en la ruta del nodo y convertirlo en ejecutable a través de la siguiente línea de comando:
 
 ```
 sudo chmod u+x Nodo_Saludo_Conteo.py
 ```
 
-Ingresar a la carpeta del espacio de trabajo y cargar el paquete nuevo, ejecutando la siguiente línea de comando:
+En la misma terminal, ir a la carpeta del workspace y cargar el paquete nuevo ejecutando la siguiente línea de comando, sin embargo, se debe crear la carpeta devel y el archivo setup.bash
 
 ```
 source devel/setup.bash
