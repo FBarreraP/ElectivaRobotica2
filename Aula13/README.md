@@ -37,7 +37,7 @@ catkin_make
 4. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo desde la terminal
 
 ```
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy #Crear nodos con ROS
 from std_msgs.msg import String
