@@ -9,9 +9,9 @@ Antes de crear cualquier nodo, se debe tener el espacio de trabajo y el paquete 
 Ingresar en una terminal a la carpeta donde se quiere guardar el workspace y posteriormente ejecutar la siguiente línea de comando:
 
 ```
-mkdir -p Aula13_ws/src
+mkdir -p ~/aula13_ws/src
 
-cd Aula13_ws
+cd ~/aula13_ws
 
 catkin_make
 ```
