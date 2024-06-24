@@ -1,87 +1,57 @@
-<h1>Aula 13</h1>
+<h1>Aula 12</h1>
 
-En esta clase se crean nodos publisher y subscriber.
+En esta clase se presentan los ejemplos de ROS que trae por defecto, además de depurar la ejecución de los nodos.
 
-Antes de crear cualquier nodo, se debe tener el espacio de trabajo y el paquete ya creado en el PC. Posteriormente, dirigirse a la ruta de dicho paquete con los comandos unix a través del terminal de Ubuntu.
+<h2>Comunicación nodos y topics en ROS</h2>
 
-<h2>Crear un Workspace</h2>
+La comunicación entre nodos es realizada a través de un topic, el cual es un canal de información de un dato de dato específico, el cual es conformado principalmente por el nombre del topic y el mensaje que recibirá (string, int, image, combinación, etc).
 
-Ingresar en una terminal a la carpeta donde se quiere guardar el workspace y posteriormente ejecutar la siguiente línea de comando:
+Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/o suscribirse a diferentes topics
 
-```
-mkdir -p ~/aula13_ws/src
+![Comunicación nodos y topics](image.png)
 
-cd ~/aula13_ws
+<h3>Talker - Listener</h3>
 
-catkin_make
-```
-<h2>Crear un package</h2>
+![Talker-Listener](image-1.png)
 
-Ingresar a la carpeta src del workspace previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
+Fuente: https://www.oreilly.com/library/view/ros-robotics-projects/9781838649326/0375b997-95dc-48c6-9738-49a4eb1a9f62.xhtml
 
-```
-catkin_create_pkg ejemplos std_msgs rospy roscpp
-```
+En cada terminal correr los siguientes comandos:
 
-Desde el terminal, retornar a la carpeta del workspace y compilarlo, a través de la siguiente línea de comando, el cual se debe ejecutar cuando se cree un nuevo paquete.
+Nodo maestro
 
 ```
-catkin_make
+roscore
 ```
-
-<h2>Crear un nodo publisher</h2>
-
-1. Crear una nueva carpeta con el nombre scripts
-2. Ingresar a dicha carpeta
-3. crear un archivo Nodo_Saludo_Conteo.py
-4. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo desde la terminal
-
+Nodo publicador
 ```
-#!/usr/bin/env python3
-
-import rospy #Crear nodos con ROS
-from std_msgs.msg import String
-
-#def Nodo_Saludo_Conteo():
-rospy.init_node('Nodo_Saludo_Conteo')  #Inicializa el nodo con el nombre Nodo_conteo
-
-pub = rospy.Publisher('conversacion', String, queue_size=1) #Declara el nodo como publisher con los parámetros  del nombre del topic, el tipo de dato del mensaje y 
-
-rate = rospy.Rate(10) #Iniciaiza la frecuencia en Hertz de ejecución del nodo
-
-cont = 0
-
-while not rospy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mientras esté encendido
-
-    mensaje = "Buen dia %d" %cont
-    #rospy.loginfo(mensaje)
-    pub.publish(mensaje)
-    cont+=1
-    rate.sleep() #Delay de 0.1s
-
-
-#if __name__ == '__main__':
-#    try:
-#        Nodo_Saludo_Conteo()
-#    except rospy.ROSInterruptException:
-#        pass
+rosrun roscpp_tutorials talker
 ```
+Nodo suscriptor
+```
+rosrun roscpp_tutorials listener
+```
+Topic
 
-Posteriormente, en la terminal en la ruta del nodo y convertirlo en ejecutable a través de la siguiente línea de comando:
+*Para depurar la comunicación entre dos nodos:
+
+Muestra la lista de topics activos
+```
+rostopic list
+```
+Muestra la información de un topic espcífico, en relación al tipo de mensaje, los nodos publishers y los nodos subscribers activos a dicho topic.
+```
+rostopic info /chatter
+```
+Si se desea recibir el mensaje de un topic específico, es decir, es crear un nodo subscriber de dicho topic; para esto se debe estar ejecutando el nodo publisher.
+```
+rostopic echo /chatter
+```
+Si se desea enviar un mensaje a un topic específico, es decir, es crear un nodo publisher de dicho topic; para esto se debe estar ejecutando el nodo subscriber.
 
 ```
-sudo chmod u+x Nodo_Saludo_Conteo.py
+rostopic pub /chatter std_msgs/String "data: ''Bom dia, tudo bem?'"
 ```
 
-En la misma terminal, ir a la carpeta del workspace y cargar el paquete nuevo ejecutando la siguiente línea de comando, sin embargo, se debe crear la carpeta devel y el archivo setup.bash
+<h3>Turtle</h3>
 
-```
-source devel/setup.bash
-```
-Salir de la ubicación del espacio de trabajo y correr el nodo en el paquete específico
-```
-rosrun ejemplos Nodo_Saludo_Conteo.py
-```
-
-
-<h2>Crear un nodo subscriber</h2>
