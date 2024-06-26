@@ -1,4 +1,4 @@
-<h1>Aula 13</h1>
+<h1>Aula 14</h1>
 
 En esta clase se crean nodos publisher y subscriber.
 
@@ -31,10 +31,10 @@ catkin_make
 
 <h2>Crear un nodo publisher</h2>
 
-1. Crear una nueva carpeta con el nombre scripts
+1. Crear una nueva carpeta con el nombre scripts dentro del package a utilizar
 2. Ingresar a dicha carpeta
-3. crear un archivo Nodo_Saludo_Conteo.py
-4. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo desde la terminal
+3. Crear un archivo Nodo_Saludo_Conteo.py
+4. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo pero desde la terminal
 
 ```
 #!/usr/bin/env python3
@@ -67,13 +67,13 @@ while not rospy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mie
 #        pass
 ```
 
-Posteriormente, en la terminal en la ruta del nodo y convertirlo en ejecutable a través de la siguiente línea de comando:
+Posteriormente, en la terminal ubicada en la ruta del nodo, convertirlo en ejecutable a través de la siguiente línea de comando:
 
 ```
 sudo chmod u+x Nodo_Saludo_Conteo.py
 ```
 
-En la misma terminal, ir a la carpeta del workspace y cargar el paquete nuevo ejecutando la siguiente línea de comando, sin embargo, se debe crear la carpeta devel y el archivo setup.bash
+En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actualizar el package) ejecutando la siguiente línea de comando:
 
 ```
 source devel/setup.bash
@@ -85,3 +85,42 @@ rosrun ejemplos Nodo_Saludo_Conteo.py
 
 
 <h2>Crear un nodo subscriber</h2>
+
+1. Ingresar a la carpeta scripts dentro del package a utilizar
+2. Crear un archivo Nodo_Recibir_Saludo.py
+3. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo pero desde la terminal
+
+```
+
+```
+Posteriormente, en la terminal ubicada en la ruta del nodo, convertirlo en ejecutable a través de la siguiente línea de comando:
+
+```
+sudo chmod u+x Nodo_Recibir_Saludo.py
+```
+En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actualizar el package) ejecutando la siguiente línea de comando:
+
+```
+source devel/setup.bash
+```
+Salir de la ubicación del espacio de trabajo y correr el nodo en el paquete específico
+```
+rosrun ejemplos Nodo_Recibir_Saludo.py
+```
+
+<h3>Ejemplo 1</h3>
+
+Abrir un puerto serial desde Ubuntu
+
+
+
+Nodo publisher para adquisición de datos seriales enviados desde una terminal, de un potenciómetro y un LM35
+
+```
+
+```
+
+Nodo subscriber para graficar de datos de un potenciómetro
+
+
+Nodo subscriber para graficar de datos de un LM35

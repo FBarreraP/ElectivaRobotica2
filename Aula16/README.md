@@ -1,4 +1,2 @@
-Abrir un puerto serial desde Ubuntu
-
-Nodo de adquisición de datos seriales enviados desde una terminal
+<h1>Aula 15</h1>
 

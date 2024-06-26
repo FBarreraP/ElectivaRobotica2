@@ -1,4 +1,4 @@
-<h1>Aula 11</h1>
+<h1>Aula 12</h1>
 
 En esta clase se presenta un introducción a ROS
 
@@ -143,12 +143,3 @@ Fuente: https://robodev.blog/ros-basic-concepts
 ![ROS service](image-2.png)
 
 Fuente: https://robodev.blog/ros-basic-concepts
-
-
-<h2>Comandos ROS</h2>
-
-ROS master
-
-```
-roscore
-```
