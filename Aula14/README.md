@@ -163,7 +163,7 @@ stty -F /dev/ttyS1 9600 cs8 -cstopb -parenb
 cat /dev/ttyS1
 ```
 
-![Ejemplo1](image-1.png)
+![Ejemplo1](image.png)
 
 Nodo publisher para adquisición de datos seriales enviados desde una terminal, de un potenciómetro y un LM35
 
