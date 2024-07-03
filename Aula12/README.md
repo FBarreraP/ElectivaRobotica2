@@ -4,15 +4,29 @@ En esta clase se presenta un introducción a ROS
 
 <h2>Introducción a ROS</h2>
 
+ROS es un Sistema Operativo de Robots, click para ver las diferentes <a href="https://wiki.ros.org/Distributions">versiones de ROS</a>
+
+ https://wiki.ros.org/Distributions
+
+<h3>Raspberry Pi :atom:</h3>
+
+La instalación de ROS Melodic en RPi se encuentra en el siguiente link: https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
+
+Abrir una terminal en RPi y conceder permisos de super usuario (administrador)
+
+```
+su root
+```
+
+
+
 <h3>Instalación de Ubuntu 20.04</h3>
 
-Descargar ubuntu 20.04 y Virtual Box
+Descargar ubuntu 20.04 y Virtual Box y crear la máquina virtual con Ubuntu 20.04 de formato .iso en el Virtual Box
 
-Crear la máquina virtual con Ubuntu 20.04 de formato .iso en el Virtual Box
+<h3>Ubuntu 20.04 :electron:</h3>
 
-<h3>Instalación de ROS Noetic</h3>
-
-https://wiki.ros.org/noetic/Installation/Ubuntu
+La instalación de ROS Noetic en Ubuntu 20.04 se encuentra en el siguiente link: https://wiki.ros.org/noetic/Installation/Ubuntu
 
 Abrir una terminal en Ubuntu y conceder permisos de super usuario (administrador)
 
