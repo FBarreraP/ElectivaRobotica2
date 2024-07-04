@@ -12,11 +12,25 @@ ROS es un Sistema Operativo de Robots, click para ver las diferentes <a href="ht
 
 La instalación de ROS Melodic en RPi se encuentra en el siguiente link: https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
 
-Abrir una terminal en RPi y conceder permisos de super usuario (administrador)
+Abrir una terminal en RPi y conceder permisos de super usuario (usuario de administrador)
 
 ```
 su root
 ```
+
+Sin embargo, por razones de seguridad, root está deshabilitado de forma predeterminada en Raspbian y en la mayoría de las distribuciones de Linux. Para volver a habilitarlo, el usuario debe usar "sudo" y establecer una nueva contraseña para la cuenta de administrador.
+
+
+```
+sudo su
+```
+![Error1](image-8.png)
+
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
+```
+
+Fuente: https://vprivalov.medium.com/ubuntu-tips-fix-error-with-security-keys-in-apt-update-e958616e0650#:~:text=Solution%20is%20to%20add%20the%20missing%20key%3A%20sudo,it.%20Now%20apt%20update%20should%20complete%20without%20problems.
 
 
 
