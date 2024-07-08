@@ -10,16 +10,29 @@ ROS es un Sistema Operativo de Robots, click para ver las diferentes <a href="ht
 
 <h3>Raspberry Pi :atom:</h3>
 
-La instalación de ROS Melodic en RPi se encuentra en el siguiente link: https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
+La instalación de ROS Melodic en RPi (Raspbian Buster) se encuentra en el siguiente link: https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
+
+>[!WARNING]
+>En algunas versiones de Raspbian (ej:buster) se presenta el siguiente error posteriormente a la ejecución del comando de instalación del toolbox de Peter Corke en Raspberry
+
+![Error de boot Raspbian](image-9.png)
+
+Fuente: https://embarcados.com.br/raspberry-pi-corrigindo-problemas-com-o-start4-elf-e-fixup4-dat/
+
+Para solucionar ese error, se deben tener en cuenta los siguientes pasos:
+
+I. Descargar <a href="https://github.com/raspberrypi/firmware/tree/master/boot">aquí</a> los archivos desactualizados: fixup4.dat y start4.elf
+
+II. Reemplazar los dos archivos (fixup4.dat y start4.elf) descargados anteriormente en la carpeta /boot de la SD Card
+
+III. Después de inicializar el sistema operativo, actualizar el sistema operativo a través de los siguientes comandos:
+```
+sudo apt update
+sudo apt full-upgrade
+```
+
 
 Abrir una terminal en RPi y conceder permisos de super usuario (usuario de administrador)
-
-```
-su root
-```
-
-Sin embargo, por razones de seguridad, root está deshabilitado de forma predeterminada en Raspbian y en la mayoría de las distribuciones de Linux. Para volver a habilitarlo, el usuario debe usar "sudo" y establecer una nueva contraseña para la cuenta de administrador.
-
 
 ```
 sudo su
