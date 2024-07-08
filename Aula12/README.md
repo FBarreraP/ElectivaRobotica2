@@ -10,10 +10,8 @@ ROS es un Sistema Operativo de Robots, click para ver las diferentes <a href="ht
 
 <h3>Raspberry Pi :atom:</h3>
 
-La instalación de ROS Melodic en RPi (Raspbian Buster) se encuentra en el siguiente link: https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
-
 >[!WARNING]
->En algunas versiones de Raspbian (ej:buster) se presenta el siguiente error posteriormente a la ejecución del comando de instalación del toolbox de Peter Corke en Raspberry
+>En algunas versiones de Raspbian (ej:buster) se presenta el siguiente error posteriormente a la instalación del Raspbian Buster en la Raspberry Pi 4
 
 ![Error de boot Raspbian](image-9.png)
 
@@ -31,19 +29,48 @@ sudo apt update
 sudo apt full-upgrade
 ```
 
+La instalación de ROS Melodic en RPi (Raspbian Buster) se encuentra en el siguiente link: https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
 
 Abrir una terminal en RPi y conceder permisos de super usuario (usuario de administrador)
 
 ```
 sudo su
 ```
-![Error1](image-8.png)
+
+Posteriormente, en un terminal correr los siguientes comandos:
 
 ```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
-```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
-Fuente: https://vprivalov.medium.com/ubuntu-tips-fix-error-with-security-keys-in-apt-update-e958616e0650#:~:text=Solution%20is%20to%20add%20the%20missing%20key%3A%20sudo,it.%20Now%20apt%20update%20should%20complete%20without%20problems.
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt install -y python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential cmake
+
+sudo rosdep init
+
+rosdep update
+
+mkdir -p ~/ros_catkin_ws
+
+cd ~/ros_catkin_ws
+
+rosinstall_generator ros_comm --rosdistro melodic --deps --wet-only --tar > melodic-ros_comm-wet.rosinstall
+
+wstool init src melodic-ros_comm-wet.rosinstall
+
+rosdep install -y --from-paths src --ignore-src --rosdistro melodic -r --os=debian:buster
+
+sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/melodic -j4
+
+source /opt/ros/melodic/setup.bash
+
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+
+```
 
 
 
@@ -61,7 +88,7 @@ Abrir una terminal en Ubuntu y conceder permisos de super usuario (administrador
 su root
 ```
 
-Inicialmente se debe configurar el computador para que acepte software de packages.ros.org, por tanto, en un terminal en Ubuntu correr los siguientes comandos:
+Posteriormente, en un terminal correr los siguientes comandos:
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
