@@ -58,9 +58,9 @@ mkdir -p ~/ros_catkin_ws
 
 cd ~/ros_catkin_ws
 
-rosinstall_generator ros_comm --rosdistro melodic --deps --wet-only --tar > melodic-ros_comm-wet.rosinstall
+rosinstall_generator desktop --rosdistro melodic --deps --wet-only --tar > melodic-desktop-wet.rosinstall
 
-wstool init src melodic-ros_comm-wet.rosinstall
+wstool init src melodic-desktop-wet.rosinstall
 
 rosdep install -y --from-paths src --ignore-src --rosdistro melodic -r --os=debian:buster
 
