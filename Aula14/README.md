@@ -40,7 +40,7 @@ catkin_make
 snap install sublime-text --classic
 ```
 
-```
+```python
 #!/usr/bin/env python3
 
 import rospy #Crear nodos con ROS
@@ -93,7 +93,7 @@ rosrun ejemplos Nodo_Saludo_Conteo.py
 2. Crear un archivo Nodo_Recibir_Saludo.py
 3. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo pero desde la terminal
 
-```
+```python
 #!/usr/bin/env python3
 
 import rospy #Crear nodos con ROS
