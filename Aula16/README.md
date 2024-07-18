@@ -40,7 +40,7 @@ cat /dev/ttyS1
  * File:   main.c
  * Author: LENOVO
  *
- * Created on 17 de Julho de 2024, 22:48
+ * Created on 17 de Julho de 2024, 23:14
  */
 
 #include <xc.h>
@@ -130,7 +130,7 @@ void start(void) {
     temperature = conversion2 / 0.01;
     SettingsLCD(RAW2);
     sprintf(text, "%.4f,%.4f\n", conversion1, temperature);
-    for (i = 0; i <= strlen(text); i++) {
+    for (i = 0; i < strlen(text); i++) {
         while (TX1IF == 0);
         TXREG = text[i];
         WriteLCD(text[i]);
