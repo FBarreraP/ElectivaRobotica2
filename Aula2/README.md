@@ -1,6 +1,20 @@
 <h1>Aula 2</h1>
 
-Adquisición de datos de la MPU6050
+
+<h2>MPU6050</h2>
+
+La MPU6050 es un dispositivo de 6 GDL que integra acelerómetro y giroscopio y cuenta con comunicación SPI e I2C.
+
+<h3>STM32F303K8</h3>
+
+La información de apoyo puede ser consultada en los manuales de la tarjeta, sin embargo, <a href="https://os.mbed.com/platforms/ST-Nucleo-F303K8/">aquí</a> también se puede encontrar alguna información desde la página de Mbed.
+
+<img src="image.png" alt="STM32F303K8"/>
+<figcaption>Fuente: </figcaption>
+
+<h3>Adquisición de datos </h3>
+
+La adquisición de datos es realizada desde la STM32 programada en Mbed, para el ejemplo se utiliza la STM32F303K8
 
 ```cpp
 //----------------------------------------------------------------------------
