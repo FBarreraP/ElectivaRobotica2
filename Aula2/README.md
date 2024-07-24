@@ -2,17 +2,36 @@
 
 Esta clase consiste en comprender la IMU de 6 GDL y adquirir la información que proporciona el acelerómetro y el giroscopio.
 
-<h2>MPU6050</h2>
+<h2>IMU</h2>
 
 Las Unidades de Medición Inercial (IMUs) son dispositivos electrónicos que proporcionan mediciones de velocidad angular y fuerza gravitacional en diferentes ejes. Algunas IMUs pueden medir campo magnético, temperatura, presión atmosférica, entre otras variables físicas.
 
-<img src="" alt="STM32F303K8"/>
-<figcaption>Fuente: https://os.mbed.com/platforms/ST-Nucleo-F303K8/</figcaption>
+<img src="image-2.png" alt="IMU"/>
+<br>
+
+Una IMU detecta las variaciones de fuerza gravitacional (g) y velocidad angular  (°/s), además del campo magnético terrestre (T o G), a través de los acelerómetros, giroscopios y magnetómetros. Los ángulos de Euler pueden ser estimados por fusión sensorial.
+
+<img src="image-3.png" alt="IMU"/>
+<figcaption>Fuente: </figcaption>
+
+<h3>Giroscopio</h3>
+
+
+<h3>Acelerómetro</h3>
+
+
+<h3>Magnetómetro</h3>
+
+
+<h3>MPU6050</h3>
 
 La MPU6050 es un dispositivo de 6 GDL que integra acelerómetro y giroscopio y cuenta con comunicación SPI e I2C.
 
-<img src="image-1.png" alt="MPU6050"/>
-<figcaption>Fuente: https://naylampmechatronics.com/blog/45_tutorial-mpu6050-acelerometro-y-giroscopio.html</figcaption>
+<img src="image-1.png" alt="MPU6050 y MPU9250"/>
+<figcaption>Fuente: Datasheet MPU6050 y MPU9250</figcaption>
+
+![alt text](image-4.png)
+<img src="image-4.png" alt="MPU6050 y MPU9250"/>
 
 <h3>I2C</h3>
 
@@ -26,14 +45,13 @@ La información de apoyo puede ser consultada en los manuales de la tarjeta, sin
 
 <img src="image.png" alt="STM32F303K8"/>
 <figcaption>Fuente: https://os.mbed.com/platforms/ST-Nucleo-F303K8/</figcaption>
+<br>
 
 Para la versiones de Mbed 5 y 6, hay algunas APIs <a href="https://os.mbed.com/docs/mbed-os/v6.16/apis/index.html">aquí</a> 
 
-<h3>Adquisición de datos </h3>
+<h3>Ejercicio 1</h3>
 
-La adquisición de datos es realizada desde la STM32 programada en Mbed, para el ejemplo se utiliza la STM32F303K8
-
-El siguiente código está para Mbed 2
+Adquirir los datos del acelerómetro y giroscopio de la IMU (MPU6050) con la STM32 con Mbed 2.
 
 ```cpp
 //----------------------------------------------------------------------------
