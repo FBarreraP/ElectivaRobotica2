@@ -1,20 +1,39 @@
 <h1>Aula 2</h1>
 
+Esta clase consiste en comprender la IMU de 6 GDL y adquirir la información que proporciona el acelerómetro y el giroscopio.
 
 <h2>MPU6050</h2>
 
+Las Unidades de Medición Inercial (IMUs) son dispositivos electrónicos que proporcionan mediciones de velocidad angular y fuerza gravitacional en diferentes ejes. Algunas IMUs pueden medir campo magnético, temperatura, presión atmosférica, entre otras variables físicas.
+
+<img src="" alt="STM32F303K8"/>
+<figcaption>Fuente: https://os.mbed.com/platforms/ST-Nucleo-F303K8/</figcaption>
+
 La MPU6050 es un dispositivo de 6 GDL que integra acelerómetro y giroscopio y cuenta con comunicación SPI e I2C.
+
+<img src="image-1.png" alt="MPU6050"/>
+<figcaption>Fuente: https://naylampmechatronics.com/blog/45_tutorial-mpu6050-acelerometro-y-giroscopio.html</figcaption>
+
+<h3>I2C</h3>
+
+La comunicación I2C es un protocolo de envío y recepción de datos serialmente a través de los pines SDA (datos) y SCL (reloj), en la cual se puede crear una topología de conexión entre diferentes dispositivos esclavos y maestros, direccionando la información a través de la dirección de esclavo de 7 bits.
+
+
 
 <h3>STM32F303K8</h3>
 
 La información de apoyo puede ser consultada en los manuales de la tarjeta, sin embargo, <a href="https://os.mbed.com/platforms/ST-Nucleo-F303K8/">aquí</a> también se puede encontrar alguna información desde la página de Mbed.
 
 <img src="image.png" alt="STM32F303K8"/>
-<figcaption>Fuente: </figcaption>
+<figcaption>Fuente: https://os.mbed.com/platforms/ST-Nucleo-F303K8/</figcaption>
+
+Para la versiones de Mbed 5 y 6, hay algunas APIs <a href="https://os.mbed.com/docs/mbed-os/v6.16/apis/index.html">aquí</a> 
 
 <h3>Adquisición de datos </h3>
 
 La adquisición de datos es realizada desde la STM32 programada en Mbed, para el ejemplo se utiliza la STM32F303K8
+
+El siguiente código está para Mbed 2
 
 ```cpp
 //----------------------------------------------------------------------------
