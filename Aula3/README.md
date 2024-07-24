@@ -1,5 +1,31 @@
 <h1>Aula 3</h1>
 
+Esta clase consiste en calibrar los sensores (acelerómetro y giroscopio) de la MPU6050.
+
+<h3>Precisión</h3>
+
+La precisión permite concentrar datos con baja desviación estándar, sin embargo, dichos datos están alejados del punto exacto de medición.
+
+<h3>Exactitud</h3>
+
+La exactitud indica que los datos están cercanos al punto exacto de medición
+
+<h3>Resolución</h3>
+
+Es la mínima variación entre muestra y muestra
+
+$$2g/32768 = 0.00006103516$$
+
+$$16g/32768 = 0.00048828125$$
+
+<h3>Error</h3>
+
+
+
+
+
+
+
 Adquisición de datos de la MPU6050
 
 ```cpp
