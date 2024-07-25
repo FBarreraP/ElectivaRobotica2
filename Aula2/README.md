@@ -6,22 +6,32 @@ Esta clase consiste en comprender la IMU de 6 GDL y adquirir la información que
 
 Las Unidades de Medición Inercial (IMUs) son dispositivos electrónicos que proporcionan mediciones de velocidad angular y fuerza gravitacional en diferentes ejes. Algunas IMUs pueden medir campo magnético, temperatura, presión atmosférica, entre otras variables físicas.
 
+<center>
 <img src="image-2.png" alt="IMU"/>
+</center>
 <br>
 
-Una IMU detecta las variaciones de fuerza gravitacional (g) y velocidad angular  (°/s), además del campo magnético terrestre (T o G), a través de los acelerómetros, giroscopios y magnetómetros. Los ángulos de Euler pueden ser estimados por fusión sensorial.
+Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad angular  ($°/s$), además del campo magnético terrestre (T o G), a través de los acelerómetros, giroscopios y magnetómetros. Los ángulos de Euler pueden ser estimados por fusión sensorial. Estos sensores en una IMU son de tecnología MEMS.
 
 <img src="image-3.png" alt="IMU"/>
 <figcaption>Fuente: </figcaption>
 
 <h3>Giroscopio</h3>
 
+<img src="image-8.png" alt="Giroscopio MEMS"/>
+<figcaption>Fuente: https://cursos.mcielectronics.cl/2019/06/18/giroscopio/</figcaption>
 
 <h3>Acelerómetro</h3>
 
+<img src="image-9.png" alt="Funcionamiento del Acelerómetro"/>
+<figcaption>Fuente: http://www.prometec.net/imu-mpu6050/</figcaption>
+
+<img src="image-10.png" alt="Acelerómetros MEMS"/>
 
 <h3>Magnetómetro</h3>
 
+<img src="image-11.png" alt="Magnetómetro MEMS"/>
+<figcaption>Fuente: </figcaption>
 
 <h3>MPU6050</h3>
 
@@ -65,7 +75,7 @@ Para la versiones de Mbed 5 y 6, hay algunas APIs <a href="https://os.mbed.com/d
 
 <h3>Ejercicio 1</h3>
 
-Adquirir los datos del acelerómetro y giroscopio de la IMU (MPU6050) con la STM32 con Mbed 2 y graficarlos con Matlab.
+Adquirir los datos del acelerómetro y giroscopio de la IMU (MPU6050) con la STM32.
 
 ```cpp
 //----------------------------------------------------------------------------
