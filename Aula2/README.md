@@ -28,6 +28,10 @@ Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad 
 
 <img src="image-10.png" alt="Acelerómetros MEMS"/>
 
+Además, los acelerómetros permiten detectar diferentes movimientos de un dispositivo
+
+<img src="image-12.png" alt="Movimientos acelerómetros"/>
+
 <h3>Magnetómetro</h3>
 
 <img src="image-11.png" alt="Magnetómetro MEMS"/>
