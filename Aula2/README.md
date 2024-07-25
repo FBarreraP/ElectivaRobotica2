@@ -34,9 +34,24 @@ La MPU6050 es un dispositivo de 6 GDL que integra acelerómetro y giroscopio y c
 
 <h3>I2C</h3>
 
-La comunicación I2C es un protocolo de envío y recepción de datos serialmente a través de los pines SDA (datos) y SCL (reloj), en la cual se puede crear una topología de conexión entre diferentes dispositivos esclavos y maestros, direccionando la información a través de la dirección de esclavo de 7 bits.
+I2C (Inter Integrated Circuits) es una comunicación tipo ‘half duplex’ que puede ser realizada entre uno o más maestros y uno o más esclavos, a partir de una señal de reloj (SCL) y una señal de datos (SDA). El direccionamiento de los datos se realiza a través de la dirección de esclavo de 7 bits.
 
+<img src="image-5.png" alt="Conexión I2C"/>
+<figcaption>Fuente: https://howtomechatronics.com/tutorials/arduino/how-i2c-communication-works-and-how-to-use-it-with-arduino/
+</figcaption>
+<br>
 
+<h4>Escribir I2C</h4>
+
+<img src="image-6.png" alt="Escribir I2C"/>
+<figcaption>Fuente: https://howtomechatronics.com/tutorials/arduino/how-i2c-communication-works-and-how-to-use-it-with-arduino/
+</figcaption>
+<br>
+
+<h4>Leer I2C</h4>
+
+<img src="image-7.png" alt="Leer I2C"/>
+<br>
 
 <h3>STM32F303K8</h3>
 
