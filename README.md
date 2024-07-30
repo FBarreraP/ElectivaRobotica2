@@ -154,9 +154,9 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td rowspan="4">Presencial</td>
 	</tr>
 	<tr>
-		<td>Primer (20%)</td>
+		<td>Segundo (30%)</td>
 		<td>Quices y/o laboratorio</td>
-		<td>20%</td>
+		<td>30%</td>
 		<td>17/09/2024<br>24/09/2024<br>01/10/2024<br>02/10/2024</td>
 	</tr>
 	<tr>
