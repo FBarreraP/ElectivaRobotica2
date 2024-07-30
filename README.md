@@ -58,7 +58,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>RPi con IoT y presentación de proyecto</td>
+		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>RPi con IoT y socialización del proyecto</td>
 	</tr>
 	<tr>
 		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS</td>
@@ -120,16 +120,16 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>30/10/2024</td> <td>2</td> <td>28</td> <td>14</td> <td>Desarrollo de laboratorio</td>
 	</tr>
 	<tr>
-		<td>05/10/2024</td> <td>2</td> <td>29</td> <td>15</td> <td>Desarrollo de proyecto</td>
+		<td>05/11/2024</td> <td>2</td> <td>29</td> <td>15</td> <td>Desarrollo de proyecto</td>
 	</tr>
 	<tr>
-		<td>06/10/2024</td> <td>2</td> <td>30</td> <td>15</td> <td>Desarrollo de proyecto</td>
+		<td>06/11/2024</td> <td>2</td> <td>30</td> <td>15</td> <td>Desarrollo de proyecto</td>
 	</tr>
 	<tr>
-		<td>12/10/2024</td> <td>2</td> <td>31</td> <td>16</td> <td>Desarrollo de proyecto</td>
+		<td>12/11/2024</td> <td>2</td> <td>31</td> <td>16</td> <td>Desarrollo de proyecto</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del segundo corte-->
 	<tr>
-		<td>13/10/2024</td> <td>2</td> <td>32</td> <td>16</td> <td>Desarrollo de proyecto</td>
+		<td>13/11/2024</td> <td>2</td> <td>32</td> <td>16</td> <td>Desarrollo de proyecto</td>
 	</tr>
 </table>
 
@@ -147,94 +147,28 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Metodología</td>
 	</tr>
 	<tr>
-		<td rowspan="2">Primer (20%)</td>
-		<td>Parcial</td>
-		<td>10%</td>
-		<td>29/02/2024</td>
-		<td rowspan="7">Presencial</td>
-	</tr>
-	<tr>
+		<td>Primer (20%)</td>
 		<td>Quices y/o laboratorio</td>
-		<td>10%</td>
-		<td>22/02/2024<br>22/02/2024</td>
+		<td>20%</td>
+		<td>13/08/2024<br>20/08/2024<br>27/08/2024<br>28/08/2024</td>
+		<td rowspan="4">Presencial</td>
 	</tr>
 	<tr>
-		<td rowspan="2">Segundo (30%)</td>
-		<td>Parcial</td>
-		<td>15%</td>
-		<td>11/04/2024</td>
-	</tr>
-	<tr>
+		<td>Primer (20%)</td>
 		<td>Quices y/o laboratorio</td>
-		<td>15%</td>
-		<td>04/04/2024<br>04/04/2024</td>
+		<td>20%</td>
+		<td>17/09/2024<br>24/09/2024<br>01/10/2024<br>02/10/2024</td>
 	</tr>
 	<tr>
 		<td rowspan="3">Tercer (50%)</td>
-		<td>Examen final</td>
-		<td>15%</td>
-		<td>23/05/2024</td>
-	</tr>
-	<tr>
 		<td>Quices y/o laboratorio</td>
-		<td>15%</td>
-		<td>25/04/2024<br>02/05/2024<br>09/05/2024<br>09/05/2024<br>16/05/2024<br>16/05/2024</td>
+		<td>20%</td>
+		<td>15/10/2024<br>22/10/2024<br>29/10/2024<br>30/10/2024</td>
 	</tr>
     <tr>
 		<td>Proyecto</td>
-		<td>20%</td>
-		<td>23/05/2024</td>
-	</tr>
-</table>
-
-<h4>8BN</h4>
-
-<table>
-	<tr>
-		<td>Corte</td>
-		<td>Actividad</td>
-		<td>Porcentaje 💯</td>
-		<td>Fecha</td>
-		<td>Metodología</td>
-	</tr>
-	<tr>
-		<td rowspan="2">Primer (20%)</td>
-		<td>Parcial</td>
-		<td>10%</td>
-		<td>02/03/2024</td>
-		<td rowspan="7">Presencial</td>
-	</tr>
-	<tr>
-		<td>Quices y/o laboratorio</td>
-		<td>10%</td>
-		<td>24/02/2024<br>24/02/2024</td>
-	</tr>
-	<tr>
-		<td rowspan="2">Segundo (30%)</td>
-		<td>Parcial</td>
-		<td>15%</td>
-		<td>13/04/2024</td>
-	</tr>
-	<tr>
-		<td>Quices y/o laboratorio</td>
-		<td>15%</td>
-		<td>06/04/2024<br>06/04/2024</td>
-	</tr>
-	<tr>
-		<td rowspan="3">Tercer (50%)</td>
-		<td>Examen final</td>
-		<td>15%</td>
-		<td>25/05/2024</td>
-	</tr>
-	<tr>
-		<td>Quices y/o laboratorio</td>
-		<td>15%</td>
-		<td>27/04/2024<br>04/05/2024<br>11/05/2024<br>11/05/2024<br>18/05/2024<br>18/05/2024</td>
-	</tr>
-    <tr>
-		<td>Proyecto</td>
-		<td>20%</td>
-		<td>25/05/2024</td>
+		<td>30%</td>
+		<td>05/11/2024<br>06/11/2024<br>12/11/2024<br>13/11/2024</td>
 	</tr>
 </table>
 
