@@ -3,7 +3,7 @@ Materia: Electiva de robótica 2 🦿<br>
 Universidad: ECCI 🏫<br>
 Año: 2024 📅</h1><br>
 
-La electiva de robótica está enfocada a la adquisición y procesamiento de datos de Unidades de Medición Inerical (IMUs) con `Python` a través de Raspberry Pi 3B, 3B+ o 4B integrando ROS.
+La electiva de robótica está enfocada a la adquisición y procesamiento de datos de Unidades de Medición Inercial (IMUs) con `Python` a través de Raspberry Pi 3B, 3B+ o 4B integrando ROS.
 
 <h1>Aula 1</h1>
 
