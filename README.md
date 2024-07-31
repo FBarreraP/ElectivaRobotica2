@@ -136,8 +136,6 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 
 <h3>MÉTODOS DE EVALUACIÓN ✍️</h3>
 
-<h4>8AN</h4>
-
 <table>
 	<tr>
 		<td>Corte</td>
