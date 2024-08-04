@@ -421,12 +421,12 @@ end
 SENSITIVITY_ACCEL = 2.0/32768.0;
 SENSITIVITY_GYRO = 250.0/32768.0;
 
-offset_accelx = 444.00;
-offset_accely = -62.00;
-offset_accelz = 16494.00;
-offset_gyrox = 212.00;
-offset_gyroy = -47.00;
-offset_gyroz = 77.50;
+offset_accelx = -302.00;
+offset_accely = -54.00;
+offset_accelz = 16266.00;
+offset_gyrox = 185.00;
+offset_gyroy = -37.00;
+offset_gyroz = -10.00;
 
 disp('En sus marcas. Posicione el sensor en la posición inicial')
 pause(); %Aguarda qualquer tecla.
@@ -436,8 +436,9 @@ fprintf(s,'H');
 i = 1;
 while(1) %Lee datos en un tiempo determinado en la stm32
     str{i} = fscanf(s);
-    if(str{i}(1) == 'A')
+    if(str{i}(2) == 'A')
         disp('termina')
+        fclose(s);
         break;
     end
     i = i + 1;
@@ -447,8 +448,8 @@ fclose(s);
 n = length(str)-1;
 
 for i=1:n
-    temp = cellfun(@str2num,strsplit(str{i},',')); %temp = eval(['[',str{i},'];']); %Selecciona un string para separarlo posteriormente en celdas
-    if numel(temp) == 8 
+    temp = cellfun(@str2num,strsplit(str{i},'\t')); %temp = eval(['[',str{i},'];']); %Selecciona un string para separarlo posteriormente en celdas
+    if numel(temp) == 10 
         values(i,:) = temp;
     end
 end
@@ -465,11 +466,11 @@ t = 0:dt:Nsamples*dt-dt;
 % Acelerômetros RAW
 %------------------------------------
 figure;
-plot(t, values(:,3)*SENSITIVITY_ACCEL, 'b') %ax
+plot(t, values(:,4)*SENSITIVITY_ACCEL, 'b') %ax
 hold on
-plot(t, values(:,4)*SENSITIVITY_ACCEL, 'r'); %ay
-plot(t, values(:,5)*SENSITIVITY_ACCEL, 'g'); %az
-title('Acelerômetros da MPU9250 sem calibração')
+plot(t, values(:,5)*SENSITIVITY_ACCEL, 'r'); %ay
+plot(t, values(:,6)*SENSITIVITY_ACCEL, 'g'); %az
+title('Acelerômetros da MPU6050 sem calibração')
 ylabel('aceleração (g)')
 xlabel('Tempo (segundos)')
 legend('ax', 'ay', 'az', 'Location','northeast','Orientation','horizontal')
@@ -477,11 +478,11 @@ legend('ax', 'ay', 'az', 'Location','northeast','Orientation','horizontal')
 % % Acelerômetros calibrados
 % %------------------------------------
 figure;
-plot(t, (values(:,3)-offset_accelx)*SENSITIVITY_ACCEL, 'b') %ax
+plot(t, (values(:,4)-offset_accelx)*SENSITIVITY_ACCEL, 'b') %ax
 hold on
-plot(t, (values(:,4)-offset_accely)*SENSITIVITY_ACCEL, 'r'); %ay
-plot(t, (values(:,5)-(offset_accelz-(32768/2)))*SENSITIVITY_ACCEL, 'g'); %az
-title('Acelerômetros da MPU9250 calibrados')
+plot(t, (values(:,5)-offset_accely)*SENSITIVITY_ACCEL, 'r'); %ay
+plot(t, (values(:,6)-(offset_accelz-(32768/2)))*SENSITIVITY_ACCEL, 'g'); %az
+title('Acelerômetros da MPU6050 calibrados')
 ylabel('aceleração (g)')
 xlabel('Tempo (segundos)')
 legend('ax', 'ay', 'az', 'Location','northeast','Orientation','horizontal')
@@ -490,11 +491,11 @@ legend('ax', 'ay', 'az', 'Location','northeast','Orientation','horizontal')
 % % Giroscópios RAW
 % %------------------------------------
 figure;
-plot(t, values(:,6)*SENSITIVITY_GYRO, 'b') %gx
+plot(t, values(:,7)*SENSITIVITY_GYRO, 'b') %gx
 hold on
-plot(t, values(:,7)*SENSITIVITY_GYRO, 'r'); %gy
-plot(t, values(:,8)*SENSITIVITY_GYRO, 'g'); %gz
-title('Giroscópios da MPU9250 sem calibração')
+plot(t, values(:,8)*SENSITIVITY_GYRO, 'r'); %gy
+plot(t, values(:,9)*SENSITIVITY_GYRO, 'g'); %gz
+title('Giroscópios da MPU6050 sem calibração')
 ylabel('Velocidade angular (°/s)')
 xlabel('Tempo (segundos)')
 legend('gx', 'gy', 'gz', 'Location','southeast','Orientation','horizontal')
@@ -502,11 +503,11 @@ legend('gx', 'gy', 'gz', 'Location','southeast','Orientation','horizontal')
 % % Giroscópios calibrados
 % %------------------------------------
 figure;
-plot(t, (values(:,6)-offset_gyrox)*SENSITIVITY_GYRO, 'b') %gx
+plot(t, (values(:,7)-offset_gyrox)*SENSITIVITY_GYRO, 'b') %gx
 hold on
-plot(t, (values(:,7)-offset_gyroy)*SENSITIVITY_GYRO, 'r'); %gy
-plot(t, (values(:,8)-offset_gyroz)*SENSITIVITY_GYRO, 'g'); %gz
-title('Giroscópios da MPU9250 calibrados')
+plot(t, (values(:,8)-offset_gyroy)*SENSITIVITY_GYRO, 'r'); %gy
+plot(t, (values(:,9)-offset_gyroz)*SENSITIVITY_GYRO, 'g'); %gz
+title('Giroscópios da MPU6050 calibrados')
 ylabel('Velocidade angular (°/s)')
 xlabel('Tempo (segundos)')
 legend('gx', 'gy', 'gz', 'Location','northeast','Orientation','horizontal')
