@@ -18,6 +18,11 @@ $$2g/32768 = 0.00006103516$$
 
 $$16g/32768 = 0.00048828125$$
 
+
+<h3>Sensitividad</h3>
+
+
+
 <h3>Error</h3>
 
 
@@ -59,27 +64,19 @@ Adquisición de datos de la MPU6050
 //----------------------------------------------------------------------------
 //                           DECLARACAO DE VARIAVEIS
 //----------------------------------------------------------------------------
+// Offsets de calibração (AQUI DEVEM IR OS VALORES DETERMINADOS EN LA CALIBRACAO PREVIA COM O CÓDIGO "calibracao.ino")
+//double offset_accelx = 334.0, offset_accely = -948.0, offset_accelz = 16252.0;
+//double offset_gyrox = 111.0, offset_gyroy = 25.0, offset_gyroz = -49.0;
 
 // Valores "RAW" de tipo inteiro
 int16_t raw_accelx, raw_accely, raw_accelz;
 int16_t raw_gyrox, raw_gyroy, raw_gyroz;
-int16_t raw_temp;
-// Valores "RAW" de tipo float
-float Raw_accelx, Raw_accely, Raw_accelz;
-float Raw_gyrox, Raw_gyroy, Raw_gyroz;
+int16_t raw_temp; 
 
-// Valores de "offsets" de tipo float 
-float offset_accelx = 208.0, offset_accely = -314.0, offset_accelz = 16166.0;
-float offset_gyrox = 208.5, offset_gyroy = -30.5, offset_gyroz = -68.5;
-   
-// Saídas nao calibradas
+// Saídas escaladas
 float accelx, accely, accelz;
 float gyrox, gyroy, gyroz;
 float temp;
-
-// Saídas calibradas
-float Accelx, Accely, Accelz;
-float Gyrox, Gyroy, Gyroz;
 
 // Bytes
 char cmd[2];
@@ -89,12 +86,12 @@ char GirAcel[14];
 float buffer[500][8];
 int i;
 Timer t; //Cria-se o objeto do temporizador
-float timer=0;
+float timer=0.0, t_fin=10.0, cont_timer=0.0;
 //.....................................................................
 //                        Inicializacao I2C
 //..................................................................... 
 Serial pc(SERIAL_TX, SERIAL_RX);
-I2C i2c(PB_7, PB_6 );
+I2C i2c(PB_7, PB_6 );//SDA,SCL
 
 //DigitalOut myled(LED1);
 
@@ -134,49 +131,44 @@ int main(){
     wait(0.01);
     while(1) {
         //.................Construcción de la medición de los valores .................. 
-        for(i=0; i<299; i++){
-            cmd[0]=0x3B;
-            i2c.write(MPU6500_address, cmd, 1);            //Escritura del registro de inicio
-            i2c.read(MPU6500_address, GirAcel, 14);    //Lectura en rafaga de los valores de la MPU
-            t.reset();
-            t.start();
-            
-            raw_accelx = GirAcel[0]<<8 | GirAcel[1];    
-            raw_accely = GirAcel[2]<<8 | GirAcel[3];
-            raw_accelz = GirAcel[4]<<8 | GirAcel[5];
-            raw_temp = GirAcel[6]<<8 | GirAcel[7];
-            raw_gyrox = GirAcel[8]<<8 | GirAcel[9];
-            raw_gyroy = GirAcel[10]<<8 | GirAcel[11];
-            raw_gyroz = GirAcel[12]<<8 | GirAcel[13];
-            //Dados "RAW"
-            accelx = raw_accelx*SENSITIVITY_ACCEL;
-            accely = raw_accely*SENSITIVITY_ACCEL;
-            accelz = raw_accelz*SENSITIVITY_ACCEL;
-            gyrox = raw_gyrox*SENSITIVITY_GYRO;
-            gyroy = raw_gyroy*SENSITIVITY_GYRO;
-            gyroz = raw_gyroz*SENSITIVITY_GYRO;
-            temp = (raw_temp/SENSITIVITY_TEMP)+21;
-            //Dados Calibrados
-            Raw_accelx = raw_accelx; Raw_accely = raw_accely; Raw_accelz = raw_accelz; 
-            Raw_gyrox = raw_gyrox; Raw_gyroy = raw_gyroy; Raw_gyroz = raw_gyroz;
-            Accelx = (Raw_accelx-offset_accelx)*SENSITIVITY_ACCEL;
-            Accely = (Raw_accely-offset_accely)*SENSITIVITY_ACCEL;
-            Accelz = (Raw_accelz-(offset_accelz-(32768/2)))*SENSITIVITY_ACCEL;
-            Gyrox = (Raw_gyrox-offset_gyrox)*SENSITIVITY_GYRO;
-            Gyroy = (Raw_gyroy-offset_gyroy)*SENSITIVITY_GYRO;
-            Gyroz = (Raw_gyroz-offset_gyroz)*SENSITIVITY_GYRO;
-            //wait_ms(9);
-            //wait_us(951);
-            t.stop();
-            timer = t.read();
-            //pc.printf("El tiempo es %f segundos \r", timer);
-            pc.printf("%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n\r",accelx, accely, accelz, gyrox, gyroy, gyroz, Accelx, Accely, Accelz, Gyrox, Gyroy, Gyroz);
+        if(pc.getc() == 'H'){
+            i = 1;
+            while(1){
+                t.reset();
+                t.start();
+                cmd[0]=0x3B;
+                i2c.write(MPU6500_address, cmd, 1);            //Escritura del registro de inicio
+                i2c.read(MPU6500_address, GirAcel, 14);    //Lectura en rafaga de los valores de la MPU
+                //Dados crus
+                raw_accelx = GirAcel[0]<<8 | GirAcel[1];    
+                raw_accely = GirAcel[2]<<8 | GirAcel[3];
+                raw_accelz = GirAcel[4]<<8 | GirAcel[5];
+                raw_temp = GirAcel[6]<<8 | GirAcel[7];
+                raw_gyrox = GirAcel[8]<<8 | GirAcel[9];
+                raw_gyroy = GirAcel[10]<<8 | GirAcel[11];
+                raw_gyroz = GirAcel[12]<<8 | GirAcel[13];
+                //Dados escalados
+                // accelx = raw_accelx*SENSITIVITY_ACCEL;
+                // accely = raw_accely*SENSITIVITY_ACCEL;
+                // accelz = raw_accelz*SENSITIVITY_ACCEL;
+                // gyrox = raw_gyrox*SENSITIVITY_GYRO;
+                // gyroy = raw_gyroy*SENSITIVITY_GYRO;
+                // gyroz = raw_gyroz*SENSITIVITY_GYRO;
+                // temp = (raw_temp/SENSITIVITY_TEMP)+21;
+                wait_us(8380);
+                t.stop();
+                timer = t.read();
+                cont_timer += timer;
+                //pc.printf("El tiempo es %f segundos \r", timer);
+                pc.printf("%d \t %.4f \t %.2f \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n\r",i++, timer, cont_timer, raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
+                //pc.printf("%d \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \n\r",i+1,accelx, accely, accelz, gyrox, gyroy, gyroz, temp);
+                if(cont_timer >= t_fin){
+                    cont_timer = 0;
+                    pc.printf("A\n");
+                    break;
+                }
+            }
         }
-       /* for(int i=0; i<14; i++) {
-            pc.printf("Buffer[%i] = %i \n\r",i,read_buffer[i]);
-        }*/
-
-        //myled = !myled;
     }
 }
 ```
@@ -184,6 +176,15 @@ int main(){
 Calibración de datos de la MPU6050
 
 ```cpp
+//.............................................................................................................................................................................................
+//                                                                      PROGRAMA DE LEITURA DE DADOS DA IMU6050
+//.............................................................................................................................................................................................
+// Autor: Fabián Barrera Prieto
+// Curso: Mestrado em Sistemas Mecatrônicos
+// Instituicao: Universidade de Brasília
+// Data: 17/04/2017
+//.............................................................................................................................................................................................
+
 //----------------------------------------------------------------------------
 //                                BIBLIOTECAS
 //----------------------------------------------------------------------------
@@ -382,7 +383,131 @@ int main(){
         pc.printf("offset_accelx = %.2f, offset_accely = %.2f, offset_accelz = %.2f, offset_gyrox = %.2f, offset_gyroy = %.2f, offset_gyroz = %.2f \n\r",offset_accelx, offset_accely, offset_accelz, offset_gyrox, offset_gyroy, offset_gyroz);
         pc.printf("CALIBRACAO ENCERRADA \n\r");
         wait(100);
+        while(1);
     }
 }
+```
 
+
+``` matlab
+%------------------------------------------------------------------
+% Leitura (STM32F303K8) e impressao de dados 
+%------------------------------------------------------------------
+% Leituras do Acelerometro e do Giroscopio 
+% 
+% Fabián Barrera Prieto
+% Mestrado em Sistemas Mecatrônicos
+% 09/03/2017
+%------------------------------------------------------------------
+% function [values] = DadosTest ()
+    
+close all;
+clear all;
+clc;
+
+oldobj = instrfind;     %elimina resquicios presentes na porta serial
+if not(isempty(oldobj)) 
+    fclose(oldobj);     
+    delete(oldobj);
+end
+
+if ~exist('s','var')
+    s = serial('COM3','BaudRate',9600,'DataBits',8,'Parity','None','StopBits',1);
+end
+if strcmp(get(s,'status'),'closed')
+    fopen(s);
+end
+
+SENSITIVITY_ACCEL = 2.0/32768.0;
+SENSITIVITY_GYRO = 250.0/32768.0;
+
+offset_accelx = 444.00;
+offset_accely = -62.00;
+offset_accelz = 16494.00;
+offset_gyrox = 212.00;
+offset_gyroy = -47.00;
+offset_gyroz = 77.50;
+
+disp('En sus marcas. Posicione el sensor en la posición inicial')
+pause(); %Aguarda qualquer tecla.
+
+disp('comienza')
+fprintf(s,'H');
+i = 1;
+while(1) %Lee datos en un tiempo determinado en la stm32
+    str{i} = fscanf(s);
+    if(str{i}(1) == 'A')
+        disp('termina')
+        break;
+    end
+    i = i + 1;
+end
+
+fclose(s);
+n = length(str)-1;
+
+for i=1:n
+    temp = cellfun(@str2num,strsplit(str{i},',')); %temp = eval(['[',str{i},'];']); %Selecciona un string para separarlo posteriormente en celdas
+    if numel(temp) == 8 
+        values(i,:) = temp;
+    end
+end
+    
+save EP2_Aula3 values
+
+%-------------------------------------------------------------------------------------------------------------------------
+%                                                       Figuras
+%-------------------------------------------------------------------------------------------------------------------------
+Nsamples = length(values);
+dt = 0.01;
+t = 0:dt:Nsamples*dt-dt;
+%------------------------------------
+% Acelerômetros RAW
+%------------------------------------
+figure;
+plot(t, values(:,3)*SENSITIVITY_ACCEL, 'b') %ax
+hold on
+plot(t, values(:,4)*SENSITIVITY_ACCEL, 'r'); %ay
+plot(t, values(:,5)*SENSITIVITY_ACCEL, 'g'); %az
+title('Acelerômetros da MPU9250 sem calibração')
+ylabel('aceleração (g)')
+xlabel('Tempo (segundos)')
+legend('ax', 'ay', 'az', 'Location','northeast','Orientation','horizontal')
+% %------------------------------------
+% % Acelerômetros calibrados
+% %------------------------------------
+figure;
+plot(t, (values(:,3)-offset_accelx)*SENSITIVITY_ACCEL, 'b') %ax
+hold on
+plot(t, (values(:,4)-offset_accely)*SENSITIVITY_ACCEL, 'r'); %ay
+plot(t, (values(:,5)-(offset_accelz-(32768/2)))*SENSITIVITY_ACCEL, 'g'); %az
+title('Acelerômetros da MPU9250 calibrados')
+ylabel('aceleração (g)')
+xlabel('Tempo (segundos)')
+legend('ax', 'ay', 'az', 'Location','northeast','Orientation','horizontal')
+
+% %------------------------------------
+% % Giroscópios RAW
+% %------------------------------------
+figure;
+plot(t, values(:,6)*SENSITIVITY_GYRO, 'b') %gx
+hold on
+plot(t, values(:,7)*SENSITIVITY_GYRO, 'r'); %gy
+plot(t, values(:,8)*SENSITIVITY_GYRO, 'g'); %gz
+title('Giroscópios da MPU9250 sem calibração')
+ylabel('Velocidade angular (°/s)')
+xlabel('Tempo (segundos)')
+legend('gx', 'gy', 'gz', 'Location','southeast','Orientation','horizontal')
+% %------------------------------------
+% % Giroscópios calibrados
+% %------------------------------------
+figure;
+plot(t, (values(:,6)-offset_gyrox)*SENSITIVITY_GYRO, 'b') %gx
+hold on
+plot(t, (values(:,7)-offset_gyroy)*SENSITIVITY_GYRO, 'r'); %gy
+plot(t, (values(:,8)-offset_gyroz)*SENSITIVITY_GYRO, 'g'); %gz
+title('Giroscópios da MPU9250 calibrados')
+ylabel('Velocidade angular (°/s)')
+xlabel('Tempo (segundos)')
+legend('gx', 'gy', 'gz', 'Location','northeast','Orientation','horizontal')
 ```
