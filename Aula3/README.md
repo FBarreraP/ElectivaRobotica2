@@ -6,22 +6,25 @@ Esta clase consiste en calibrar los sensores (acelerómetro y giroscopio) de la 
 
 La precisión hace referencia a una baja dispersión de los datos (desviación estándar) y la exactitud corresponde a que la distribución de dichos datos están sobre el punto exacto y real.
 
+<div align="center">
 <img src="image.png" alt="Precisión y Exactitud"/>
 <figcaption>Fuente: https://www.biovera.com.br/noticias/10-dicas-para-uma-melhor-pipetagem/</figcaption>
+</div>
 
 <h3>Error</h3>
 
 El error en los instrumentos de medición es la diferencia entre el valor medido y el valor real. El error aleatorio son datos que a veces son incorrectos y no son predecibles, los cuales pueden ser ocasionados por el observador, por el instrumento de medición o por el fenómeno que se está midiendo. El error sistemático son datos incorrectos que se repiten durante el proceso de medición, debido a mala calibración, mal ajuste del factor de escala o mal funcionamiento del instrumento de medición.
 
-![alt text](image-1.png)
-<img src="image.png" alt="Error"/>
+<div align="center">
+<img src="image-1.png" alt="Error"/>
 <figcaption>Fuente: https://www.lifeder.com/error-aleatorio/</figcaption>
+</div>
 
 <h3>Calibración</h3>
 
 La calibración de un sensor o instrumento de medición consiste en ajustar los valores medidos a los valores precisos y exactos a partir de un instrumento padrón.
 
-Adquisición de datos de la MPU6050
+<h3>Adquisición de datos de la MPU6050</h3>
 
 ```cpp
 //----------------------------------------------------------------------------
@@ -163,7 +166,7 @@ int main(){
 }
 ```
 
-Calibración de datos de la MPU6050
+<h3>Calibración de datos de la MPU6050</h3>
 
 ```cpp
 //.............................................................................................................................................................................................
@@ -378,6 +381,7 @@ int main(){
 }
 ```
 
+<h3>Gráficas de la MPU6050</h3>
 
 ``` matlab
 %------------------------------------------------------------------
