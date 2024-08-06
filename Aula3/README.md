@@ -2,32 +2,18 @@
 
 Esta clase consiste en calibrar los sensores (acelerómetro y giroscopio) de la MPU6050.
 
-<h3>Precisión</h3>
+<h3>Precisión y Exactitud</h3>
 
-La precisión permite concentrar datos con baja desviación estándar, sin embargo, dichos datos están alejados del punto exacto de medición.
-
-<h3>Exactitud</h3>
-
-La exactitud indica que los datos están cercanos al punto exacto de medición
-
-<h3>Resolución</h3>
-
-Es la mínima variación entre muestra y muestra
-
-$$2g/32768 = 0.00006103516$$
-
-$$16g/32768 = 0.00048828125$$
-
-
-<h3>Sensitividad</h3>
-
-
+<img src="image.png" alt="Precisión y Exactitud"/>
+<figcaption>Fuente: </figcaption>
 
 <h3>Error</h3>
 
+El
 
+<h3>Calibración</h3>
 
-
+La calibración de un sensor o instrumento de medición consiste en ajustar los valores medidos a los valores precisos y exactos.
 
 
 

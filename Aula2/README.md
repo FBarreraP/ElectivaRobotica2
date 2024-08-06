@@ -6,9 +6,9 @@ Esta clase consiste en comprender la IMU de 6 GDL y adquirir la información que
 
 Las Unidades de Medición Inercial (IMUs) son dispositivos electrónicos que proporcionan mediciones de velocidad angular y fuerza gravitacional en diferentes ejes. Algunas IMUs pueden medir campo magnético, temperatura, presión atmosférica, entre otras variables físicas.
 
-<center>
+<div align="center">
 <img src="image-2.png" alt="IMU"/>
-</center>
+</div>
 <br>
 
 Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad angular  ($°/s$), además del campo magnético terrestre (T o G), a través de los acelerómetros, giroscopios y magnetómetros. Los ángulos de Euler pueden ser estimados por fusión sensorial. Estos sensores en una IMU son de tecnología MEMS.
