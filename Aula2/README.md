@@ -14,6 +14,7 @@ Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad 
 
 <div align="center">
 <img src="image-3.png" alt="IMU"/>
+<br>
 <figcaption>Fuente: </figcaption>
 </div>
 
@@ -21,6 +22,7 @@ Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad 
 
 <div align="center">
 <img src="image-8.png" alt="Giroscopio MEMS"/>
+<br>
 <figcaption>Fuente: https://cursos.mcielectronics.cl/2019/06/18/giroscopio/</figcaption>
 </div>
 
@@ -28,6 +30,7 @@ Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad 
 
 <div align="center">
 <img src="image-9.png" alt="Funcionamiento del Acelerómetro"/>
+<br>
 <figcaption>Fuente: http://www.prometec.net/imu-mpu6050/</figcaption>
 
 <img src="image-10.png" alt="Acelerómetros MEMS"/>
@@ -43,6 +46,7 @@ Además, los acelerómetros permiten detectar diferentes movimientos de un dispo
 
 <div align="center">
 <img src="image-11.png" alt="Magnetómetro MEMS"/>
+<br>
 <figcaption>Fuente: </figcaption>
 </div>
 

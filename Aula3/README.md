@@ -19,6 +19,7 @@ El error en los instrumentos de medición es la diferencia entre el valor medido
 <div align="center">
 <img src="image-1.png" alt="Error"/>
 <figcaption>Fuente: https://www.lifeder.com/error-aleatorio/</figcaption>
+<br>
 </div>
 
 <h3>Calibración</h3>
