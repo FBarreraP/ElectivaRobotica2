@@ -8,6 +8,7 @@ La precisión hace referencia a una baja dispersión de los datos (desviación e
 
 <div align="center">
 <img src="image.png" alt="Precisión y Exactitud"/>
+<br>
 <figcaption>Fuente: https://www.biovera.com.br/noticias/10-dicas-para-uma-melhor-pipetagem/</figcaption>
 </div>
 
