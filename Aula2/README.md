@@ -9,33 +9,42 @@ Las Unidades de Medición Inercial (IMUs) son dispositivos electrónicos que pro
 <div align="center">
 <img src="image-2.png" alt="IMU"/>
 </div>
-<br>
 
 Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad angular  ($°/s$), además del campo magnético terrestre (T o G), a través de los acelerómetros, giroscopios y magnetómetros. Los ángulos de Euler pueden ser estimados por fusión sensorial. Estos sensores en una IMU son de tecnología MEMS.
 
+<div align="center">
 <img src="image-3.png" alt="IMU"/>
 <figcaption>Fuente: </figcaption>
+</div>
 
 <h3>Giroscopio</h3>
 
+<div align="center">
 <img src="image-8.png" alt="Giroscopio MEMS"/>
 <figcaption>Fuente: https://cursos.mcielectronics.cl/2019/06/18/giroscopio/</figcaption>
+</div>
 
 <h3>Acelerómetro</h3>
 
+<div align="center">
 <img src="image-9.png" alt="Funcionamiento del Acelerómetro"/>
 <figcaption>Fuente: http://www.prometec.net/imu-mpu6050/</figcaption>
 
 <img src="image-10.png" alt="Acelerómetros MEMS"/>
+</div>
 
 Además, los acelerómetros permiten detectar diferentes movimientos de un dispositivo
 
+<div align="center">
 <img src="image-12.png" alt="Movimientos acelerómetros"/>
+</div>
 
 <h3>Magnetómetro</h3>
 
+<div align="center">
 <img src="image-11.png" alt="Magnetómetro MEMS"/>
 <figcaption>Fuente: </figcaption>
+</div>
 
 <h3>MPU6050</h3>
 
