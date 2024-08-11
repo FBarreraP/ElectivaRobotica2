@@ -7,13 +7,13 @@ Esta clase consiste en comprender la IMU de 6 GDL y adquirir la información que
 Las Unidades de Medición Inercial (IMUs) son dispositivos electrónicos que proporcionan mediciones de velocidad angular y fuerza gravitacional en diferentes ejes. Algunas IMUs pueden medir campo magnético, temperatura, presión atmosférica, entre otras variables físicas.
 
 <div align="center">
-<img src="image-2.png" alt="IMU"/>
+<img src="Imagenes/image-2.png" alt="IMU"/>
 </div>
 
 Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad angular  ($°/s$), además del campo magnético terrestre (T o G), a través de los acelerómetros, giroscopios y magnetómetros. Los ángulos de Euler pueden ser estimados por fusión sensorial. Estos sensores en una IMU son de tecnología MEMS.
 
 <div align="center">
-<img src="image-3.png" alt="IMU"/>
+<img src="Imagenes/image-3.png" alt="IMU"/>
 <br>
 <figcaption>Fuente: </figcaption>
 </div>
@@ -21,7 +21,7 @@ Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad 
 <h3>Giroscopio</h3>
 
 <div align="center">
-<img src="image-8.png" alt="Giroscopio MEMS"/>
+<img src="Imagenes/image-8.png" alt="Giroscopio MEMS"/>
 <br>
 <figcaption>Fuente: https://cursos.mcielectronics.cl/2019/06/18/giroscopio/</figcaption>
 </div>
@@ -29,23 +29,23 @@ Una IMU detecta las variaciones de fuerza gravitacional ($g=m/s^2$) y velocidad 
 <h3>Acelerómetro</h3>
 
 <div align="center">
-<img src="image-9.png" alt="Funcionamiento del Acelerómetro"/>
+<img src="Imagenes/image-9.png" alt="Funcionamiento del Acelerómetro"/>
 <br>
 <figcaption>Fuente: http://www.prometec.net/imu-mpu6050/</figcaption>
 
-<img src="image-10.png" alt="Acelerómetros MEMS"/>
+<img src="Imagenes/image-10.png" alt="Acelerómetros MEMS"/>
 </div>
 
 Además, los acelerómetros permiten detectar diferentes movimientos de un dispositivo
 
 <div align="center">
-<img src="image-12.png" alt="Movimientos acelerómetros"/>
+<img src="Imagenes/image-12.png" alt="Movimientos acelerómetros"/>
 </div>
 
 <h3>Magnetómetro</h3>
 
 <div align="center">
-<img src="image-11.png" alt="Magnetómetro MEMS"/>
+<img src="Imagenes/image-11.png" alt="Magnetómetro MEMS"/>
 <br>
 <figcaption>Fuente: </figcaption>
 </div>
@@ -54,37 +54,37 @@ Además, los acelerómetros permiten detectar diferentes movimientos de un dispo
 
 La MPU6050 es un dispositivo de 6 GDL que integra acelerómetro y giroscopio y cuenta con comunicación SPI e I2C.
 
-<img src="image-1.png" alt="MPU6050 y MPU9250"/>
+<img src="Imagenes/image-1.png" alt="MPU6050 y MPU9250"/>
 <figcaption>Fuente: Datasheet MPU6050 y MPU9250</figcaption>
 
-<img src="image-4.png" alt="MPU6050 y MPU9250"/>
+<img src="Imagenes/image-4.png" alt="MPU6050 y MPU9250"/>
 
 <h3>I2C</h3>
 
 I2C (Inter Integrated Circuits) es una comunicación tipo ‘half duplex’ que puede ser realizada entre uno o más maestros y uno o más esclavos, a partir de una señal de reloj (SCL) y una señal de datos (SDA). El direccionamiento de los datos se realiza a través de la dirección de esclavo de 7 bits.
 
-<img src="image-5.png" alt="Conexión I2C"/>
+<img src="Imagenes/image-5.png" alt="Conexión I2C"/>
 <figcaption>Fuente: https://howtomechatronics.com/tutorials/arduino/how-i2c-communication-works-and-how-to-use-it-with-arduino/
 </figcaption>
 <br>
 
 <h4>Escribir I2C</h4>
 
-<img src="image-6.png" alt="Escribir I2C"/>
+<img src="Imagenes/image-6.png" alt="Escribir I2C"/>
 <figcaption>Fuente: https://howtomechatronics.com/tutorials/arduino/how-i2c-communication-works-and-how-to-use-it-with-arduino/
 </figcaption>
 <br>
 
 <h4>Leer I2C</h4>
 
-<img src="image-7.png" alt="Leer I2C"/>
+<img src="Imagenes/image-7.png" alt="Leer I2C"/>
 <br>
 
 <h3>STM32F303K8</h3>
 
 La información de apoyo puede ser consultada en los manuales de la tarjeta, sin embargo, <a href="https://os.mbed.com/platforms/ST-Nucleo-F303K8/">aquí</a> también se puede encontrar alguna información desde la página de Mbed.
 
-<img src="image.png" alt="STM32F303K8"/>
+<img src="Imagenes/image.png" alt="STM32F303K8"/>
 <figcaption>Fuente: https://os.mbed.com/platforms/ST-Nucleo-F303K8/</figcaption>
 <br>
 
