@@ -1,6 +1,6 @@
 <h1>Aula 6</h1>
 
-Esta clase consiste en realizar la comunicación serial entre la RPi, la STM32 y la MPU6050.
+Esta clase consiste en realizar la comunicación serial entre la RPi (Raspbian Buster), la STM32 y la MPU6050.
 
 <h3>Comunicación RPi, STM32 y MPU6050</h3>
 
