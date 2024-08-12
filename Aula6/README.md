@@ -4,43 +4,43 @@ Esta clase consiste en realizar la comunicación serial entre la RPi, la STM32 y
 
 <h3>Comunicación RPi, STM32 y MPU6050</h3>
 
-Lista todos los puertos de la RPi 
+Lista todos los puertos ejecutar el siguiente comando:
 
 ```
 ls /dev
 ```
 
-Muestra información sobre los dispositivos COM conectados
+Muestra información sobre los dispositivos COM conectados ejecutar el siguiente comando:
 
 ```
 dmesg | grep tty
 ```
 
-Lista todas los puertos USB conectados de la RPi
+Lista todas los puertos USB conectados ejecutar el siguiente comando:
 
 ```
 ls /dev/ttyACM*
 ```
 
-Muestra las configuraciones de los dispositivos COM
+Muestra las configuraciones de los dispositivos COM ejecutar el siguiente comando:
 
 ```
 stty -F /dev/ttyACM0 -a
 ```
 
-Configura los baudios a 9600, 8 bits, 1 bit de stop y no bit de paridad (8N1)
+Configura los baudios a 9600, 8 bits, 1 bit de stop y no bit de paridad (8N1) ejecutar el siguiente comando:
 
 ```
 stty -F /dev/ttyACM0 9600 cs8 -cstopb -parenb
 ```
 
-Lee datos del puerto serial en un primer terminal
+Lee datos del puerto serial en un primer terminal ejecutar el siguiente comando:
 
 ```
 cat < /dev/ttyACM0
 ```
 
-Escribe datos en el puerto serial en un segundo terminal
+Escribe datos en el puerto serial en un segundo terminal ejecutar el siguiente comando:
 
 ```
 echo 'H' > /dev/ttyACM0
@@ -48,8 +48,17 @@ echo 'H' > /dev/ttyACM0
 
 * Sin embargo, se pueden utilizar monitores seriales en sistemas operativos basados en linux (Raspian, Ubuntu, etc.) tales como minicom o screen.
 
+Para instalar minicom ejecutar el siguiente comando:
 
+```
+sudo apt-get install minicom
+```
 
+Para abrir minicom:
+
+```
+minicom -s
+```
 
 <h3>Adquisición de datos MPU6050</h3>
 
