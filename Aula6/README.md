@@ -187,7 +187,7 @@ int main(){
 }
 ```
 
-<h3>Comunicación serial STM32</h3>
+<h3>Gráficas de la MPU6050 en RPi</h3>
 
 ```python
 import serial
