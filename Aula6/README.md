@@ -4,17 +4,52 @@ Esta clase consiste en realizar la comunicación serial entre la RPi, la STM32 y
 
 <h3>Comunicación RPi, STM32 y MPU6050</h3>
 
-Conocer todas los puertos de la RPi 
+Lista todos los puertos de la RPi 
 
 ```
 ls /dev
 ```
 
-Conocer todas los puertos USB conectados de la RPi
+Muestra información sobre los dispositivos COM conectados
+
+```
+dmesg | grep tty
+```
+
+Lista todas los puertos USB conectados de la RPi
 
 ```
 ls /dev/ttyACM*
 ```
+
+Muestra las configuraciones de los dispositivos COM
+
+```
+stty -F /dev/ttyACM0 -a
+```
+
+Configura los baudios a 9600, 8 bits, 1 bit de stop y no bit de paridad (8N1)
+
+```
+stty -F /dev/ttyACM0 9600 cs8 -cstopb -parenb
+```
+
+Lee datos del puerto serial en un primer terminal
+
+```
+cat < /dev/ttyACM0
+```
+
+Escribe datos en el puerto serial en un segundo terminal
+
+```
+echo 'H' > /dev/ttyACM0
+```
+
+* Sin embargo, se pueden utilizar monitores seriales en sistemas operativos basados en linux (Raspian, Ubuntu, etc.) tales como minicom o screen.
+
+
+
 
 <h3>Adquisición de datos MPU6050</h3>
 
