@@ -222,7 +222,8 @@ if value == 'S' or value == 's':
     print("\nTermina \n")
     print(datos,"\n")
     print(type(datos))
-    print(type(datos[0,1]),type(datos[0][1]))
+    print(type(datos[0,2]),type(datos[0][2]))
+    print(f'{datos[0,2]},{datos[0][2]}')
     
     offsets = [numpy.mean(datos[:,2]), numpy.mean(datos[:,3]), numpy.mean(datos[:,4])-(32768/2), numpy.mean(datos[:,5]), numpy.mean(datos[:,6]), numpy.mean(datos[:,7])]
     print(offsets)
