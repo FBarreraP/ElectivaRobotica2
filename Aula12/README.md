@@ -72,7 +72,21 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 
 ```
 
+>[!WARNING]
+>En la ejecución del segundo comando de la instalación de ROS en Raspbian Buster se presenta el siguiente error:
 
+<div align="center">
+<img src="image-10.png" alt="Error keyserver"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
+
+Para solucionar ese error, se deben ejecutar el siguiente comando:
+
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
+```
+Fuente: https://vprivalov.medium.com/ubuntu-tips-fix-error-with-security-keys-in-apt-update-e958616e0650
 
 <h3>Instalación de Ubuntu 20.04</h3>
 
