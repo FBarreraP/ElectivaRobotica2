@@ -54,7 +54,7 @@ Para instalar minicom ejecutar el siguiente comando:
 sudo apt-get install minicom
 ```
 
-Para abrir minicom:
+Para abrir minicom ejecutar el siguiente comando:
 
 ```
 minicom -s
