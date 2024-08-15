@@ -33,7 +33,7 @@ Configura los baudios a 9600, 8 bits, 1 bit de stop y no bit de paridad (8N1) ej
 ```
 stty -F /dev/ttyACM0 9600 cs8 -cstopb -parenb
 ```
-<!--
+
 Lee datos del puerto serial en un primer terminal ejecutar el siguiente comando:
 
 ```
@@ -45,7 +45,7 @@ Escribe datos en el puerto serial en un segundo terminal ejecutar el siguiente c
 ```
 echo 'H' > /dev/ttyACM0
 ```
--->
+
 En sistemas operativos basados en linux (Raspian, Ubuntu, etc.) existen algunos monitores seriales como minicom o screen.
 
 Para instalar minicom ejecutar el siguiente comando:
