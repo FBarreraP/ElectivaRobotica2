@@ -62,7 +62,7 @@ minicom -s
 
 <h3>Adquisición de datos MPU6050</h3>
 
-``` cpp
+```c++
 //----------------------------------------------------------------------------
 //                                BIBLIOTECAS
 //----------------------------------------------------------------------------
@@ -189,7 +189,7 @@ int main(){
 
 <h3>Calibración MPU6050 en RPi</h3>
 
-``` python
+```python
 import serial
 import numpy 
 import matplotlib.pyplot as plt
@@ -234,7 +234,7 @@ else:
 
 <h3>Gráficas MPU6050 en RPi</h3>
 
-``` python
+```python
 import serial
 import numpy 
 import matplotlib.pyplot as plt

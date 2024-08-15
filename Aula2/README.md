@@ -94,7 +94,7 @@ Para la versiones de Mbed 5 y 6, hay algunas APIs <a href="https://os.mbed.com/d
 
 Adquirir los datos del acelerómetro y giroscopio de la IMU (MPU6050) con la STM32.
 
-```cpp
+```c++
 //----------------------------------------------------------------------------
 //                                BIBLIOTECAS
 //----------------------------------------------------------------------------
