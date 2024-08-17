@@ -10,6 +10,8 @@ ROS es un Sistema Operativo de Robots, click para ver las diferentes <a href="ht
 
 <h3>Raspberry Pi :atom:</h3>
 
+Para instalar ROS en la RPi se debe instalar Raspbian Buster, el cual se puede descargar <a href="https://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/">aquí</a>
+
 >[!WARNING]
 >En algunas versiones de Raspbian (ej:buster) se presenta el siguiente error posteriormente a la instalación del Raspbian Buster en la Raspberry Pi 4
 
