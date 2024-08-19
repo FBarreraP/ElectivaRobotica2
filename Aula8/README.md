@@ -30,7 +30,7 @@ Consiste en combinar informaciones (mediciones) de diferentes fuentes de informa
 
 Se comporta como una combinación entre los filtros pasa alto y paso bajo, convirtiéndose en un filtro pasa banda. Los valores A y B son constantes que permiten ajustar la estimación del ángulo. Por tanto, para A es dado el mayor valor y B el menor.
 
-$$\theta^k = A \cdot (\theta^{k-1} + (\theta^{k}_{giro} \cdot dt)) + B \cdot (\theta^{k}_{acel})$$
+$$\theta^k = A \cdot (\theta^{k-1} + (\theta^{k}_{giro} \cdot dt)) + B \cdot (\theta^{k}_{giro})$$
 
 Adquisición de datos MPU6050 con STM32
 
