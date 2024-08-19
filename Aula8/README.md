@@ -7,13 +7,13 @@ Esta clase consiste en estimar los ángulos de Euler (Roll y Pitch) a través de
 Consiste en combinar informaciones (mediciones) de diferentes fuentes de información (sensores), a través de un mecanismo de fusión sensorial (filtro); con el objetivo de obtener una señal de salida con mejor calidad de lo que se podría obtener con un único sensor.
 
 <div align="center">
-<img src="image.png" alt="Fusão sensorial"/>
+<img src="Imagenes/image.png" alt="Fusão sensorial"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
 
 <div align="center">
-<img src="image-1.png" alt="Fusão sensorial com o EKF"/>
+<img src="Imagenes/image-1.png" alt="Fusão sensorial com o EKF"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
@@ -21,7 +21,7 @@ Consiste en combinar informaciones (mediciones) de diferentes fuentes de informa
 <h3>Giroscopio y Acelerómetro</h3>
 
 <div align="center">
-<img src="image-2.png" alt="Giroscopio y Acelerómetro"/>
+<img src="Imagenes/image-2.png" alt="Giroscopio y Acelerómetro"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
@@ -31,6 +31,12 @@ Consiste en combinar informaciones (mediciones) de diferentes fuentes de informa
 Se comporta como una combinación entre los filtros pasa alto y paso bajo, convirtiéndose en un filtro pasa banda. Los valores A y B son constantes que permiten ajustar la estimación del ángulo. Por tanto, para A es dado el mayor valor y B el menor.
 
 $$\theta^k = A \cdot (\theta^{k-1} + (\theta_{giro}^{k} \cdot dt)) + B \cdot (\theta_{acel}^{k})$$
+
+<div align="center">
+<img src="Imagenes/image-3.png" alt="Filtro complementario"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 Adquisición de datos MPU6050 con STM32
 
