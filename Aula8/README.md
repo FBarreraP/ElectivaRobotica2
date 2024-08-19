@@ -248,7 +248,7 @@ value = input("\nQuiere adquirir los datos S/N \n\n")
 if value == 'S' or value == 's':
     print("\nCapturando datos \n")
     data.write(b'H')
-    for i in range(100):
+    for i in range(raw):
         rec=data.readline() #byte
         #print(rec)
         rec=rec.decode("utf-8") #string
