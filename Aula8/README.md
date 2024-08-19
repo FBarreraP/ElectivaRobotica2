@@ -141,7 +141,7 @@ int main(){
     while(1) {
         //.................Construcción de la medición de los valores .................. 
         if(pc.getc() == 'H'){
-            for(i=0; i<100; i++){
+            for(i=0; i<300; i++){
                 t.reset();
                 t.start();
                 cmd[0]=0x3B;
@@ -181,16 +181,18 @@ SENSITIVITY_GYRO = 250.0/32768.0
 data = serial.Serial('/dev/ttyACM0',9600,timeout=10)
 print(data)
 
-datos=numpy.zeros((100,8)) #bits
-datos1=numpy.zeros((100,8)) #no calibrados
-datos2=numpy.zeros((100,8)) # calibrados
+raw = 300
+
+datos=numpy.zeros((raw,8)) #bits
+datos1=numpy.zeros((raw,8)) #no calibrados
+datos2=numpy.zeros((raw,8)) # calibrados
 
 value = input("\nQuiere adquirir los datos S/N \n\n")
 
 if value == 'S' or value == 's':
     print("\nCapturando datos \n")
     data.write(b'H')
-    for i in range(100):
+    for i in range(raw):
         rec=data.readline() #byte
         #print(rec)
         rec=rec.decode("utf-8") #string
@@ -232,7 +234,7 @@ rad2deg = 180/3.141592
 data = serial.Serial('/dev/ttyACM0',9600,timeout=10)
 print(data)
 
-raw = 100
+raw = 300
 
 datos=numpy.zeros((raw,8)) #bits
 datos1=numpy.zeros((raw,8)) #no calibrados
