@@ -1,8 +1,36 @@
 <h1>Aula 8</h1>
 
-Esta clase consiste en estimar los ángulos de Euler (Roll y Pitch) a través del filtro complementario
+Esta clase consiste en estimar los ángulos de Euler (Roll y Pitch) a través de fusión sensorial con el filtro complementario 
+
+<h2>Fusión sensorial</h2>
+
+Consiste en combinar informaciones (mediciones) de diferentes fuentes de información (sensores), a través de un mecanismo de fusión sensorial (filtro); con el objetivo de obtener una señal de salida con mejor calidad de lo que se podría obtener con un único sensor.
+
+<div align="center">
+<img src="image.png" alt="Fusão sensorial"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
+
+<div align="center">
+<img src="image-1.png" alt="Fusão sensorial com o EKF"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
+
+<h3>Giroscopio y Acelerómetro</h3>
+
+<div align="center">
+<img src="image-2.png" alt="Giroscopio y Acelerómetro"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 <h3>Filtro complementario</h3>
+
+Se comporta como una combinación entre los filtros pasa alto y paso bajo, convirtiéndose en un filtro pasa banda. Los valores A y B son constantes que permiten ajustar la estimación del ángulo. Por tanto, para A es dado el mayor valor y B el menor.
+
+$$theta^k = A \cdot (theta^{k-1}}+(theta^{k}_{giro} \cdot dt))+B \cdot theta^{k}_{acel}$$
 
 
 Adquisición de datos MPU6050 con STM32
@@ -103,7 +131,7 @@ int main(){
     // Configura o Acelerômetro (Full Scale Accelerometer Range  = 2g)
     cmd[0] = 0x1C; // ACCEL_CONFIG 0x1C //Registrador de configuracao do Acelerômetro
     cmd[1] = 0x00;
-    i2c.write(MPU6500_address, cmd, 2);                //ACC fullsclae 2G
+    i2c.write(MPU6500_address, cmd, 2);                //ACC full scale 2g
     wait(0.01);
     while(1) {
         //.................Construcción de la medición de los valores .................. 
