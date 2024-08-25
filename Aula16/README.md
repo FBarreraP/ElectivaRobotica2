@@ -4,33 +4,62 @@ Esta clase consiste en crear un nodo de adquisición de datos (publisher) y dos 
 
 <h2>ROS (UART)</h2>
 
-Abrir un puerto serial desde Ubuntu
+Lista todos los puertos ejecutar el siguiente comando:
 
---------------monitor serial--------------
-apt-get install minicom
-minicom -s
-minicom -b 9600 -o -D /dev/ttyS2
-
-- Listar todos los dispositivos conectados
 ```
 ls /dev
 ```
-- Lista los dispositivos COM conectados
+
+Muestra información sobre los dispositivos seriales (ttyS#) conectados ejecutar el siguiente comando:
+
 ```
 dmesg | grep tty
 ```
-- Muestra las configuraciones de los dispositivos COM
+
+<!--
+Lista todas los puertos USB conectados ejecutar el siguiente comando:
+
 ```
-stty -F /dev/ttyS0 -a
-setserial -a /dev/ttyS*
+ls /dev/ttyS*
 ```
-- Configura los baudios a 9600, 8 bits, 1 bit de stop y no bit de paridad (8N1)
+-->
+
+Muestra las configuraciones de los dispositivos seriales (ttyS#) ejecutar el siguiente comando:
+
+```
+stty -F /dev/ttyS1 -a
+```
+
+Configura los baudios a 9600, 8 bits, 1 bit de stop y no bit de paridad (8N1) ejecutar el siguiente comando:
+
 ```
 stty -F /dev/ttyS1 9600 cs8 -cstopb -parenb
 ```
-- Lee datos del puerto serial
+
+Lee datos del puerto serial en un primer terminal ejecutar el siguiente comando:
+
 ```
-cat /dev/ttyS1
+cat < /dev/ttyS1
+```
+
+Escribe datos en el puerto serial en un segundo terminal ejecutar el siguiente comando:
+
+```
+echo 'H' > /dev/ttyS1
+```
+
+En sistemas operativos basados en linux (Raspian, Ubuntu, etc.) existen algunos monitores seriales como minicom o screen.
+
+Para instalar minicom ejecutar el siguiente comando:
+
+```
+sudo apt-get install minicom
+```
+
+Para abrir minicom ejecutar el siguiente comando:
+
+```
+minicom -s
 ```
 
 ![Ejemplo1](image.png)
