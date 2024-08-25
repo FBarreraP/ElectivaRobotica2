@@ -6,12 +6,26 @@ Antes de crear cualquier nodo, se debe tener el espacio de trabajo y el paquete 
 
 <h2>Crear un Workspace</h2>
 
+Antes de crear el workspace, ingresar con permisos de super usuario a la terminal a través del siguiente comando:
+
+Para Raspbian
+
+```
+sudo su
+```
+
+Para Ubuntu
+
+```
+su root 
+```
+
 Ingresar en una terminal a la carpeta donde se quiere guardar el workspace y posteriormente ejecutar la siguiente línea de comando:
 
 ```
-mkdir -p ~/aula13_ws/src
+mkdir -p aula13_ws/src
 
-cd ~/aula13_ws
+cd aula13_ws
 
 catkin_make
 ```
@@ -81,6 +95,25 @@ En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actu
 ```
 source devel/setup.bash
 ```
+
+Sin embargo, para no tener que actualizar el paquete manualmente cada vez que se ejecute el nodo, agregar la siguiente linea de comando en el archivo ".bashrc", el cual está en la carpeta de instalación de ROS:
+
+```
+nano ~/.bashrc
+```
+```
+source /RUTA WORKSPACE/devel/setup.bash (ej: source /home/ep2/Desktop/aula13_ws/devel/setup.bash)
+```
+
+Para aplicar las modificaciones en el archivo .bashrc, se debe actualizar a través del siguiente comando:
+
+```
+source ~/.bashrc
+```
+
+Posteriormente, abrir una nueva terminal y correr el nodo.
+
+
 Salir de la ubicación del espacio de trabajo y correr el nodo en el paquete específico
 ```
 rosrun ejemplos Nodo_Saludo_Conteo.py
