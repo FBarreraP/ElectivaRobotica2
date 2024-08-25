@@ -177,9 +177,13 @@ Nodo publisher para adquisición de datos seriales enviados desde una terminal, 
 import rospy #Crear nodos con ROS
 from std_msgs.msg import Float64
 import serial
+import threading
+import time
 
-def Nodo_Adquisicion_Datos():
-    rospy.init_node('Nodo_Adquisicion_Datos')  #Inicializa el nodo con el nombre Nodo_conteo
+
+def Nodo_Proteus():
+
+    rospy.init_node('Nodo_Proteus')  #Inicializa el nodo con el nombre Nodo_conteo
 
     pub1 = rospy.Publisher('potenciometro', Float64, queue_size=10) #Declara el nodo como publisher con los parámetros  del nombre del topic, el tipo de dato del mensaje y 
     pub2 = rospy.Publisher('LM35', Float64, queue_size=10)
@@ -189,23 +193,26 @@ def Nodo_Adquisicion_Datos():
     s = serial.Serial('/dev/ttyS1', 9600, 8, 'N', 1) #9600 8N1
 
     while not rospy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mientras esté encendido
-        
-        rec = s.readline() #byte
-        print(rec)
-        rec = rec.decode() #utf-8
-        print(rec)
-        print(type(rec))
-        rec = rec.split(",") #list
-        print(rec)
-        print(type(rec))
-        pub1.publish(float(rec[0][:]))
-        pub2.publish(float(rec[1][:]))
-        #rospy.loginfo(mensaje)
-        rate.sleep() #Delay de 0.1s
+        value = input("Quiere adquirir un dato? S/N")
+        if value == 'S' or value == 's':  
+            s.write(b'H')      
+            #time.sleep(0.001)
+            rec = s.readline() #byte
+            print(rec)
+            rec = rec.decode() #utf-8
+            print(rec)
+            print(type(rec))
+            rec = rec.split(",") #list
+            print(rec)
+            print(type(rec))
+            pub1.publish(float(rec[0]))
+            pub2.publish(float(rec[1]))
+            #rospy.loginfo(mensaje)
+            rate.sleep() #Delay de 0.1s
 
 if __name__ == '__main__':
     try:
-        Nodo_Adquisicion_Datos()
+        Nodo_Proteus()
     except rospy.ROSInterruptException:
         pass
 
@@ -238,14 +245,21 @@ def grafica():
 
 def callback(mensaje):
     
+    global pub
+
     print(mensaje.data)
     n.append(mensaje.data)
-    #if len(n) == 3: 
+    angulo = mensaje.data*(180.0/5.0)
+    pub.publish(angulo)
     
 
-def Nodo_Plot_Potenciometro():
+def Nodo_Grafica_Pot():
 
-    rospy.init_node('Nodo_Plot_Potenciometro')
+    global pub
+
+    rospy.init_node('Nodo_Grafica_Pot')
+
+    pub = rospy.Publisher('servo', Float64, queue_size=10)
 
     sub = rospy.Subscriber('potenciometro', Float64, callback)
 
@@ -253,10 +267,10 @@ def Nodo_Plot_Potenciometro():
 
 
 if __name__ == '__main__':
-    
+
     hilo2 = threading.Thread(target=grafica)
     hilo2.start()
-    Nodo_Plot_Potenciometro()
+    Nodo_Grafica_Pot()    
 ```
 
 Nodo subscriber para graficar de datos de un LM35
