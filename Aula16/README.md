@@ -40,7 +40,7 @@ cat /dev/ttyS1
  * File:   main.c
  * Author: LENOVO
  *
- * Created on 17 de Julho de 2024, 23:14
+ * Created on 25 de Agosto de 2024, 14:56
  */
 
 #include <xc.h>
@@ -72,16 +72,21 @@ void start(void);
 void SettingsLCD(unsigned char word);
 void WriteLCD(unsigned char word);
 void LCD(unsigned char data);
+//Interrupción
+void __interrupt() RECEIVE(void);
 
 int digital1, digital2;
 float conversion1, conversion2, temperature;
-unsigned char i, flag = 0;
+unsigned char i, flag = 0, d;
 char text[20];
 
 void main(void) {
     settings();
     while (1) {
-        start();
+        if (flag == 1) {
+            flag = 0;
+            start();
+        }
     }
 }
 
@@ -112,6 +117,11 @@ void settings(void) {
     SPBRG = 0x19;
     RCSTA = 0x90;
     TXSTA = 0x20;
+    //Interrupción
+    GIE = 1;
+    PEIE = 1;
+    RCIE = 1;
+    RCIF = 0;
 }
 
 void start(void) {
@@ -129,7 +139,7 @@ void start(void) {
     conversion2 = (float) digital2 * (5.0 / 1023.0);
     temperature = conversion2 / 0.01;
     SettingsLCD(RAW2);
-    sprintf(text, "%.4f,%.4f\n", conversion1, temperature);
+    sprintf(text, "%.4f,%.4f\n\r", conversion1, temperature);
     for (i = 0; i < strlen(text); i++) {
         while (TX1IF == 0);
         TXREG = text[i];
@@ -137,8 +147,8 @@ void start(void) {
     }
     //while(TXIF == 0);
     //TXREG = 0x0A;//Salto de línea
-    while (TXIF == 0);
-    TXREG = 0x0D; //Retorno de carro
+    //while (TXIF == 0);
+    //TXREG = 0x0D; //Retorno de carro
 }
 
 void SettingsLCD(unsigned char word) {
@@ -166,6 +176,15 @@ void LCD(unsigned char data) { //Opción bits
     __delay_us(time * 5);
     E = 0;
     __delay_us(time * 5);
+}
+
+void __interrupt() RECEIVE(void) {
+    if (RCIF == 1) {
+        d = RCREG;
+        if (d == 'H') {
+            flag = 1;
+        }
+    }
 }
 ```
 
