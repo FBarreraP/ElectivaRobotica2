@@ -223,47 +223,58 @@ Nodo publisher para adquisición de datos seriales enviados desde una terminal, 
 #!/usr/bin/env python3
 
 import rospy #Crear nodos con ROS
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, String
 import serial
 import threading
 import time
 
+def callback(mensaje):
+    print(f'Mensaje servo: {mensaje.data}')
+
+def callback2(mensaje):
+    global pub1, pub2, s
+
+    print(f'Serial: {s}')
+    print(f'Mensaje usuario: {mensaje.data}')
+    value = mensaje.data
+    if value == 'S' or value == 's':  
+        s.write(b'H')      
+        print(f'H enviada')
+        #time.sleep(0.001)
+        rec = s.readline() #byte
+        print(rec)
+        rec = rec.decode() #utf-8
+        print(rec)
+        print(type(rec))
+        rec = rec.split(",") #list
+        print(rec[0])
+        print(rec[1])
+        pub1.publish(float(rec[0]))
+        pub2.publish(float(rec[1]))
+        #rospy.loginfo(mensaje)
+        #rate.sleep() #Delay de 0.1s
 
 def Nodo_Proteus():
+    global pub1, pub2, s
 
     rospy.init_node('Nodo_Proteus')  #Inicializa el nodo con el nombre Nodo_conteo
 
     pub1 = rospy.Publisher('potenciometro', Float64, queue_size=10) #Declara el nodo como publisher con los parámetros  del nombre del topic, el tipo de dato del mensaje y 
     pub2 = rospy.Publisher('LM35', Float64, queue_size=10)
+    sub1 = rospy.Subscriber('servo', Float64, callback)
+    sub2 = rospy.Subscriber('teclado', String, callback2)
 
-    rate = rospy.Rate(10) #Iniciaiza la frecuencia en Hertz de ejecución del nodo
+    rate = rospy.Rate(10) #Inicializa la frecuencia en Hertz de ejecución del nodo
 
     s = serial.Serial('/dev/ttyS1', 9600, 8, 'N', 1) #9600 8N1
 
-    while not rospy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mientras esté encendido
-        value = input("Quiere adquirir un dato? S/N")
-        if value == 'S' or value == 's':  
-            s.write(b'H')      
-            #time.sleep(0.001)
-            rec = s.readline() #byte
-            print(rec)
-            rec = rec.decode() #utf-8
-            print(rec)
-            print(type(rec))
-            rec = rec.split(",") #list
-            print(rec)
-            print(type(rec))
-            pub1.publish(float(rec[0]))
-            pub2.publish(float(rec[1]))
-            #rospy.loginfo(mensaje)
-            rate.sleep() #Delay de 0.1s
+    rospy.spin()
 
 if __name__ == '__main__':
     try:
         Nodo_Proteus()
     except rospy.ROSInterruptException:
         pass
-
 ```
 
 Nodo subscriber para graficar de datos de un potenciómetro
