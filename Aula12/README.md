@@ -19,7 +19,7 @@ Para instalar ROS en la RPi se debe instalar Raspbian Buster, el cual se puede d
 >[!WARNING]
 >En algunas versiones de Raspbian (ej:buster) se presenta el siguiente error posteriormente a la instalación del Raspbian Buster en la Raspberry Pi 4
 
-![Error de boot Raspbian](image-9.png)
+![Error de boot Raspbian](Imagenes/image-9.png)
 
 Fuente: https://embarcados.com.br/raspberry-pi-corrigindo-problemas-com-o-start4-elf-e-fixup4-dat/
 
@@ -154,7 +154,7 @@ ROS es un sistema operativo de robots. Actualmente, es una colección de framewo
 
 otra de las ventajas de ROS es que los subsistemas están interconectados como grafos (nodos) a través de flechas (mensajes), es decir, es posible ejecutar diferentes programas de manera simultanea (paralelo)
 
-![ROS IMU](image-3.png)
+![ROS IMU](Imagenes/image-3.png)
 
 Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/
 
@@ -162,7 +162,7 @@ Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/
 
 `catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estarán todo el código (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
 
-![catkin](image-6.png)
+![catkin](Imagenes/image-6.png)
 
 Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
 
@@ -170,7 +170,7 @@ Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
 
 Los paquetes pueden contener ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta, en la cual se deben tener dos archivos (package.xml y CMakeLists.txt), los cuales brindan información sobre el paquete con respecto al propietario, objetivo, dependencias y librerías del paquete. Los paquetes deben estar dentro del área de trabajo.
 
-![Packages](image-5.png)
+![Packages](Imagenes/image-5.png)
 
 Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
 
@@ -202,11 +202,11 @@ Son el punto intermedio entre el nodo publicador y el nodo suscriptor.
 
 <h3>Estructura de directorios</h3>
 
-![Estructura gráfica ROS](image-4.png)
+![Estructura gráfica ROS](Imagenes/image-4.png)
 
 Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
 
-![Estructura nivel ROS](image-7.png)
+![Estructura nivel ROS](Imagenes/image-7.png)
 
 Fuente: https://blog.csdn.net/ck784101777/article/details/106297924
 
@@ -214,17 +214,17 @@ Fuente: https://blog.csdn.net/ck784101777/article/details/106297924
 
 
 
-![ROS Master and Nodes](image.png)
+![ROS Master and Nodes](Imagenes/image.png)
 
 Fuente: https://robodev.blog/ros-basic-concepts
 
 
-![ROS Topic and Message](image-1.png)
+![ROS Topic and Message](Imagenes/image-1.png)
 
 Fuente: https://robodev.blog/ros-basic-concepts
 
 
-![ROS service](image-2.png)
+![ROS service](Imagenes/image-2.png)
 
 Fuente: https://robodev.blog/ros-basic-concepts
 
