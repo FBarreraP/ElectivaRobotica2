@@ -19,9 +19,11 @@ Para instalar ROS en la RPi se debe instalar Raspbian Buster, el cual se puede d
 >[!WARNING]
 >En algunas versiones de Raspbian (ej:buster) se presenta el siguiente error posteriormente a la instalación del Raspbian Buster en la Raspberry Pi 4
 
-![Error de boot Raspbian](Imagenes/image-9.png)
-
-Fuente: https://embarcados.com.br/raspberry-pi-corrigindo-problemas-com-o-start4-elf-e-fixup4-dat/
+<div align="center">
+<img src="Imagenes/image-9.png" alt="Error de boot Raspbian"/>
+<br>
+<figcaption>Fuente: https://embarcados.com.br/raspberry-pi-corrigindo-problemas-com-o-start4-elf-e-fixup4-dat/</figcaption>
+</div>
 
 Para solucionar ese error, se deben tener en cuenta los siguientes pasos:
 
@@ -82,7 +84,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 >En la ejecución del segundo comando de la instalación de ROS en Raspbian Buster se presenta el siguiente error:
 
 <div align="center">
-<img src="image-10.png" alt="Error keyserver"/>
+<img src="Imagenes/image-10.png" alt="Error keyserver"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
@@ -152,27 +154,51 @@ rosversion -d
 
 ROS es un sistema operativo de robots. Actualmente, es una colección de frameworks, herramientas (visualizar datos, guardar datos sensores, depurar y simular) y librerías. Una de las principales justificaciones de ROS es crear proyectos complejos de robótica con alta compatibilidad con hardware (Raspberry, PC(Ubuntu), Intel NUC, entre otros) y que sean reutilizables entre diferentes robots, independizando la programación por subsistemas (visión, navegación (movimiento), comunicación, sensores) y que a su vez se interconecten entre ellos.
 
+<div align="center">
+<img src="Imagenes/image.png" alt="ROS Master and Nodes"/>
+<br>
+<figcaption>Fuente: https://robodev.blog/ros-basic-concepts</figcaption>
+</div>
+
+<div align="center">
+<img src="Imagenes/image-1.png" alt="ROS Topic and Message"/>
+<br>
+<figcaption>Fuente: https://robodev.blog/ros-basic-concepts</figcaption>
+</div>
+
+<div align="center">
+<img src="Imagenes/image-2.png" alt="ROS service"/>
+<br>
+<figcaption>Fuente: https://robodev.blog/ros-basic-concepts</figcaption>
+</div>
+
 otra de las ventajas de ROS es que los subsistemas están interconectados como grafos (nodos) a través de flechas (mensajes), es decir, es posible ejecutar diferentes programas de manera simultanea (paralelo)
 
-![ROS IMU](Imagenes/image-3.png)
-
-Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/
+<div align="center">
+<img src="Imagenes/image-3.png" alt="ROS IMU"/>
+<br>
+<figcaption>Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/</figcaption>
+</div>
 
 <h3>catkin</h3>
 
-`catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estarán todo el código (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
+`catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic, Melodic, entre otras), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estarán todo el código (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
 
-![catkin](Imagenes/image-6.png)
-
-Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
+<div align="center">
+<img src="Imagenes/image-6.png" alt="Catkin"/>
+<br>
+<figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
+</div>
 
 <h3>Packages</h3>
 
 Los paquetes pueden contener ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta, en la cual se deben tener dos archivos (package.xml y CMakeLists.txt), los cuales brindan información sobre el paquete con respecto al propietario, objetivo, dependencias y librerías del paquete. Los paquetes deben estar dentro del área de trabajo.
 
-![Packages](Imagenes/image-5.png)
-
-Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
+<div align="center">
+<img src="Imagenes/image-5.png" alt="Packages"/>
+<br>
+<figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
+</div>
 
 Para instalar los paquetes de tutoriales ejecutar el siguiente comando: 
 
@@ -202,31 +228,17 @@ Son el punto intermedio entre el nodo publicador y el nodo suscriptor.
 
 <h3>Estructura de directorios</h3>
 
-![Estructura gráfica ROS](Imagenes/image-4.png)
+<div align="center">
+<img src="Imagenes/image-4.png" alt="Estructura gráfica ROS"/>
+<br>
+<figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
+</div>
 
-Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039
-
-![Estructura nivel ROS](Imagenes/image-7.png)
-
-Fuente: https://blog.csdn.net/ck784101777/article/details/106297924
-
-
-
-
-
-![ROS Master and Nodes](Imagenes/image.png)
-
-Fuente: https://robodev.blog/ros-basic-concepts
-
-
-![ROS Topic and Message](Imagenes/image-1.png)
-
-Fuente: https://robodev.blog/ros-basic-concepts
-
-
-![ROS service](Imagenes/image-2.png)
-
-Fuente: https://robodev.blog/ros-basic-concepts
+<div align="center">
+<img src="Imagenes/image-7.png" alt="Estructura nivel ROS"/>
+<br>
+<figcaption>Fuente: https://blog.csdn.net/ck784101777/article/details/106297924</figcaption>
+</div>
 
 <h2>Conexiones nodos y topics en ROS</h2>
 
@@ -240,7 +252,7 @@ Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/
 <figcaption>Fuente: </figcaption>
 </div>
 
-<h3>Ejemplo 1 "Hola mundo" (Talker - Listener)</h3>
+<h3>Ejemplo "Hola mundo" (Talker - Listener)</h3>
 
 <div align="center">
 <img src="Imagenes/image-11.png" alt="Conexiones Talker - Listener"/>
