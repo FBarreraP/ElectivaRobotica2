@@ -89,7 +89,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 <figcaption>Fuente: Autor</figcaption>
 </div>
 
-Para solucionar ese error, se deben ejecutar el siguiente comando:
+Para solucionar ese error, se debe ejecutar el siguiente comando:
 
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
