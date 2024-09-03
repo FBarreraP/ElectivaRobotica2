@@ -1,12 +1,16 @@
 <h1>Aula 12</h1>
 
-En esta clase se presenta un introducción a ROS
+En esta clase se presenta una introducción a ROS
 
 <h2>Introducción a ROS</h2>
 
-ROS es un Sistema Operativo de Robots, click para ver las diferentes <a href="https://wiki.ros.org/Distributions">versiones de ROS</a>
+ROS es un Sistema Operativo de Robots, click <a href="https://wiki.ros.org/Distributions">aquí</a> para ver las diferentes versiones de ROS.
 
- https://wiki.ros.org/Distributions
+<div align="center">
+<img src="Imagenes/image-13.png" alt="Versiones ROS"/>
+<br>
+<figcaption>Fuente: https://wiki.ros.org/Distributions</figcaption>
+</div>
 
 <h3>Raspberry Pi :atom:</h3>
 
@@ -31,7 +35,7 @@ sudo apt update
 sudo apt full-upgrade
 ```
 
-La instalación de ROS Melodic en RPi (Raspbian Buster) se encuentra en el siguiente link: https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
+La instalación de ROS Melodic en RPi (Raspbian Buster) se encuentra <a href="https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi">aquí</a>
 
 Abrir una terminal en RPi y conceder permisos de super usuario (usuario de administrador)
 
@@ -39,7 +43,7 @@ Abrir una terminal en RPi y conceder permisos de super usuario (usuario de admin
 sudo su
 ```
 
-Posteriormente, en un terminal correr los siguientes comandos:
+Posteriormente, en un terminal ejecutar los siguientes comandos, uno a uno:
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -96,7 +100,7 @@ Descargar ubuntu 20.04 y Virtual Box y crear la máquina virtual con Ubuntu 20.0
 
 <h3>Ubuntu 20.04 :electron:</h3>
 
-La instalación de ROS Noetic en Ubuntu 20.04 se encuentra en el siguiente link: https://wiki.ros.org/noetic/Installation/Ubuntu
+La instalación de ROS Noetic en Ubuntu 20.04 se encuentra <a href="https://wiki.ros.org/noetic/Installation/Ubuntu">aquí</a>
 
 Abrir una terminal en Ubuntu y conceder permisos de super usuario (administrador)
 
@@ -132,14 +136,10 @@ sudo rosdep init
 rosdep update
 ```
 
-Para validar la instalación de ROS, ejecutar los siguientes comandos en terminales independientes, para correr ROS maestro y para correr el nodo `talker` del paquete `roscpp_tutorials`, el cual es un nodo publicador.
+Para validar la instalación de ROS, ejecutar el siguiente comando en una terminal, el cual es para correr ROS maestro:
 
 ```
 roscore
-```
-
-```
-rosrun roscpp_tutorials talker
 ```
 
 Así mismo, si se quiere conocer la versión instala de ROS, ejecutar el siguiente comando:
@@ -228,55 +228,66 @@ Fuente: https://robodev.blog/ros-basic-concepts
 
 Fuente: https://robodev.blog/ros-basic-concepts
 
-<h2>Comunicación nodos y topics en ROS</h2>
+<h2>Conexiones nodos y topics en ROS</h2>
 
 La comunicación entre nodos es realizada a través de un topic, el cual es un canal de información de un dato de dato específico, el cual es conformado principalmente por el nombre del topic y el mensaje que recibirá (string, int, image, combinación, etc).
 
 Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/o suscribirse a diferentes topics
 
-![Comunicación nodos y topics](image-12.png)
+<div align="center">
+<img src="Imagenes/image-12.png" alt="Conexiones nodos y topics"/>
+<br>
+<figcaption>Fuente: </figcaption>
+</div>
 
-<h3>Ejemplo 1 (Talker - Listener)</h3>
+<h3>Ejemplo 1 "Hola mundo" (Talker - Listener)</h3>
 
-![Talker-Listener](image-11.png)
+<div align="center">
+<img src="Imagenes/image-11.png" alt="Conexiones Talker - Listener"/>
+<br>
+<figcaption>Fuente: https://www.oreilly.com/library/view/ros-robotics-projects/9781838649326/0375b997-95dc-48c6-9738-49a4eb1a9f62.xhtml</figcaption>
+</div>
 
-Fuente: https://www.oreilly.com/library/view/ros-robotics-projects/9781838649326/0375b997-95dc-48c6-9738-49a4eb1a9f62.xhtml
-
-En cada terminal correr los siguientes comandos:
+En terminales independientes correr los siguientes comandos:
 
 Nodo maestro
 
 ```
 roscore
 ```
-Nodo publicador
+
+Nodo <i>publisher</i>
+
 ```
 rosrun roscpp_tutorials talker
 ```
-Nodo suscriptor
+
+Nodo <i>suscriber</i>
+
 ```
 rosrun roscpp_tutorials listener
 ```
-Topic
 
-*Para depurar la comunicación entre dos nodos:
+Si se desea depurar la comunicación entre dos nodos (<i>publisher</i> y <i>suscriber</i>) se debe conocer el <i>topic</i> que está intermedio de los dos nodos, para esto se debe desplegar la lista de topics activos a través del siguiente comando:
 
-Muestra la lista de topics activos
 ```
 rostopic list
 ```
-Muestra la información de un topic espcífico, en relación al tipo de mensaje, los nodos publishers y los nodos subscribers activos a dicho topic.
+
+Si se desea mostrar la información de un <i>topic</i> espcífico, en relación al tipo de mensaje, los nodos <i>publishers</i> y los nodos <i>subscribers</i> activos a dicho <i>topic</i>, se debe ejecutar el siguiente comando:
+
 ```
 rostopic info /chatter
 ```
-Si se desea recibir el mensaje de un topic específico, es decir, es crear un nodo subscriber de dicho topic; para esto se debe estar ejecutando el nodo publisher.
+
+Si se desea visualizar el mensaje que está llegando a un <i>topic</i> específico, es decir, emulando el nodo <i>subscriber</i>, se debe ejecutar el siguiente comando:
+
 ```
 rostopic echo /chatter
 ```
-Si se desea enviar un mensaje a un topic específico, es decir, es crear un nodo publisher de dicho topic; para esto se debe estar ejecutando el nodo subscriber.
+
+Si se desea visualizar el mensaje que está saliendo de un <i>topic</i> específico, es decir, emulando el nodo <i>publisher</i>, se debe ejecutar el siguiente comando:
 
 ```
-rostopic pub /chatter std_msgs/String "data: ''Bom dia, tudo bem?'"
+rostopic pub /chatter std_msgs/String "data: 'Bom dia, tudo bem?'"
 ```
-
-<h3>Turtle</h3>

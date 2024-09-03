@@ -1,4 +1,4 @@
-<h1>Aula 15</h1>
+<h1>Aula 21</h1>
 
 Esta clase consiste en crear un nodo de adquisición de datos (publisher) y dos nodos para graficar los datos de manera independiente (subscriber).
 
