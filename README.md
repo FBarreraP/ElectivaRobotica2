@@ -61,25 +61,25 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>RPi con IoT y socialización del proyecto</td>
 	</tr>
 	<tr>
-		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS</td>
+		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS y Hola mundo ROS (depuración)</td>
 	</tr>
 	<tr>
-		<td>10/09/2024</td> <td>2</td> <td>13</td> <td>7</td> <td>Ejemplos de ROS</td>
+		<td>10/09/2024</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos (<i>publisher</i> y <i>subscriber</i>)</td>
 	</tr>
 	<tr>
-		<td>11/09/2024</td> <td>2</td> <td>14</td> <td>7</td> <td>Creación de nodos</td>
+		<td>11/09/2024</td> <td>2</td> <td>14</td> <td>7</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
     <tr>
-		<td>17/09/2024</td> <td>2</td> <td>15</td> <td>8</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>17/09/2024</td> <td>2</td> <td>15</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>18/09/2024</td> <td>2</td> <td>16</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
+		<td>18/09/2024</td> <td>2</td> <td>16</td> <td>8</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>24/09/2024</td> <td>2</td> <td>17</td> <td>9</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>24/09/2024</td> <td>2</td> <td>17</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>25/09/2024</td> <td>2</td> <td>18</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
+		<td>25/09/2024</td> <td>2</td> <td>18</td> <td>9</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
 		<td>01/10/2024</td> <td>2</td> <td>19</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio</td>
