@@ -12,7 +12,7 @@ ROS es un Sistema Operativo de Robots, click <a href="https://wiki.ros.org/Distr
 <figcaption>Fuente: https://wiki.ros.org/Distributions</figcaption>
 </div>
 
-<h3>Raspberry Pi :atom:</h3>
+<h3>Instalación de Raspbian buster</h3>
 
 Para instalar ROS en la RPi se debe instalar Raspbian Buster, el cual se puede descargar <a href="https://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/">aquí</a>
 
@@ -36,6 +36,8 @@ III. Después de inicializar el sistema operativo, actualizar el sistema operati
 sudo apt update
 sudo apt full-upgrade
 ```
+
+<h3>ROS en Raspberry Pi :atom:</h3>
 
 La instalación de ROS Melodic en RPi (Raspbian Buster) se encuentra <a href="https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi">aquí</a>
 
@@ -100,7 +102,7 @@ Fuente: https://vprivalov.medium.com/ubuntu-tips-fix-error-with-security-keys-in
 
 Descargar ubuntu 20.04 y Virtual Box y crear la máquina virtual con Ubuntu 20.04 de formato .iso en el Virtual Box
 
-<h3>Ubuntu 20.04 :electron:</h3>
+<h3>ROS en Ubuntu 20.04 :electron:</h3>
 
 La instalación de ROS Noetic en Ubuntu 20.04 se encuentra <a href="https://wiki.ros.org/noetic/Installation/Ubuntu">aquí</a>
 
