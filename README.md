@@ -61,7 +61,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>03/09/2024</td> <td>2</td> <td>11</td> <td>6</td> <td>RPi con IoT y socialización del proyecto</td>
 	</tr>
 	<tr>
-		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS y "hola mundo en ROS" (depuración)</td>
+		<td>04/09/2024</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS y "hola mundo" en ROS (depuración)</td>
 	</tr>
 	<tr>
 		<td>10/09/2024</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos (<i>publisher</i> y <i>subscriber</i>)</td>
