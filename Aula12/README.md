@@ -182,7 +182,7 @@ Otra de las ventajas de ROS es que los subsistemas (<i>packages</i>) están inte
 <figcaption>Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/</figcaption>
 </div>
 
-Los mensajes en ROS pueden ser consultados <a href="https://docs.ros.org/en/ros2_packages/rolling/api/std_msgs/interfaces/message_definitions.html">aquí</a> y deben ser de alguno de los siguientes tipos de datos, siendo "data", el atributo (variable) en el que se guarda dicho mensaje:
+Los mensajes en ROS pueden ser consultados <a href="https://index.ros.org/p/std_msgs/">aquí</a> y deben ser de alguno de los siguientes tipos de datos, siendo "data", el atributo (variable) en el que se guarda dicho mensaje:
 
 <div align="center">
 <img src="Imagenes/image-14.png" alt="Tipos de mensajes ROS"/>
