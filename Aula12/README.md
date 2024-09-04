@@ -154,7 +154,7 @@ rosversion -d
 
 <h2>ROS</h2>
 
-ROS es un sistema operativo de robots. Actualmente, es una colección de frameworks, herramientas (visualizar datos, guardar datos sensores, depurar y simular) y librerías. Una de las principales justificaciones de ROS es crear proyectos complejos de robótica con alta compatibilidad con hardware (Raspberry, PC(Ubuntu), Intel NUC, entre otros) y que sean reutilizables entre diferentes robots, independizando la programación por subsistemas (visión, navegación (movimiento), comunicación, sensores) y que a su vez se interconecten entre ellos.
+ROS es un sistema operativo de robots. Actualmente, es una colección de frameworks, herramientas (visualizar datos, guardar datos sensores, depurar y simular) y librerías. Una de las principales justificaciones de ROS es crear proyectos complejos de robótica con alta compatibilidad con hardware (Raspberry, PC(Ubuntu), Intel NUC, entre otros) y que sean reutilizables entre diferentes robots, independizando la programación por subsistemas (visión, navegación, comunicación, sensores, actuadores, entre otros) y que a su vez se interconecten entre ellos.
 
 <div align="center">
 <img src="Imagenes/image.png" alt="ROS Master and Nodes"/>
@@ -174,7 +174,7 @@ ROS es un sistema operativo de robots. Actualmente, es una colección de framewo
 <figcaption>Fuente: https://robodev.blog/ros-basic-concepts</figcaption>
 </div>
 
-otra de las ventajas de ROS es que los subsistemas están interconectados como grafos (nodos) a través de flechas (mensajes), es decir, es posible ejecutar diferentes programas de manera simultanea (paralelo)
+Otra de las ventajas de ROS es que los subsistemas (<i>packages</i>) están interconectados como grafos (nodos) a través de flechas (mensajes), es decir, es posible ejecutar diferentes programas de manera simultanea (paralelo).
 
 <div align="center">
 <img src="Imagenes/image-3.png" alt="ROS IMU"/>
