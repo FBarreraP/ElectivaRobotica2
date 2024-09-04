@@ -98,48 +98,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
 ```
 Fuente: https://vprivalov.medium.com/ubuntu-tips-fix-error-with-security-keys-in-apt-update-e958616e0650
 
-<h3>Instalación de Ubuntu 20.04</h3>
-
-Descargar ubuntu 20.04 y Virtual Box y crear la máquina virtual con Ubuntu 20.04 de formato .iso en el Virtual Box
-
-<h3>ROS en Ubuntu 20.04 :electron:</h3>
-
-La instalación de ROS Noetic en Ubuntu 20.04 se encuentra <a href="https://wiki.ros.org/noetic/Installation/Ubuntu">aquí</a>
-
-Abrir una terminal en Ubuntu y conceder permisos de super usuario (administrador)
-
-```
-su root
-```
-
-Posteriormente, en el terminal anterior (usuario de administrador) ejecutar los siguientes comandos uno a uno:
-
-```
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-
-sudo apt install curl
-
-curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-
-sudo apt update
-
-sudo apt install ros-noetic-desktop-full
-
-source /opt/ros/noetic/setup.bash
-
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-
-source ~/.bashrc
-
-sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-
-sudo apt install python3-rosdep
-
-sudo rosdep init
-
-rosdep update
-```
-
 Para validar la instalación de ROS, ejecutar el siguiente comando en una terminal, el cual es para correr ROS maestro:
 
 ```
