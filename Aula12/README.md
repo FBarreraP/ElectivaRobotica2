@@ -112,7 +112,7 @@ Abrir una terminal en Ubuntu y conceder permisos de super usuario (administrador
 su root
 ```
 
-Posteriormente, en un terminal correr los siguientes comandos:
+Posteriormente, en el terminal anterior (usuario de administrador) ejecutar los siguientes comandos uno a uno:
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
