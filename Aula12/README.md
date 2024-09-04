@@ -47,7 +47,7 @@ Abrir una terminal en RPi y conceder permisos de super usuario (usuario de admin
 sudo su
 ```
 
-Posteriormente, en un terminal ejecutar los siguientes comandos, uno a uno:
+Posteriormente, en el terminal anterior (usuario de administrador) ejecutar los siguientes comandos, uno a uno:
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
