@@ -182,6 +182,14 @@ Otra de las ventajas de ROS es que los subsistemas (<i>packages</i>) están inte
 <figcaption>Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/</figcaption>
 </div>
 
+Los mensajes en ROS deben ser de alguno de los siguientes tipos de datos, siendo "data", el atributo (variable) en el que se guarda dicho mensaje:
+
+<div align="center">
+<img src="Imagenes/image-14.png" alt="Tipos de mensajes ROS"/>
+<br>
+<figcaption>Fuente: https://atadiat.com/en/e-ros-imu-and-arduino-how-to-send-to-ros/</figcaption>
+</div>
+
 <h3>catkin</h3>
 
 `catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic, Melodic, entre otras), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estará todo el proyecto (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
