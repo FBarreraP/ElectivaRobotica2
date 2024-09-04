@@ -184,7 +184,7 @@ Otra de las ventajas de ROS es que los subsistemas (<i>packages</i>) están inte
 
 <h3>catkin</h3>
 
-`catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic, Melodic, entre otras), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estarán todo el código (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
+`catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic, Melodic, entre otras), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estará todo el proyecto (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
 
 <div align="center">
 <img src="Imagenes/image-6.png" alt="Catkin"/>
@@ -202,19 +202,21 @@ Los paquetes pueden contener ejecutables, librerías, códigos (scripts) y mucha
 <figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
 </div>
 
+<!--
 Para instalar los paquetes de tutoriales ejecutar el siguiente comando: 
 
 ```
 sudo apt-get install ros-noetic-ros-tutorials
 ```
+-->
 
-Si se desea ver la lista de los paquetes instalados se debe ejecutar la siguiente línea de comando:
+Si se desea ver la lista de los paquetes instalados se debe ejecutar el siguiente comando:
 
 ```
 rosls <TAB>
 ```
 
-Para encontrar la ruta de un paquete se debe ejecutar el siguiente comando:
+Si se desea encontrar la ruta de un paquete se debe ejecutar el siguiente comando:
 
 ```
 rospack find roscpp
