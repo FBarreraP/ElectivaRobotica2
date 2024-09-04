@@ -224,11 +224,11 @@ rospack find roscpp
 
 <h3>Nodes</h3>
 
-Son programas ejecutables que envían o reciben información a un topic, hay dos principales tipos de nodos, publicador y suscriptor. Los nodos deben estar dentro de los paquetes.
+Son programas ejecutables que envían o reciben información a un <i>topic</i>, hay dos principales tipos de nodos: <i>publisher</i> y <i>suscriber</i>. Los nodos deben estar dentro de los paquetes.
 
 <h3>Topics</h3>
 
-Son el punto intermedio entre el nodo publicador y el nodo suscriptor.
+Son el punto intermedio entre el nodo <i>publisher</i> y el nodo <i>suscriber</i>.
 
 <h3>Estructura de directorios</h3>
 
