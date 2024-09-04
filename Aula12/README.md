@@ -37,6 +37,12 @@ sudo apt update
 sudo apt full-upgrade
 ```
 
+Si se desea conocer la versión de Raspbian instalada en la Raspberry Pi, en una terminal se debe ejecutar el siguiente comando:
+
+```
+cat /etc/os-release
+```
+
 <h3>ROS en Raspberry Pi :atom:</h3>
 
 La instalación de ROS Melodic en RPi (Raspbian Buster) se encuentra <a href="https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi">aquí</a>
