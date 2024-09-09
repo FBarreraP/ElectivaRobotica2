@@ -31,9 +31,9 @@ Desde el terminal, retornar a la carpeta del <i>workspace</i> y compilarlo, a tr
 catkin_make
 ```
 
-<h2>Crear un nodo publisher</h2>
+<h2>Crear un nodo <i>publisher</i></h2>
 
-1. Crear una nueva carpeta con el nombre scripts dentro del package a utilizar
+1. Crear una nueva carpeta con el nombre scripts dentro del <i>package</i> a utilizar
 2. Ingresar a dicha carpeta
 3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
 4. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario para editarlo
@@ -47,7 +47,8 @@ snap install sublime-text --classic
 -->
 
 ```python
-#!/usr/bin/env python3
+#!/usr/bin/env python2
+#coding=utf-8
 
 import rospy #Crear nodos con ROS
 from std_msgs.msg import String
