@@ -17,7 +17,7 @@ cd WORKSPACE_FOLDER_NAME (ej: cd aula13_ws)
 
 catkin_make
 ```
-<h2>Crear un package</h2>
+<h2>Crear un <i>package</i></h2>
 
 Ingresar a la carpeta "src" del <i>workspace</i> previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
 
