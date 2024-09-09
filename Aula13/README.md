@@ -2,7 +2,7 @@
 
 En esta clase se crean nodos publisher y subscriber.
 
-Antes de crear cualquier nodo, se debe tener el espacio de trabajo y el paquete ya creado en el PC. Posteriormente, dirigirse a la ruta de dicho paquete con los comandos unix a través del terminal de Ubuntu.
+Antes de crear cualquier nodo, se debe tener el espacio de trabajo y el paquete ya creado en el PC.
 
 <h2>Crear un Workspace</h2>
 
@@ -23,9 +23,9 @@ su root
 Ingresar en una terminal a la carpeta donde se quiere guardar el workspace y posteriormente ejecutar la siguiente línea de comando:
 
 ```
-mkdir -p aula13_ws/src
+mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p aula13_ws/src)
 
-cd aula13_ws
+cd WORKSPACE_FOLDER_NAME (ej: cd aula13_ws)
 
 catkin_make
 ```
@@ -34,7 +34,7 @@ catkin_make
 Ingresar a la carpeta src del workspace previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
 
 ```
-catkin_create_pkg ejemplos std_msgs rospy roscpp
+catkin_create_pkg PACKAGE_NAME depend1 depend2 depend2 ... dependN (ej: catkin_create_pkg ejemplos std_msgs rospy roscpp)
 ```
 
 Desde el terminal, retornar a la carpeta del workspace y compilarlo, a través de la siguiente línea de comando, el cual se debe ejecutar cuando se cree un nuevo paquete.
