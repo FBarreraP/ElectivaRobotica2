@@ -47,7 +47,7 @@ catkin_make
 
 1. Crear una nueva carpeta con el nombre scripts dentro del package a utilizar
 2. Ingresar a dicha carpeta
-3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: NodoP_Saludo_Conteo.py)
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
 4. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario  para editarlo
 
 <!--
