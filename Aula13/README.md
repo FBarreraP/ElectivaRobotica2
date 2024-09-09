@@ -116,7 +116,7 @@ rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Saludo_Conteo.py)
 3. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario para editarlo
 
 ```python
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 
 import rospy #Crear nodos con ROS
 from std_msgs.msg import String
