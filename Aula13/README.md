@@ -1,24 +1,12 @@
 <h1>Aula 13</h1>
 
-En esta clase se crean nodos publisher y subscriber.
+En esta clase se crean nodos publisher y subscriber con ROS melodic en la Raspberry.
 
-Antes de crear cualquier nodo, se debe tener el espacio de trabajo y el paquete ya creado en el PC.
+Antes de crear cualquier nodo, se debe tener el espacio de trabajo (<i>workspace</i>) y el paquete (<i>package</i>) ya creado en el PC. El <i>workspace</i> en la Raspberry se debe crear específicamente en la carpeta "root". 
+
+Antes de crear el workspace, ingresar con permisos de super usuario en la terminal.
 
 <h2>Crear un Workspace</h2>
-
-Antes de crear el workspace, ingresar con permisos de super usuario a la terminal a través del siguiente comando:
-
-Para Raspbian
-
-```
-sudo su
-```
-
-Para Ubuntu
-
-```
-su root 
-```
 
 Ingresar en una terminal a la carpeta donde se quiere guardar el workspace y posteriormente ejecutar la siguiente línea de comando:
 
