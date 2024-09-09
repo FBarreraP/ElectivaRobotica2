@@ -106,7 +106,7 @@ Sin embargo, para no tener que actualizar el paquete manualmente cada vez que se
 nano ~/.bashrc
 ```
 ```
-source /RUTA WORKSPACE/devel/setup.bash (ej: source /home/ep2/Desktop/aula13_ws/devel/setup.bash)
+source /RUTA WORKSPACE/devel/setup.bash (ej: source /home/pi/Desktop/aula13_ws/devel/setup.bash)
 ```
 
 Para aplicar las modificaciones en el archivo .bashrc, se debe actualizar a través del siguiente comando:
