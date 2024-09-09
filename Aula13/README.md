@@ -109,9 +109,9 @@ Posteriormente, abrir una nueva terminal y correr el nodo a través del siguient
 rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Saludo_Conteo.py)
 ```
 
-<h2>Crear un nodo subscriber</h2>
+<h2>Crear un nodo <i>subscriber</i></h2>
 
-1. Ingresar a la carpeta scripts dentro del package a utilizar
+1. Ingresar a la carpeta "scripts" dentro del <i>package</i> a utilizar
 2. Crear un archivo Nodo_Recibir_Saludo.py
 3. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario para editarlo
 
@@ -144,12 +144,15 @@ Posteriormente, en la terminal ubicada en la ruta del nodo, convertirlo en ejecu
 ```
 sudo chmod u+x Nodo_Recibir_Saludo.py
 ```
+
 En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actualizar el package) ejecutando la siguiente línea de comando:
 
 ```
 source devel/setup.bash
 ```
-Salir de la ubicación del espacio de trabajo y correr el nodo en el paquete específico
+
+Posteriormente, abrir una nueva terminal y correr el nodo a través del siguiente comando:
+
 ```
 rosrun ejemplos Nodo_Recibir_Saludo.py
 ```
