@@ -145,7 +145,7 @@ Posteriormente, en la terminal ubicada en la ruta del nodo, convertirlo en ejecu
 sudo chmod u+x NODE_FILE.py (ej: sudo chmod u+x Nodo_Recibir_Saludo.py)
 ```
 
-En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actualizar el package) ejecutando la siguiente línea de comando:
+En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actualizar el package) ejecutando la siguiente línea de comando; sin embargo, si ya se cargó este comando con la ruta en el archivo ".bashrc", no hay necesidad de ejecutarlo.
 
 ```
 source devel/setup.bash
