@@ -47,12 +47,16 @@ catkin_make
 
 1. Crear una nueva carpeta con el nombre scripts dentro del package a utilizar
 2. Ingresar a dicha carpeta
-3. Crear un archivo Nodo_Saludo_Conteo.py
-4. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo pero desde la terminal. Para instalar sublime text se debe ejecutar el siguiente comando:
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: NodoP_Saludo_Conteo.py)
+4. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario
+
+<!--
+a través del comando subl o gedit, el comando nano también abre el archivo para editarlo pero desde la terminal. Para instalar sublime text se debe ejecutar el siguiente comando:
 
 ```
 snap install sublime-text --classic
 ```
+-->
 
 ```python
 #!/usr/bin/env python3
@@ -87,7 +91,7 @@ if __name__ == '__main__':
 Posteriormente, en la terminal ubicada en la ruta del nodo, convertirlo en ejecutable a través de la siguiente línea de comando:
 
 ```
-sudo chmod u+x Nodo_Saludo_Conteo.py
+sudo chmod u+x NODE_FILE.py (ej: sudo chmod u+x Nodo_Saludo_Conteo.py)
 ```
 
 En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actualizar el package) ejecutando la siguiente línea de comando:
