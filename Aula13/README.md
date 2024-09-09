@@ -142,7 +142,7 @@ if __name__ == '__main__':
 Posteriormente, en la terminal ubicada en la ruta del nodo, convertirlo en ejecutable a través de la siguiente línea de comando:
 
 ```
-sudo chmod u+x Nodo_Recibir_Saludo.py
+sudo chmod u+x NODE_FILE.py (ej: sudo chmod u+x Nodo_Recibir_Saludo.py)
 ```
 
 En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actualizar el package) ejecutando la siguiente línea de comando:
@@ -154,5 +154,5 @@ source devel/setup.bash
 Posteriormente, abrir una nueva terminal y correr el nodo a través del siguiente comando:
 
 ```
-rosrun ejemplos Nodo_Recibir_Saludo.py
+rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Recibir_Saludo.py)
 ```
