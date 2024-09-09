@@ -11,9 +11,9 @@ Antes de crear el workspace, ingresar con permisos de super usuario en la termin
 Ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i> y posteriormente ejecutar la siguiente línea de comando:
 
 ```
-mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p aula13_ws/src)
+mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p ~/aula13_ws/src)
 
-cd WORKSPACE_FOLDER_NAME (ej: cd aula13_ws)
+cd WORKSPACE_FOLDER_NAME (ej: cd ~/aula13_ws)
 
 catkin_make
 ```
