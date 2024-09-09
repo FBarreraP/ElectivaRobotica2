@@ -128,7 +128,7 @@ rosrun ejemplos Nodo_Saludo_Conteo.py
 
 1. Ingresar a la carpeta scripts dentro del package a utilizar
 2. Crear un archivo Nodo_Recibir_Saludo.py
-3. Abrir el archivo con un editor de texto a través del comando subl o gedit, el comando nano también abre el archivo para editarlo pero desde la terminal
+3. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario  para editarlo
 
 ```python
 #!/usr/bin/env python3
