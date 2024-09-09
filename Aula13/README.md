@@ -6,9 +6,9 @@ Antes de crear cualquier nodo, se debe tener el espacio de trabajo (<i>workspace
 
 Antes de crear el workspace, ingresar con permisos de super usuario en la terminal.
 
-<h2>Crear un Workspace</h2>
+<h2>Crear un <i>workspace</i></h2>
 
-Ingresar en una terminal a la carpeta donde se quiere guardar el workspace y posteriormente ejecutar la siguiente línea de comando:
+Ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i> y posteriormente ejecutar la siguiente línea de comando:
 
 ```
 mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p aula13_ws/src)
@@ -19,13 +19,13 @@ catkin_make
 ```
 <h2>Crear un package</h2>
 
-Ingresar a la carpeta src del workspace previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
+Ingresar a la carpeta "src" del <i>workspace</i> previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
 
 ```
 catkin_create_pkg PACKAGE_NAME depend1 depend2 depend2 ... dependN (ej: catkin_create_pkg ejemplos std_msgs rospy roscpp)
 ```
 
-Desde el terminal, retornar a la carpeta del workspace y compilarlo, a través de la siguiente línea de comando, el cual se debe ejecutar cuando se cree un nuevo paquete.
+Desde el terminal, retornar a la carpeta del <i>workspace</i> y compilarlo, a través de la siguiente línea de comando, el cual se debe ejecutar cada vez que se crea un nuevo <i>package</i>.
 
 ```
 catkin_make
