@@ -48,7 +48,7 @@ catkin_make
 1. Crear una nueva carpeta con el nombre scripts dentro del package a utilizar
 2. Ingresar a dicha carpeta
 3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
-4. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario  para editarlo
+4. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario para editarlo
 
 <!--
 a través del comando subl o gedit, el comando nano también abre el archivo para editarlo pero desde la terminal. Para instalar sublime text se debe ejecutar el siguiente comando:
@@ -128,7 +128,7 @@ rosrun ejemplos Nodo_Saludo_Conteo.py
 
 1. Ingresar a la carpeta scripts dentro del package a utilizar
 2. Crear un archivo Nodo_Recibir_Saludo.py
-3. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario  para editarlo
+3. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario para editarlo
 
 ```python
 #!/usr/bin/env python3
