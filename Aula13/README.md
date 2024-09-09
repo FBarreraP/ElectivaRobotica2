@@ -89,7 +89,7 @@ En la misma terminal, ir a la carpeta del workspace y cargar el nodo nuevo (actu
 source devel/setup.bash
 ```
 
-Sin embargo, para no tener que actualizar el paquete manualmente cada vez que se ejecute el nodo, agregar la siguiente linea de comando en el archivo ".bashrc", el cual está en la carpeta de instalación de ROS:
+Para no tener que actualizar el paquete manualmente cada vez que se ejecute el nodo, agregar la siguiente linea de comando en el archivo ".bashrc", el cual está en la carpeta de instalación de ROS:
 
 ```
 nano ~/.bashrc
@@ -104,14 +104,10 @@ Para aplicar las modificaciones en el archivo .bashrc, se debe actualizar a trav
 source ~/.bashrc
 ```
 
-Posteriormente, abrir una nueva terminal y correr el nodo.
-
-
-Salir de la ubicación del espacio de trabajo y correr el nodo en el paquete específico
+Posteriormente, abrir una nueva terminal y correr el nodo a través del siguiente comando:
 ```
-rosrun ejemplos Nodo_Saludo_Conteo.py
+rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Saludo_Conteo.py)
 ```
-
 
 <h2>Crear un nodo subscriber</h2>
 
