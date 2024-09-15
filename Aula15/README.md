@@ -155,4 +155,10 @@ def NPS_Acel_Cal():
     sub = rospy.Subscriber('a_xyz_sc', String, callback)
 
     rospy.spin()
+
+if __name__ == '__main__':
+
+    hilo2 = threading.Thread(target=grafica)
+    hilo2.start()
+    NPS_Acel_Cal()
 ```
