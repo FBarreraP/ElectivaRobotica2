@@ -10,7 +10,6 @@ Esta clase consiste en adquirir y graficar los datos de la IMU6050 en diferentes
 <figcaption>Fuente: Autor</figcaption>
 </div>
 
-
 Nodo usuario 
 
 ```python
@@ -97,7 +96,7 @@ if __name__ == '__main__':
         pass
 ```
 
-Nodo gráficas acelerometro
+Nodo gráficas acelerómetros X, Y y Z
 
 ```python
 #!/usr/bin/env python2
@@ -173,7 +172,7 @@ if __name__ == '__main__':
     NPS_Acel_Cal()
 ```
 
-Nodo gráficas acelerometro
+Nodo gráficas giróscopios X, Y y Z
 
 ```python
 #!/usr/bin/env python2
