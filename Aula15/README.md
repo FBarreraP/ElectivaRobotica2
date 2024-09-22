@@ -144,7 +144,6 @@ def callback(mensaje):
 
     temp = mensaje.data.split(",")
     datos[j][:] = temp
-    #datos1 = deepcopy(datos)
     datos1[j][0] = datos[j,0]
     for i in range(0,3):
         datos1[j][i+1] = ((datos[j,i+1])-offsets[i])*SENSITIVITY_ACCEL
@@ -220,7 +219,6 @@ def callback(mensaje):
 
     temp = mensaje.data.split(",")
     datos[j][:] = temp
-    #datos1 = deepcopy(datos)
     datos1[j][0] = datos[j,0]
     for i in range(0,3):
         datos1[j][i+1] = ((datos[j,i+1])-offsets[i])*SENSITIVITY_GYRO
