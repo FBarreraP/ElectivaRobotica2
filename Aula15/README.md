@@ -145,10 +145,10 @@ def callback(mensaje):
     temp = mensaje.data.split(",")
     datos[j][:] = temp
     #datos1 = deepcopy(datos)
+    datos1[j][0] = datos[j,0]
     for i in range(0,3):
-        datos1[j][0] = datos[j,0]
         datos1[j][i+1] = ((datos[j,i+1])-offsets[i])*SENSITIVITY_ACCEL
-    pub.publish(str(datos1[j,0])+","+str(datos1[i,1])+","+str(datos1[i,2])+","+str(datos1[i,3]))
+    pub.publish(str(datos1[j,0])+","+str(datos1[j,1])+","+str(datos1[j,2])+","+str(datos1[j,3]))
     j+=1
 
 def NPS_Acel_Cal():
@@ -221,10 +221,10 @@ def callback(mensaje):
     temp = mensaje.data.split(",")
     datos[j][:] = temp
     #datos1 = deepcopy(datos)
+    datos1[j][0] = datos[j,0]
     for i in range(0,3):
-        datos1[j][0] = datos[j,0]
         datos1[j][i+1] = ((datos[j,i+1])-offsets[i])*SENSITIVITY_GYRO
-    pub.publish(str(datos1[j,0])+","+str(datos1[i,1])+","+str(datos1[i,2])+","+str(datos1[i,3]))
+    pub.publish(str(datos1[j,0])+","+str(datos1[j,1])+","+str(datos1[j,2])+","+str(datos1[j,3]))
     j+=1
 
 def NPS_Giro_Cal():
