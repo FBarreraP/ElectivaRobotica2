@@ -5,7 +5,7 @@ Esta clase consiste en adquirir y graficar los datos de la IMU6050 en diferentes
 <h2>Conexiones de nodos</h2>
 
 <div align="center">
-<embed src="Imagenes/image.pdf" type="Grafos">
+<embed src="Imagenes/image.pdf" type="application/pdf">
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
