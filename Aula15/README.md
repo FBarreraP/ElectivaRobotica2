@@ -5,7 +5,7 @@ Esta clase consiste en adquirir y graficar los datos de la IMU6050 en diferentes
 <h2>Conexiones de nodos</h2>
 
 <div align="center">
-<img src="Imagenes/image.png" alt="Fusão sensorial"/>
+<img src="Imagenes/image.png" alt="Conexiones de nodos"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>

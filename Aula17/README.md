@@ -4,7 +4,11 @@ Esta clase consiste en estimar Roll y Pitch a través del filtro complementario 
 
 <h2>Conexiones de nodos</h2>
 
-
+<div align="center">
+<img src="Imagenes/image.png" alt="Conexiones de nodos"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
 
 Con la herramienta de ROS "rqtgraph"
 
