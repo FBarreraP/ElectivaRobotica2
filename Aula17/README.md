@@ -4,24 +4,15 @@ Esta clase consiste en estimar Roll y Pitch a través del filtro complementario 
 
 <h2>Conexiones de nodos</h2>
 
+
+
+Con la herramienta de ROS "rqtgraph"
+
 <div align="center">
 <img src="Imagenes/rosgraph.png" alt="Grafos con rtq_graph"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
-
-Si se desea observar de manera gráfica la conexión entre nodos y topics, ejecutar el siguiente comando:
-
-```
-rosrun rqt_graph rqt_graph 
-```
-
-Para habilitar las estadísticas de frecuencias de publicación de los nodos ejecutar el siguiente comando:
-
-```
-rosparam set enable_statistics true
-```
-
 
 <h3>Ejemplo</h3>
 

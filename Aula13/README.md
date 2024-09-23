@@ -6,7 +6,17 @@ Antes de crear cualquier nodo, se debe tener el espacio de trabajo (<i>workspace
 
 Antes de crear el workspace, ingresar con permisos de super usuario en la terminal.
 
-<h2>Crear un <i>workspace</i></h2>
+<h2>Ejemplo</h2>
+
+Con la herramienta de ROS "rqtgraph"/
+
+<div align="center">
+<img src="Imagenes/rosgraph.png" alt="Grafos con rtq_graph"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
+
+<h3>Crear un <i>workspace</i></h3>
 
 Ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i> y posteriormente ejecutar la siguiente línea de comando:
 
@@ -17,7 +27,7 @@ cd WORKSPACE_FOLDER_NAME (ej: cd ~/aula13_ws)
 
 catkin_make
 ```
-<h2>Crear un <i>package</i></h2>
+<h3>Crear un <i>package</i></h3>
 
 Ingresar a la carpeta "src" del <i>workspace</i> previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
 
@@ -31,7 +41,7 @@ Desde el terminal, retornar a la carpeta del <i>workspace</i> y compilarlo, a tr
 catkin_make
 ```
 
-<h2>Crear un nodo <i>publisher</i></h2>
+<h3>Crear un nodo <i>publisher</i></h3>
 
 1. Crear una nueva carpeta con el nombre scripts dentro del <i>package</i> a utilizar
 2. Ingresar a dicha carpeta
@@ -109,7 +119,7 @@ Posteriormente, abrir una nueva terminal y correr el nodo a través del siguient
 rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Saludo_Conteo.py)
 ```
 
-<h2>Crear un nodo <i>subscriber</i></h2>
+<h3>Crear un nodo <i>subscriber</i></h3>
 
 1. Ingresar a la carpeta "scripts" dentro del <i>package</i> a utilizar
 2. Crear un archivo Nodo_Recibir_Saludo.py
