@@ -10,6 +10,14 @@ Esta clase consiste en adquirir y graficar los datos de la IMU6050 en diferentes
 <figcaption>Fuente: Autor</figcaption>
 </div>
 
+Con la herramienta de ROS "rqtgraph"
+
+<div align="center">
+<img src="Imagenes/rosgraph.png" alt="Grafos con rtq_graph"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
+
 Nodo usuario 
 
 ```python
