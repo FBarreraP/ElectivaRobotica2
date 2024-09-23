@@ -8,7 +8,7 @@ Antes de crear el workspace, ingresar con permisos de super usuario en la termin
 
 <h2>Ejemplo</h2>
 
-Con la herramienta de ROS "rqtgraph"/
+Con la herramienta de ROS "rqtgraph"
 
 <div align="center">
 <img src="Imagenes/rosgraph.png" alt="Grafos con rtq_graph"/>
