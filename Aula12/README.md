@@ -279,3 +279,23 @@ Si se desea visualizar el mensaje que está saliendo de un <i>topic</i> específ
 ```
 rostopic pub /chatter std_msgs/String "data: 'Bom dia, tudo bem?'"
 ```
+
+Si se desea observar de manera gráfica la conexión entre nodos y topics, ejecutar el siguiente comando:
+
+```
+rosrun rqt_graph rqt_graph 
+```
+
+<!--
+Para habilitar las estadísticas de frecuencias de publicación de los nodos ejecutar el siguiente comando:
+
+```
+rosparam set enable_statistics true
+```
+-->
+
+<div align="center">
+<img src="Imagenes/rosgraph.png" alt="Grafos con rtq_graph"/>
+<br>
+<figcaption>Fuente: Autor</figcaption>
+</div>
