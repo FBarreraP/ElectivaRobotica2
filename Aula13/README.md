@@ -8,9 +8,8 @@ Antes de crear el workspace, ingresar con permisos de super usuario en la termin
 
 <h2>Ejemplo</h2>
 
-![alt text](image.png)
 <div align="center">
-<img src="Imagenes/image.png" alt="Conexiones de nodos"/>
+<img src="Imagenes/image.png" alt="Conexiones de nodos" width="500" height="400"/>
 <br>
 <figcaption>Fuente: Autor</figcaption>
 </div>
