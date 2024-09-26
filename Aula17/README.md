@@ -594,7 +594,7 @@ def NS_Pitch():
                 #print("j = %d y k = %d" %(j-1,k-1))
                 Pitch[j-1][0] = k-1
                 #Acelerómetro
-                Pitch[j][1] = (math.atan2(-datos3[j-1,1],math.sqrt((datos3[j-1,2]*datos3[j-1,2])+(datos3$
+                Pitch[j][1] = (math.atan2(-datos3[j-1,1],math.sqrt((datos3[j-1,2]*datos3[j-1,2])+(datos3[j-1,3]*datos3[j-1,3]))))*rad2deg
                 #Giroscopio
                 Pitch[k][2] = Pitch[k-1][3]+((datos3[k-1,5]*dt)*rad2deg)
                 #Filtro complementario
