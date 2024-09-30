@@ -125,6 +125,14 @@ Intel® RealSense™ Depth Camera D435
 
 Más información de esta power bank se puede encontrar <a href="https://maxoak.net/products/maxoak-k2-185wh-50000mah-power-bank">aquí</a>
 
+<h3>Control PS4</h3>
+
+<div align="center">
+<img src="image-4.png" alt="Control PS4"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/getting_started/pairing_controller.html</figcaption>
+</div>
+
 
 <h2>Uso básico del LoCoBot PX100</h2>
 
