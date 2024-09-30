@@ -86,6 +86,8 @@ Algunas características (límites de las articulaciones, configuraciones de los
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
 </div>
 
+Más información de esta plataforma Create 3 se puede encontrar <a href="https://iroboteducation.github.io/create3_docs/">aquí</a>
+
 <h3>NUC (PC)</h3>
 
 <div align="center">
@@ -121,6 +123,36 @@ Intel® RealSense™ Depth Camera D435
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
 </div>
 
+Más información de esta power bank se puede encontrar <a href="https://maxoak.net/products/maxoak-k2-185wh-50000mah-power-bank">aquí</a>
+
+
+<h2>Uso básico del LoCoBot PX100</h2>
+
+El uso básico del LoCoBot PX100 consiste en aprender a cargarlo, encenderlo, programarlo remotamente desde un computador personal y apagarlo. La información se puede encontrar <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/getting_started/user_guide.html">aquí</a>
+
+<h3>Cargar el LoCoBot PX100</h3>
+
+
+
+<h3>Encender el LoCoBot PX100</h3>
+
+
+
+<h3>Configuración de conexión</h3>
+
+Hay dos formas de programar el LoCoBot PX100 de manera remota o directamente desde el NUC. Por tanto, se debe tener en cuenta que hay dos nomenclaturas para esto:
+
+1. 'Remote' que consiste en programar el LoCoBot PX100 a través de comunicación SSH desde un computador personal.
+2. 'Robot' o 'LoCoBot' que consiste en programar el LoCoBot PX100 desde el computador NUC de dicho robot.
+
+<h4>Conexión NUC</h4>
+
+
+<h4>Conexión remota</h4>
+
+Comunicación SSH
+
+<h3>Apagar el LoCoBot PX100</h3>
 
 
 
