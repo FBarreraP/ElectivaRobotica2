@@ -46,7 +46,7 @@ rosdep update
 
 <h2>LoCoBot PX100</h2>
 
-Es un robot híbrido ya que integra una plataforma diferencial (Create® 3) y un brazo manipulador de 4 GDL (Pincher), además cuenta con una cámara de profundidad (Intel®) y controlado por Ubuntu en un NUC (Intel®).
+Es un robot híbrido ya que integra una plataforma diferencial (Create® 3) y un brazo manipulador de 4 GDL (Pincher), además cuenta con una cámara de profundidad (Intel®) y controlado por Ubuntu en un NUC (Intel®). Toda la documentación del LoCoBot PX100 se encuentra <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/#:~:text=Interbotix%20X-Series%20LoCoBots.%20The%20Low%20Cost%20Robot%20(LoCoBot)%20is%20a">aquí</a>.
 
 <div align="center">
 <img src="image-1.png" alt="LoCoBot PX100"/>
@@ -66,9 +66,11 @@ Es importante tener en cuenta que el 'codename' del LoCoBot PX100 que se utiliza
 locobot_px100
 ```
 
+<h3>Componentes</h3>
+
 Las especificaciones de cada componente que integra el LoCoBot PX100 están <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html">aquí</a>
 
-<h3>PincherX-100</h3>
+<h4>PincherX-100</h4>
 
 Algunas características (límites de las articulaciones, configuraciones de los servos, planos, entre otras) más detalladas y los archivos STEP y STL del brazo manipulador se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">aquí</a>
 
@@ -78,7 +80,7 @@ Algunas características (límites de las articulaciones, configuraciones de los
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html</figcaption>
 </div>
 
-<h3>Create® 3</h3>
+<h4>Create® 3</h4>
 
 <div align="center">
 <img src="image-3.png" alt="Plataforma Create 3"/>
@@ -88,7 +90,7 @@ Algunas características (límites de las articulaciones, configuraciones de los
 
 Más información de esta plataforma Create 3 se puede encontrar <a href="https://iroboteducation.github.io/create3_docs/">aquí</a>
 
-<h3>NUC (PC)</h3>
+<h4>NUC (PC)</h4>
 
 <div align="center">
 <img src="image-4.png" alt="NUC"/>
@@ -96,7 +98,7 @@ Más información de esta plataforma Create 3 se puede encontrar <a href="https:
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
 </div>
 
-<h3>Cámara de profundidad</h3>
+<h4>Cámara de profundidad</h4>
 
 Intel® RealSense™ Depth Camera D435
 
@@ -115,7 +117,7 @@ Intel® RealSense™ Depth Camera D435
 </div>
 
 
-<h3>Power bank</h3>
+<h4>Power bank</h4>
 
 <div align="center">
 <img src="image-7.png" alt="Power bank"/>
@@ -125,7 +127,7 @@ Intel® RealSense™ Depth Camera D435
 
 Más información de esta power bank se puede encontrar <a href="https://maxoak.net/products/maxoak-k2-185wh-50000mah-power-bank">aquí</a>
 
-<h3>Control PS4</h3>
+<h4>Control PS4</h4>
 
 <div align="center">
 <img src="image-4.png" alt="Control PS4"/>
@@ -134,35 +136,45 @@ Más información de esta power bank se puede encontrar <a href="https://maxoak.
 </div>
 
 
-<h2>Uso básico del LoCoBot PX100</h2>
+<h3>Uso básico del LoCoBot PX100</h3>
 
 El uso básico del LoCoBot PX100 consiste en aprender a cargarlo, encenderlo, programarlo remotamente desde un computador personal y apagarlo. La información se puede encontrar <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/getting_started/user_guide.html">aquí</a>
 
-<h3>Cargar el LoCoBot PX100</h3>
+<h4>Cargar el LoCoBot PX100</h4>
 
 
 
-<h3>Encender el LoCoBot PX100</h3>
+<h4>Encender el LoCoBot PX100</h4>
 
 
 
-<h3>Configuración de conexión</h3>
+<h4>Configuración de conexión</h4>
 
 Hay dos formas de programar el LoCoBot PX100 de manera remota o directamente desde el NUC. Por tanto, se debe tener en cuenta que hay dos nomenclaturas para esto:
 
 1. 'Remote' que consiste en programar el LoCoBot PX100 a través de comunicación SSH desde un computador personal.
 2. 'Robot' o 'LoCoBot' que consiste en programar el LoCoBot PX100 desde el computador NUC de dicho robot.
 
-<h4>Conexión NUC</h4>
+<h5>Conexión NUC</h5>
 
 
-<h4>Conexión remota</h4>
+<h5>Conexión remota</h5>
 
 Comunicación SSH
 
-<h3>Apagar el LoCoBot PX100</h3>
+<h4>Apagar el LoCoBot PX100</h4>
 
 
+
+<h3>ROS 1 en el LoCoBot PX100</h3>
+
+https://docs.trossenrobotics.com/interbotix_xslocobots_docs/ros_interface/ros1.html
+
+<h4>Configuración</h4>
+
+
+
+<h4>Guía de inicio</h4>
 
 
 
