@@ -1,7 +1,6 @@
 <h1>Aula 21</h1>
 
-Esta clase consiste en crear un nodo de adquisición de datos (publisher) y dos nodos para graficar los datos de manera independiente (subscriber).
-
+Esta clase consiste en realizar una introducción del LoCoBot PX100 y de Ubuntu 20.04, que es desde donde se ejecutan los comandos para el Locobot.
 
 <h2>Instalación de Ubuntu 20.04</h2>
 
@@ -45,8 +44,90 @@ sudo rosdep init
 rosdep update
 ```
 
+<h2>LoCoBot PX100</h2>
 
-<h2>ROS (UART)</h2>
+Es un robot híbrido ya que integra una plataforma diferencial (Create® 3) y un brazo manipulador de 4 GDL (Pincher), además cuenta con una cámara de profundidad (Intel®) y controlado por Ubuntu en un NUC (Intel®).
+
+<div align="center">
+<img src="image-1.png" alt="LoCoBot PX100"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications/locobot_px100.html</figcaption>
+</div>
+
+<div align="center">
+<img src="image-2.png" alt="Planos LoCoBot PX100"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications/locobot_px100.html</figcaption>
+</div>
+
+Es importante tener en cuenta que el 'codename' del LoCoBot PX100 que se utilizará para la programación de dicho robot es: 
+
+```
+locobot_px100
+```
+
+Las especificaciones de cada componente que integra el LoCoBot PX100 están <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html">aquí</a>
+
+<h3>PincherX-100</h3>
+
+Algunas características (límites de las articulaciones, configuraciones de los servos, planos, entre otras) más detalladas y los archivos STEP y STL del brazo manipulador se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">aquí</a>
+
+<div align="center">
+<img src="image-8.png" alt="PincherX-100"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html</figcaption>
+</div>
+
+<h3>Create® 3</h3>
+
+<div align="center">
+<img src="image-3.png" alt="Plataforma Create 3"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
+</div>
+
+<h3>NUC (PC)</h3>
+
+<div align="center">
+<img src="image-4.png" alt="NUC"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
+</div>
+
+<h3>Cámara de profundidad</h3>
+
+Intel® RealSense™ Depth Camera D435
+
+<div align="center">
+<img src="image-5.png" alt="Cámara"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
+</div>
+
+<h4>Servo de la cámara</h4>
+
+<div align="center">
+<img src="image-6.png" alt="Servo (DYNAMIXEL 2XL) cámara"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
+</div>
+
+
+<h3>Power bank</h3>
+
+<div align="center">
+<img src="image-7.png" alt="Power bank"/>
+<br>
+<figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
+</div>
+
+
+
+
+
+
+
+<h2>Ejemplo ROS Ubuntu</h2>
 
 Lista todos los puertos ejecutar el siguiente comando:
 
