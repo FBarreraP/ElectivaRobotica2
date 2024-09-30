@@ -72,7 +72,7 @@ Las especificaciones de cada componente que integra el LoCoBot PX100 están <a h
 
 <h4>PincherX-100</h4>
 
-Algunas características (límites de las articulaciones, configuraciones de los servos, planos, entre otras) más detalladas y los archivos STEP y STL del brazo manipulador se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">aquí</a>
+El PincherX-100 es un brazo manipulador de 4 GDL de tipo antropomórfico o angular que cuenta con servomotores DYNAMIXEL XL430-W250 que ofrecen una alta resolución de 4096 posiciones y los parámetros PID definibles por el usuario, el monitoreo de temperatura, la retroalimentación de posición, así como los niveles de voltaje, entre otras características (límites de las articulaciones, configuraciones de los servos, planos, entre otras) más detalladas y los archivos STEP y STL del brazo manipulador se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/specifications/px100.html">aquí</a>
 
 <div align="center">
 <img src="image-8.png" alt="PincherX-100"/>
@@ -81,6 +81,8 @@ Algunas características (límites de las articulaciones, configuraciones de los
 </div>
 
 <h4>Create® 3</h4>
+
+La plataforma robótica móvil Create 3 integra diferentes sensores (proximidad, odometro) y actuadores (motores DC). El software de esta plataforma está basado en ROS para el uso de dichos sensores y actuadores; además, el robot también proporciona algunos comportamientos autónomos listos para usar, como el acoplamiento con la base de carga, el seguimiento de la pared y las reacciones a los obstáculos. Es posible configurar esta plataforma móvil a través de un red.
 
 <div align="center">
 <img src="image-3.png" alt="Plataforma Create 3"/>
@@ -92,6 +94,8 @@ Más información de esta plataforma Create 3 se puede encontrar <a href="https:
 
 <h4>NUC (PC)</h4>
 
+El NUC es un computador de Intel con procesador Dual-Core i3 de 8va generación, 8 GB de RAM DDR4, unidad de estado sólido (SSD) de 240 GB, Intel Iris Plus Graphics 655, Wifi, Bluetooth 5.0, Gigabit Ethernet, compatibilidad con 4k, lector de tarjetas, compatible con dos monitores, HDMI, USB, Thunderbolt 3, Ubuntu 20.04.
+
 <div align="center">
 <img src="image-4.png" alt="NUC"/>
 <br>
@@ -100,7 +104,7 @@ Más información de esta plataforma Create 3 se puede encontrar <a href="https:
 
 <h4>Cámara de profundidad</h4>
 
-Intel® RealSense™ Depth Camera D435
+La cámara de Intel RealSense Depth Camera D435 realiza detección de profundidad para aplicaciones de visión inteligente.
 
 <div align="center">
 <img src="image-5.png" alt="Cámara"/>
@@ -110,14 +114,17 @@ Intel® RealSense™ Depth Camera D435
 
 <h4>Servo de la cámara</h4>
 
+El DYNAMIXEL 2XL puede controlar dos ejes con un solo módulo, que sirve para variar el paneo e inclinación para la cámara del LoCoBot y así realizar la detección de objetos, ya sea que la plataforma esté en movimiento o estacionaria. Esta gama de servomotores 2XL adopta nuevas características que permiten un modo de control de 360 grados con su codificador magnético sin contacto y su estructura de ensamblaje de carcasa trasera hueca y engranaje metálico (pulvimetalurgia) que se utiliza para una alta durabilidad.
+
 <div align="center">
 <img src="image-6.png" alt="Servo (DYNAMIXEL 2XL) cámara"/>
 <br>
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
 </div>
 
-
 <h4>Power bank</h4>
+
+El banco de energía MAXOAK K2 está diseñado para alimentar computadoras portátiles durante períodos prolongados. Este banco de energía de 50 kAh (50000 Ah) puede mantener el NUC y todos los periféricos funcionando durante 4 horas con un uso moderado. Tiene múltiples salidas, incluidos conectores de barril de 20V 5A y 12V 2.5 A, dos puertos USB-A de 5V y 2.1 A y dos puertos USB-A de 5V 1A.
 
 <div align="center">
 <img src="image-7.png" alt="Power bank"/>
@@ -129,12 +136,13 @@ Más información de esta power bank se puede encontrar <a href="https://maxoak.
 
 <h4>Control PS4</h4>
 
+El control PS4 es utilizado para manipular todas las funciones del LoCoBot PX100 de manera manual e inalámbrica.
+
 <div align="center">
 <img src="image-4.png" alt="Control PS4"/>
 <br>
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/getting_started/pairing_controller.html</figcaption>
 </div>
-
 
 <h3>Uso básico del LoCoBot PX100</h3>
 
