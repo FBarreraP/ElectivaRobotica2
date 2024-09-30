@@ -139,7 +139,7 @@ Más información de esta power bank se puede encontrar <a href="https://maxoak.
 El control PS4 es utilizado para manipular todas las funciones del LoCoBot PX100 de manera manual e inalámbrica.
 
 <div align="center">
-<img src="image-4.png" alt="Control PS4"/>
+<img src="image-9.png" alt="Control PS4"/>
 <br>
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/getting_started/pairing_controller.html</figcaption>
 </div>
