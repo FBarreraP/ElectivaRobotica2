@@ -150,6 +150,19 @@ El uso básico del LoCoBot PX100 consiste en aprender a cargarlo, encenderlo, pr
 
 <h4>Cargar el LoCoBot PX100</h4>
 
+Es importante tener en cuenta que el locobot Px100 se conforma por diferentes equipos: a) plataforma móvil (Create 3 from iRobot), b) computadora (Intel NUC NUC8i3BEH Mini PC), c) Power bank (MAXOAK K2), d) cámara (Intel® RealSense™ Depth Camera D435), e) servomotores de giro e inclinación (DINAMIXEL 2XL), f) brazo robótico de 4 GDL (PincherX 100 Robot Arm); los cuales requieren para su correcto funcionamiento de unas fuentes eléctricas que se deben mantener de acuerdo a lo establecido por el fabricante, es por este motivo que es recomendable mantenerlas a un nivel de carga mayor al 50%, es decir, no se debe dejar descargar completamente las baterías de iones de litio, ni tampoco dejarlas sin uso por un tiempo mayor de 6 meses
+
+<h5>Cargar la create 3</h5>
+
+Su LoCoBot Create® 3-base debe venir con una fuente de alimentación con adaptador de CA y la base de carga Create® 3:
+
+La base de carga iRobot Create® 3 y su cable Una salida de 16,8 V y 2,5 A para la batería externa Conecte ambos a la corriente de la pared. Conecte la fuente de alimentación de la batería externa a la batería externa.
+
+Coloque el Create® 3 en su base de carga y espere a que suene un timbre. La luz LED de estado en la base indicará el nivel de carga:
+
+<h5>Cargar la power bank</h5>
+
+
 
 
 <h4>Encender el LoCoBot PX100</h4>
@@ -163,12 +176,52 @@ Hay dos formas de programar el LoCoBot PX100 de manera remota o directamente des
 1. 'Remote' que consiste en programar el LoCoBot PX100 a través de comunicación SSH desde un computador personal.
 2. 'Robot' o 'LoCoBot' que consiste en programar el LoCoBot PX100 desde el computador NUC de dicho robot.
 
-<h5>Conexión NUC</h5>
+<h5>Conexión directa con el NUC</h5>
 
+Inicialmente, se debe contar con un monitor HDMI, teclado y mouse. Posteriormente, seguir los siguientes pasos:
+
+1. Iniciar sesión en el usuario `locobot` en el LoCoBot usando su contraseña predeterminada, `locobot`.
+2. Abrir un terminal (presionando Ctrl+Alt+T).
+3. Escribir el comando `hostname` para recuperar el nombre de <i>host</i> del robot. Este es el nombre de dominio de la computadora que usará cuando acceda a ella por SSH. Por lo general es `locobot`.
+
+* Si está utilizando varios LoCoBots, debe hacer que cada nombre de host sea único, es decir, `locobot1`, `locobot2`, etc., a través de ejecutar el siguiente comando:
+
+```
+hostnamectl set-hostname <unique_hostname>
+```
 
 <h5>Conexión remota</h5>
 
-Comunicación SSH
+Comunicación SSH en el LoCoBot
+
+En el computador remoto, instalar el software OpenSSH Client para permitir una conexión de shell segura entre el computador remoto y el computador LoCoBot, a través del siguiente comando:
+
+```
+sudo apt install openssh-client
+```
+
+Para realizar la comunicación SSH en el LoCoBot desde el computador remoto con el indicador de reenvío de pantalla `-X`. Si el nombre de usuario o el nombre de host del robot son diferentes a `locobot`, utilícelo en su lugar; ejecutar el siguiente comando:
+
+```
+ssh -X locobot@locobot.local
+```
+
+El indicador `-X` indica a OpenSSH que queremos hacer el reenvío de pantalla. Esto significa que OpenSSH reenviará la aplicación gráfica al cliente desde el servidor.
+
+Si es necesario ingresar la contraseña: `locobot` cuando sea solicitada.
+
+Una vez que se haya iniciado sesión en el LoCoBot, se pueden abrir varios terminales SSH utilizando el siguiente comando:
+
+```
+/usr/bin/dbus-launch /usr/bin/gnome-terminal &
+```
+
+
+
+
+
+
+4. Validar la comunicación 
 
 <h4>Apagar el LoCoBot PX100</h4>
 
