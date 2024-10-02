@@ -40,3 +40,18 @@ Posteriormente a la anterior instalación, se debe comentar la línea `ROS_MASTE
 <h3>Guía de inicio</h3>
 
 
+<h3>Ejemplo de control PS4 con el LoCoBot</h3>
+
+1. Conectarse al locobot a través del terminal
+
+2. En otra consola conectada al locobot iniciar el nodo de Joystick, a través del siguiente comando:
+
+```
+roslaunch interbotix_xslocobot_joy xslocobot_joy.launch robot_model:=locobot_px100 use_base:=true use_camera:=true
+```
+
+Abrir en la consola del computador
+
+```
+roslaunch interbotix_xslocobot_descriptions remote_view.launch`
+```
