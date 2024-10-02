@@ -60,12 +60,6 @@ Es un robot híbrido ya que integra una plataforma diferencial (Create® 3) y un
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications/locobot_px100.html</figcaption>
 </div>
 
-Es importante tener en cuenta que el 'codename' del LoCoBot PX100 que se utilizará para la programación de dicho robot es: 
-
-```
-locobot_px100
-```
-
 <h3>Componentes</h3>
 
 Las especificaciones de cada componente que integra el LoCoBot PX100 están <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html">aquí</a>
@@ -200,7 +194,13 @@ En el computador remoto, instalar el software OpenSSH Client para permitir una c
 sudo apt install openssh-client
 ```
 
-Para realizar la comunicación SSH en el LoCoBot desde el computador remoto con el indicador de reenvío de pantalla `-X`. Si el nombre de usuario o el nombre de host del robot son diferentes a `locobot`, utilícelo en su lugar; ejecutar el siguiente comando:
+Para realizar la comunicación SSH en el LoCoBot desde el computador remoto se debe conectar el robot a la misma red WiFi a la que está conectada el computador remoto. Para validar la comunicación remota ejecutar el siguiente comando:
+
+```
+ping -c 3 locobot.local
+```
+
+Posteriormente, ejecutar el siguiente comando. Si el nombre de usuario o el nombre de host del robot son diferentes a `locobot`, utilícelo en su lugar.
 
 ```
 ssh -X locobot@locobot.local
@@ -216,27 +216,9 @@ Una vez que se haya iniciado sesión en el LoCoBot, se pueden abrir varios termi
 /usr/bin/dbus-launch /usr/bin/gnome-terminal &
 ```
 
-
-
-
-
-
 4. Validar la comunicación 
 
 <h4>Apagar el LoCoBot PX100</h4>
-
-
-
-<h3>ROS 1 en el LoCoBot PX100</h3>
-
-https://docs.trossenrobotics.com/interbotix_xslocobots_docs/ros_interface/ros1.html
-
-<h4>Configuración</h4>
-
-
-
-<h4>Guía de inicio</h4>
-
 
 
 
