@@ -194,29 +194,27 @@ En el computador remoto, instalar el software OpenSSH Client para permitir una c
 sudo apt install openssh-client
 ```
 
-Para realizar la comunicación SSH en el LoCoBot desde el computador remoto se debe conectar el robot a la misma red WiFi a la que está conectada el computador remoto. Para validar la comunicación remota ejecutar el siguiente comando:
+Para realizar la comunicación SSH en el LoCoBot desde el computador remoto:
+
+1. Se debe conectar el robot a la misma red WiFi a la que está conectada el computador remoto. Para validar la comunicación remota ejecutar el siguiente comando:
 
 ```
 ping -c 3 locobot.local
 ```
 
-Posteriormente, ejecutar el siguiente comando. Si el nombre de usuario o el nombre de host del robot son diferentes a `locobot`, utilícelo en su lugar.
+2. Posteriormente, ejecutar el siguiente comando. Si el nombre de usuario o el nombre de host del robot son diferentes a `locobot`, utilícelo en su lugar.
 
 ```
 ssh -X locobot@locobot.local
 ```
 
-El indicador `-X` indica a OpenSSH que queremos hacer el reenvío de pantalla. Esto significa que OpenSSH reenviará la aplicación gráfica al cliente desde el servidor.
+3. Si es necesario ingresar la contraseña: `locobot` cuando sea solicitada.
 
-Si es necesario ingresar la contraseña: `locobot` cuando sea solicitada.
-
-Una vez que se haya iniciado sesión en el LoCoBot, se pueden abrir varios terminales SSH utilizando el siguiente comando:
+4. Una vez que se haya iniciado sesión en el LoCoBot, se pueden abrir varios terminales SSH utilizando el siguiente comando:
 
 ```
 /usr/bin/dbus-launch /usr/bin/gnome-terminal &
 ```
-
-4. Validar la comunicación 
 
 <h4>Apagar el LoCoBot PX100</h4>
 
