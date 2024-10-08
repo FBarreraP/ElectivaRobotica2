@@ -190,7 +190,9 @@ Los otros estados del robot a través del anillo de seis LED RGB están <a href=
 
 Para garantizar un correcto uso de la batería K2 es importante tener en cuenta los siguientes aspectos de acuerdo al manual del uso realizado por el fabricante y el cual se encuentra <a href="https://maxoak.net/products/maxoak-k2-185wh-50000mah-power-bank">aquí</a>:
 
-a.	El cargador recomendable es de entrada AC 100V~230V y salida DC 16.8V/2.5A
+<ol type="a">
+  <li>El cargador recomendable es de entrada AC 100V~230V y salida DC 16.8V/2.5A</li>
+</ol>
 b.	La batería se puede recargar en solo 6-8 horas.
 c.	1000 ciclos de vida (carga y descarga)
 d.	Admite carga y descarga al mismo tiempo
