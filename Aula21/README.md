@@ -91,7 +91,7 @@ Más información de esta plataforma Create 3 se puede encontrar <a href="https:
 El NUC es un computador de Intel con procesador Dual-Core i3 de 8va generación, 8 GB de RAM DDR4, unidad de estado sólido (SSD) de 240 GB, Intel Iris Plus Graphics 655, Wifi, Bluetooth 5.0, Gigabit Ethernet, compatibilidad con 4k, lector de tarjetas, compatible con dos monitores, HDMI, USB, Thunderbolt 3, Ubuntu 20.04.
 
 <div align="center">
-<img src="image-4.png" alt="NUC" width="450"/>
+<img src="image-4.png" alt="NUC" width="400"/>
 <br>
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
 </div>
@@ -101,7 +101,7 @@ El NUC es un computador de Intel con procesador Dual-Core i3 de 8va generación,
 La cámara de Intel RealSense Depth Camera D435 realiza detección de profundidad para aplicaciones de visión inteligente.
 
 <div align="center">
-<img src="image-5.png" alt="Cámara"/>
+<img src="image-5.png" alt="Cámara" width="300"/>
 <br>
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
 </div>
