@@ -49,7 +49,7 @@ rosdep update
 Es un robot híbrido ya que integra una plataforma diferencial (Create® 3) y un brazo manipulador de 4 GDL (Pincher), además cuenta con una cámara de profundidad (Intel®) y controlado por Ubuntu en un NUC (Intel®). Toda la documentación del LoCoBot PX100 se encuentra <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/#:~:text=Interbotix%20X-Series%20LoCoBots.%20The%20Low%20Cost%20Robot%20(LoCoBot)%20is%20a">aquí</a>.
 
 <div align="center">
-<img src="image-1.png" alt="LoCoBot PX100" width="400"/>
+<img src="image-1.png" alt="LoCoBot PX100" height="300"/>
 <br>
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications/locobot_px100.html</figcaption>
 </div>
@@ -91,7 +91,7 @@ Más información de esta plataforma Create 3 se puede encontrar <a href="https:
 El NUC es un computador de Intel con procesador Dual-Core i3 de 8va generación, 8 GB de RAM DDR4, unidad de estado sólido (SSD) de 240 GB, Intel Iris Plus Graphics 655, Wifi, Bluetooth 5.0, Gigabit Ethernet, compatibilidad con 4k, lector de tarjetas, compatible con dos monitores, HDMI, USB, Thunderbolt 3, Ubuntu 20.04.
 
 <div align="center">
-<img src="image-4.png" alt="NUC"/>
+<img src="image-4.png" alt="NUC" width="300"/>
 <br>
 <figcaption>Fuente: https://docs.trossenrobotics.com/interbotix_xslocobots_docs/specifications.html</figcaption>
 </div>
