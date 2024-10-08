@@ -510,6 +510,36 @@ void __interrupt() RECEIVE(void) {
 }
 ```
 
+Nodo Usuario
+
+```python
+#!/usr/bin/env python3
+
+import rospy #Crear nodos con ROS
+from std_msgs.msg import String
+import serial
+
+def Nodo_Usuario():
+
+    rospy.init_node('Nodo_Usuario')  #Inicializa el nodo con el nombre Nodo_conteo
+
+    pub = rospy.Publisher('teclado', String, queue_size=10) #Declara el nodo como publisher con los parámetros  del nombre del topic, el tipo de dato del mensaje y 
+
+    rate = rospy.Rate(10) #Inicializa la frecuencia en Hertz de ejecución del nodo
+
+    while not rospy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mientras esté encendido
+        value = input("Quiere adquirir un dato? S/N")
+
+        pub.publish(str(value))
+
+
+if __name__ == '__main__':
+    try:
+        Nodo_Usuario()
+    except rospy.ROSInterruptException:
+        pass
+```
+
 Nodo adquisición de datos potenciómetro y LM35
 
 ```python
@@ -674,36 +704,3 @@ if __name__ == '__main__':
     hilo2.start()
     Nodo_Grafica_LM35()    
 ```
-
-Nodo Usuario
-
-```python
-#!/usr/bin/env python3
-
-import rospy #Crear nodos con ROS
-from std_msgs.msg import String
-import serial
-
-def Nodo_Usuario():
-
-    rospy.init_node('Nodo_Usuario')  #Inicializa el nodo con el nombre Nodo_conteo
-
-    pub = rospy.Publisher('teclado', String, queue_size=10) #Declara el nodo como publisher con los parámetros  del nombre del topic, el tipo de dato del mensaje y 
-
-    rate = rospy.Rate(10) #Inicializa la frecuencia en Hertz de ejecución del nodo
-
-    while not rospy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mientras esté encendido
-        value = input("Quiere adquirir un dato? S/N")
-
-        pub.publish(str(value))
-
-
-if __name__ == '__main__':
-    try:
-        Nodo_Usuario()
-    except rospy.ROSInterruptException:
-        pass
-```
-
-
-Nodo subscriber para graficar de datos de un LM35
