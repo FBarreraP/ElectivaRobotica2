@@ -220,7 +220,13 @@ El procedimiento adecuado de carga de la batería K2 consiste simplemente en con
 
 <h4>Encender el LoCoBot PX100</h4>
 
+La secuencia de pasos que se debe seguir para el correcto encendido de los componentes que conforman el LoCoBot PX100 es:
 
+<ol>
+  <li>Create 3 con la estación de carga</li>
+  <li>Power Bank</li>
+  <li>NUC</li>
+</ol>
 
 <h4>Configuración de conexión</h4>
 
@@ -277,7 +283,13 @@ ssh -X locobot@locobot.local
 
 <h4>Apagar el LoCoBot PX100</h4>
 
+La secuencia de pasos que se debe seguir para el correcto apagado de los componentes que conforman el LoCoBot PX100 es:
 
+<ol>
+  <li>Ubuntu 20.04 (NUC)</li>
+  <li>Power Bank</li>
+  <li>Create 3</li>
+</ol>
 
 <h2>Ejemplo ROS Ubuntu</h2>
 
