@@ -510,7 +510,7 @@ void __interrupt() RECEIVE(void) {
 }
 ```
 
-Nodo publisher para adquisición de datos seriales enviados desde una terminal, de un potenciómetro y un LM35
+Nodo adquisición de datos potenciómetro y LM35
 
 ```python
 #!/usr/bin/env python3
@@ -570,7 +570,7 @@ if __name__ == '__main__':
         pass
 ```
 
-Nodo subscriber para graficar de datos de un potenciómetro
+Nodo grafica potenciómetro
 
 ```python
 #!/usr/bin/env python3
@@ -625,7 +625,57 @@ if __name__ == '__main__':
     Nodo_Grafica_Pot()    
 ```
 
-Nodo de Usuario
+Nodo grafica LM35 
+
+```python
+#!/usr/bin/env python3
+
+import rospy #Crear nodos con ROS
+from std_msgs.msg import Float64
+import matplotlib.pyplot as plt
+import threading
+import time
+
+n = []
+
+def grafica():
+    fig, ax = plt.subplots()
+    ax.set_title('LM35')
+    ax.set_xlabel('muestra')
+    ax.set_ylabel('temperatura')
+    while len(n)<20:
+        #print(len(n))  
+        ax.clear()
+        ax.plot(n[:],'.b')
+        plt.pause(0.01)
+    plt.show()
+
+def callback(mensaje):
+    
+    global pub
+
+    print(mensaje.data)
+    n.append(mensaje.data)    
+
+def Nodo_Grafica_LM35():
+
+    global pub
+
+    rospy.init_node('Nodo_Grafica_LM35')
+
+    sub = rospy.Subscriber('LM35', Float64, callback)
+
+    rospy.spin()
+
+
+if __name__ == '__main__':
+
+    hilo2 = threading.Thread(target=grafica)
+    hilo2.start()
+    Nodo_Grafica_LM35()    
+```
+
+Nodo Usuario
 
 ```python
 #!/usr/bin/env python3
