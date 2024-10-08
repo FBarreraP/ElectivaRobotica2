@@ -160,14 +160,16 @@ Si la batería se autoprotege, su sistema de gestión interno puede negarse a ca
 
 Para garantizar un correcto uso de la batería 4S es importante tener en cuenta los siguientes aspectos de acuerdo a las indicaciones eléctricas por el fabricante:
 
-a.	Indispensable la estación de carga iRobot, la cual se debe conectar con su cable de salida de 16.8V y 2.5A a la tomacorriente de la pared
-b.	La batería se puede recargar en solo 4 horas (la batería se autoprotegerá y desactivará la capacidad de carga si se carga continuamente durante cuatro horas sin alcanzar el 100 % del estado de carga.)
-c.	Admite solo carga o descarga
-d.	El anillo de luz mostrará el estado de carga y se animará mientras la batería se está cargando
-e.	Encienda la plataforma colocándola en la estación de carga iRobot con el sensor de acoplamiento (docking sensor) frente a dicha estación y espere unos segundos hasta que se inicie. El LED de estado se iluminará y la base reproducirá el “sonido feliz”.
-f.	Apague la plataforma manteniendo presionado el botón de encendido durante 10 segundos
-g.	Mantenga el robot en la estación de carga iRobot cuando no esté en uso para evitar que la batería se descargue.
-h.	El botón central está marcado con un icono de encendido, mientras que los botones laterales están marcados con uno o dos puntos. El botón central también contiene un anillo de seis LED RGB que visualizan el estado del robot. 
+<ol type="a">
+  <li>Indispensable la estación de carga iRobot, la cual se debe conectar con su cable de salida de 16.8V y 2.5A a la tomacorriente de la pared</li>
+  <li>La batería se puede recargar en solo 4 horas (la batería se autoprotegerá y desactivará la capacidad de carga si se carga continuamente durante cuatro horas sin alcanzar el 100 % del estado de carga)</li>
+  <li>Admite solo carga o descarga</li>
+  <li>El anillo de luz mostrará el estado de carga y se animará mientras la batería se está cargando</li>
+  <li>Encienda la plataforma colocándola en la estación de carga iRobot con el sensor de acoplamiento (docking sensor) frente a dicha estación y espere unos segundos hasta que se inicie. El LED de estado se iluminará y la base reproducirá el “sonido feliz”</li>
+  <li>Apague la plataforma manteniendo presionado el botón de encendido durante 10 segundos</li>
+  <li>Mantenga el robot en la estación de carga iRobot cuando no esté en uso para evitar que la batería se descargue</li>
+  <li>El botón central está marcado con un icono de encendido, mientras que los botones laterales están marcados con uno o dos puntos. El botón central también contiene un anillo de seis LED RGB que visualizan el estado del robot</li>
+</ol>
 
 <div align="center">
 <img src="image-12.png" alt="Botones Create 3"/>
