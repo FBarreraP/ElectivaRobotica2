@@ -180,7 +180,7 @@ Los otros estados del robot a través del anillo de seis LED RGB están <a href=
 <div align="center">
 <img src="boot.gif" alt="Encendido Create 3"/>
 <img src="charged_spinning.gif" alt="Cargando Create 3"/>
-<img src="white_solid.gif" alt="Carga 100% Create 3"/>
+<img src="white_solid.jpg" alt="Carga 100% Create 3"/>
 <img src="red_pulsing.gif" alt="Carga <10% Create 3"/>
 <br>
 <figcaption>Fuente: https://iroboteducation.github.io/create3_docs/hw/face/</figcaption>
