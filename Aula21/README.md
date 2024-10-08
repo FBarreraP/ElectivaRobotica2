@@ -192,25 +192,25 @@ Para garantizar un correcto uso de la batería K2 es importante tener en cuenta 
 
 <ol type="a">
   <li>El cargador recomendable es de entrada AC 100V~230V y salida DC 16.8V/2.5A</li>
-</ol>
-b.	La batería se puede recargar en solo 6-8 horas.
-c.	1000 ciclos de vida (carga y descarga)
-d.	Admite carga y descarga al mismo tiempo
-e.	Presione el botón On: encendido rápido, los LED indican la energía restante
-f.	Presione el botón Apagado: permanezca 2 segundos para apagar
-g.	Apagado automático: el banco de energía se apaga automáticamente en 30 segundos si no hay carga
-h.	Luces LED en estado de descarga
-0-25%: iluminación LED1
-25-50%: iluminación LED1, LED2
-50-75%: iluminación LED1, LED2, LED3
-75-100%: iluminación LED1, LED2, LED3, LED4
-alarma de bajo voltaje: LED1 parpadeando
-i.	Luces LED en estado de carga
-0-25%: iluminación LED1
+  <li>La batería se puede recargar en solo 6-8 horas</li>
+  <li>1000 ciclos de vida (carga y descarga)</li>
+  <li>Admite carga y descarga al mismo tiempo</li>
+  <li>Presione el botón On: encendido rápido, los LED indican la energía restante</li>
+  <li>Presione el botón Apagado: permanezca 2 segundos para apagar</li>
+  <li>Apagado automático: el banco de energía se apaga automáticamente en 30 segundos si no hay carga</li>
+  <li>Luces LED en estado de descarga</li>
+  <dd>0-25%: iluminación LED1</dd>
+  <dd>25-50%: iluminación LED1, LED2</dd>
+  <dd>50-75%: iluminación LED1, LED2, LED3</dd>
+  <dd>75-100%: iluminación LED1, LED2, LED3, LED4</dd>
+  <dd>alarma de bajo voltaje: LED1 parpadeando</dd>
+  <li>Luces LED en estado de carga</li>
+  0-25%: iluminación LED1
 25-50%: LED1 encendido, LED2 parpadeando
 50-75%: LED1, LED2 encendido, LED3 parpadeando
 75-99%: LED1, LED2, iluminación LED3, LED4 intermitente
 100%: iluminación LED1, LED2, LED3, LED4
+</ol>
 
 El procedimiento adecuado de carga de la batería K2 consiste simplemente en conectar el puerto de salida de DC del adaptador de AC al puerto de entrada del banco de energía y conecte el otro lado al tomacorriente de pared y verifique el estado de carga de acuerdo al estado de los LED.
 
