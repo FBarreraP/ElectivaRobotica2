@@ -146,18 +146,77 @@ El uso básico del LoCoBot PX100 consiste en aprender a cargarlo, encenderlo, pr
 
 Es importante tener en cuenta que el locobot Px100 se conforma por diferentes equipos: a) plataforma móvil (Create 3 from iRobot), b) computadora (Intel NUC NUC8i3BEH Mini PC), c) Power bank (MAXOAK K2), d) cámara (Intel® RealSense™ Depth Camera D435), e) servomotores de giro e inclinación (DINAMIXEL 2XL), f) brazo robótico de 4 GDL (PincherX 100 Robot Arm); los cuales requieren para su correcto funcionamiento de unas fuentes eléctricas que se deben mantener de acuerdo a lo establecido por el fabricante, es por este motivo que es recomendable mantenerlas a un nivel de carga mayor al 50%, es decir, no se debe dejar descargar completamente las baterías de iones de litio, ni tampoco dejarlas sin uso por un tiempo mayor de 6 meses
 
-<h5>Cargar la create 3</h5>
+<h5>Cargar la Create 3</h5>
 
-Su LoCoBot Create® 3-base debe venir con una fuente de alimentación con adaptador de CA y la base de carga Create® 3:
+La batería de la Create 3 (iRobot) está integrada a dicha plataforma y debe venir con una fuente de alimentación con adaptador de AC y la estación de carga iRobot. La batería es de iones de litio 4S de 26 Wh, con un voltaje nominal de 14.4 V (12 V mín., 16.8 Vmáx.), la cual informará un estado de carga del 0% cuando el voltaje total del paquete alcance los 12.0 V. Se autoprotegerá y desconectará de cualquier carga a 10,8 V o menos.
 
-La base de carga iRobot Create® 3 y su cable Una salida de 16,8 V y 2,5 A para la batería externa Conecte ambos a la corriente de la pared. Conecte la fuente de alimentación de la batería externa a la batería externa.
+<div align="center">
+<img src="image-11.png" alt="Carga create 3"/>
+<br>
+<figcaption>Fuente: https://iroboteducation.github.io/create3_docs/hw/overview/</figcaption>
+</div>
 
-Coloque el Create® 3 en su base de carga y espere a que suene un timbre. La luz LED de estado en la base indicará el nivel de carga:
+Si la batería se autoprotege, su sistema de gestión interno puede negarse a cargarse hasta que se reinicie. El reinicio de la batería se logra retirándola del robot durante al menos quince minutos, momento en el cual se debe volver a instalar en el robot y colocar el robot en el cargador. 
+
+Para garantizar un correcto uso de la batería 4S es importante tener en cuenta los siguientes aspectos de acuerdo a las indicaciones eléctricas por el fabricante:
+
+a.	Indispensable la estación de carga iRobot, la cual se debe conectar con su cable de salida de 16.8V y 2.5A a la tomacorriente de la pared
+b.	La batería se puede recargar en solo 4 horas (la batería se autoprotegerá y desactivará la capacidad de carga si se carga continuamente durante cuatro horas sin alcanzar el 100 % del estado de carga.)
+c.	Admite solo carga o descarga
+d.	El anillo de luz mostrará el estado de carga y se animará mientras la batería se está cargando
+e.	Encienda la plataforma colocándola en la estación de carga iRobot con el sensor de acoplamiento (docking sensor) frente a dicha estación y espere unos segundos hasta que se inicie. El LED de estado se iluminará y la base reproducirá el “sonido feliz”.
+f.	Apague la plataforma manteniendo presionado el botón de encendido durante 10 segundos
+g.	Mantenga el robot en la estación de carga iRobot cuando no esté en uso para evitar que la batería se descargue.
+h.	El botón central está marcado con un icono de encendido, mientras que los botones laterales están marcados con uno o dos puntos. El botón central también contiene un anillo de seis LED RGB que visualizan el estado del robot. 
+
+<div align="center">
+<img src="image-12.png" alt="Botones Create 3"/>
+<br>
+<figcaption>Fuente: https://iroboteducation.github.io/create3_docs/hw/face/</figcaption>
+</div>
+
+Los otros estados del robot a través del anillo de seis LED RGB están <a href="https://iroboteducation.github.io/create3_docs/hw/face/">aquí</a>
+
+<div align="center">
+<img src="boot.gif" alt="Encendido Create 3"/>
+<img src="charged_spinning.gif" alt="Cargando Create 3"/>
+<img src="white_solid.gif" alt="Carga 100% Create 3"/>
+<img src="red_pulsing.gif" alt="Carga <10% Create 3"/>
+<br>
+<figcaption>Fuente: https://iroboteducation.github.io/create3_docs/hw/face/</figcaption>
+</div>
 
 <h5>Cargar la power bank</h5>
 
+Para garantizar un correcto uso de la batería K2 es importante tener en cuenta los siguientes aspectos de acuerdo al manual del uso realizado por el fabricante y el cual se encuentra <a href="https://maxoak.net/products/maxoak-k2-185wh-50000mah-power-bank">aquí</a>:
 
+a.	El cargador recomendable es de entrada AC 100V~230V y salida DC 16.8V/2.5A
+b.	La batería se puede recargar en solo 6-8 horas.
+c.	1000 ciclos de vida (carga y descarga)
+d.	Admite carga y descarga al mismo tiempo
+e.	Presione el botón On: encendido rápido, los LED indican la energía restante
+f.	Presione el botón Apagado: permanezca 2 segundos para apagar
+g.	Apagado automático: el banco de energía se apaga automáticamente en 30 segundos si no hay carga
+h.	Luces LED en estado de descarga
+0-25%: iluminación LED1
+25-50%: iluminación LED1, LED2
+50-75%: iluminación LED1, LED2, LED3
+75-100%: iluminación LED1, LED2, LED3, LED4
+alarma de bajo voltaje: LED1 parpadeando
+i.	Luces LED en estado de carga
+0-25%: iluminación LED1
+25-50%: LED1 encendido, LED2 parpadeando
+50-75%: LED1, LED2 encendido, LED3 parpadeando
+75-99%: LED1, LED2, iluminación LED3, LED4 intermitente
+100%: iluminación LED1, LED2, LED3, LED4
 
+El procedimiento adecuado de carga de la batería K2 consiste simplemente en conectar el puerto de salida de DC del adaptador de AC al puerto de entrada del banco de energía y conecte el otro lado al tomacorriente de pared y verifique el estado de carga de acuerdo al estado de los LED.
+
+<div align="center">
+<img src="image-10.png" alt="Carga power bank"/>
+<br>
+<figcaption>Fuente: https://cdn.shopify.com/s/files/1/0364/8009/0247/files/User_Manual-K2.pdf?v=1615319987</figcaption>
+</div>
 
 <h4>Encender el LoCoBot PX100</h4>
 
@@ -186,7 +245,9 @@ hostnamectl set-hostname <unique_hostname>
 
 <h5>Conexión remota</h5>
 
-Comunicación SSH en el LoCoBot
+Para realizar la comunicación SSH en el LoCoBot desde el computador remoto:
+
+Acceder con permisos de super usuario en todos los terminales de la máquina virtual 'su root'
 
 En el computador remoto, instalar el software OpenSSH Client para permitir una conexión de shell segura entre el computador remoto y el computador LoCoBot, a través del siguiente comando:
 
@@ -194,9 +255,7 @@ En el computador remoto, instalar el software OpenSSH Client para permitir una c
 sudo apt install openssh-client
 ```
 
-Para realizar la comunicación SSH en el LoCoBot desde el computador remoto:
-
-1. Se debe conectar el robot a la misma red WiFi a la que está conectada el computador remoto. Para validar la comunicación remota ejecutar el siguiente comando:
+1. Se debe conectar el robot a la misma red WiFi a la que está conectada el computador remoto; el NUC genera una red de conexión local (ej: locobot6). Para validar la comunicación remota ejecutar el siguiente comando:
 
 ```
 ping -c 3 locobot.local

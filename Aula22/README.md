@@ -49,9 +49,3 @@ Posteriormente a la anterior instalación, se debe comentar la línea `ROS_MASTE
 ```
 roslaunch interbotix_xslocobot_joy xslocobot_joy.launch robot_model:=locobot_px100 use_base:=true use_camera:=true
 ```
-
-Abrir en la consola del computador
-
-```
-roslaunch interbotix_xslocobot_descriptions remote_view.launch`
-```
