@@ -205,11 +205,11 @@ Para garantizar un correcto uso de la batería K2 es importante tener en cuenta 
   <dd>75-100%: iluminación LED1, LED2, LED3, LED4</dd>
   <dd>alarma de bajo voltaje: LED1 parpadeando</dd>
   <li>Luces LED en estado de carga</li>
-  0-25%: iluminación LED1
-25-50%: LED1 encendido, LED2 parpadeando
-50-75%: LED1, LED2 encendido, LED3 parpadeando
-75-99%: LED1, LED2, iluminación LED3, LED4 intermitente
-100%: iluminación LED1, LED2, LED3, LED4
+  <dd>0-25%: iluminación LED1</dd>
+  <dd>25-50%: LED1 encendido, LED2 parpadeando</dd>
+  <dd>50-75%: LED1, LED2 encendido, LED3 parpadeando</dd>
+  <dd>75-99%: LED1, LED2, iluminación LED3, LED4 intermitente</dd>
+  <dd>100%: iluminación LED1, LED2, LED3, LED4</dd>
 </ol>
 
 El procedimiento adecuado de carga de la batería K2 consiste simplemente en conectar el puerto de salida de DC del adaptador de AC al puerto de entrada del banco de energía y conecte el otro lado al tomacorriente de pared y verifique el estado de carga de acuerdo al estado de los LED.
