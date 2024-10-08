@@ -144,7 +144,7 @@ El uso básico del LoCoBot PX100 consiste en aprender a cargarlo, encenderlo, pr
 
 <h4>Cargar el LoCoBot PX100</h4>
 
-Es importante tener en cuenta que el locobot Px100 se conforma por diferentes equipos: a) plataforma móvil (Create 3 from iRobot), b) computadora (Intel NUC NUC8i3BEH Mini PC), c) Power bank (MAXOAK K2), d) cámara (Intel® RealSense™ Depth Camera D435), e) servomotores de giro e inclinación (DINAMIXEL 2XL), f) brazo robótico de 4 GDL (PincherX 100 Robot Arm); los cuales requieren para su correcto funcionamiento de unas fuentes eléctricas que se deben mantener de acuerdo a lo establecido por el fabricante, es por este motivo que es recomendable mantenerlas a un nivel de carga mayor al 50%, es decir, no se debe dejar descargar completamente las baterías de iones de litio, ni tampoco dejarlas sin uso por un tiempo mayor de 6 meses
+Es importante tener en cuenta que el locobot Px100 se conforma por diferentes equipos: a) plataforma móvil (Create 3 from iRobot), b) computadora (Intel NUC NUC8i3BEH Mini PC), c) Power bank (MAXOAK K2), d) cámara (Intel® RealSense™ Depth Camera D435), e) servomotores de giro e inclinación (DINAMIXEL 2XL), f) brazo robótico de 4 GDL (PincherX 100 Robot Arm); los cuales requieren para su correcto funcionamiento de unas fuentes eléctricas que se deben mantener de acuerdo a lo establecido por los fabricantes, es por este motivo que es recomendable mantenerlas a un nivel de carga mayor al 50%, es decir, no se debe dejar descargar completamente las baterías de iones de litio, ni tampoco dejarlas sin uso por un tiempo mayor de 6 meses
 
 <h5>Cargar la Create 3</h5>
 
@@ -156,7 +156,7 @@ La batería de la Create 3 (iRobot) está integrada a dicha plataforma y debe ve
 <figcaption>Fuente: https://iroboteducation.github.io/create3_docs/hw/overview/</figcaption>
 </div>
 
-Si la batería se autoprotege, su sistema de gestión interno puede negarse a cargarse hasta que se reinicie. El reinicio de la batería se logra retirándola del robot durante al menos quince minutos, momento en el cual se debe volver a instalar en el robot y colocar el robot en el cargador. 
+Si la batería se autoprotege, su sistema de gestión interno puede negarse a cargarse hasta que se reinicie. El reinicio de la batería se logra retirándola del robot durante al menos quince minutos, momento en el cual se debe volver a instalar en el robot y colocar el robot en el cargador.
 
 Para garantizar un correcto uso de la batería 4S es importante tener en cuenta los siguientes aspectos de acuerdo a las indicaciones eléctricas por el fabricante:
 
