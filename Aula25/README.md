@@ -31,6 +31,8 @@ Los ejemplos demos en Python para el LoCoBot PX100 se encuentran <a href="https:
 
 La información sobre los paquetes de Python en ROS1 para el LoCoBot PX100 se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/python_interface.html">aquí</a>
 
+<h3>Ejemplo</h3>
+
 Lanzar del nodo de control y python en una terminal del locobot a través del siguiente comando:
 
 ```
