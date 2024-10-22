@@ -23,11 +23,13 @@ roslaunch interbotix_xslocobot_joy xslocobot_joy.launch robot_model:=locobot_px1
 
 <h2>Paquete de Python para el Locobot<h2>
 
-Los ejemplos demos en Python para el LoCoBot PX100 se ejecutan a través del siguiente comando:
+Los ejemplos demos en Python para el LoCoBot PX100 se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/ros1_packages/python_demos.html">aquí</a> y se encuentran instalados en la siguiente ruta:
 
 ```
-interbotix_ws/src/interbotix_ros_rovers/interbotix_ros_xslocobots/examples/python_demos
+~/interbotix_ws/src/interbotix_ros_rovers/interbotix_ros_xslocobots/examples/python_demos
 ```
+
+La información sobre los paquetes de Python en ROS1 para el LoCoBot PX100 se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/python_interface.html">aquí</a>
 
 Lanzar del nodo de control y python en una terminal del locobot a través del siguiente comando:
 
