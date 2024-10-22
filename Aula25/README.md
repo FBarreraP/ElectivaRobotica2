@@ -21,7 +21,7 @@ En otra consola conectada al locobot iniciar el nodo de Joystick, a través del 
 roslaunch interbotix_xslocobot_joy xslocobot_joy.launch robot_model:=locobot_px100 launch_driver:=false
 ```
 
-<h2>Paquete de Python para el Locobot<h2>
+<h2>Paquete de Python para el Locobot</h2>
 
 Los ejemplos demos en Python para el LoCoBot PX100 se encuentran <a href="https://docs.trossenrobotics.com/interbotix_xslocobots_docs/ros1_packages/python_demos.html">aquí</a> y se encuentran instalados en la siguiente ruta:
 
