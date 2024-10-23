@@ -17,9 +17,7 @@ Si se desea simular el LoCoBot desde el computador personal sin tener el LoCoBot
 ```
 sudo apt install curl
 
-curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_rovers/main/interbotix_ros_xslocobots/install/xslocobot_remote_install.sh' > 
-
-xslocobot_remote_install.sh
+curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_rovers/main/interbotix_ros_xslocobots/install/xslocobot_remote_install.sh' > xslocobot_remote_install.sh
 
 chmod +x xslocobot_remote_install.sh
 
