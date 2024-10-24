@@ -36,7 +36,7 @@ La información sobre los paquetes de Python en ROS1 para el LoCoBot PX100 se en
 Lanzar el nodo de control en python en una terminal del locobot a través del siguiente comando:
 
 ```
-roslaunch interbotix_xslocobot_control xslocobot_python.launch robot_model:=locobot_px100
+roslaunch interbotix_xslocobot_control xslocobot_python.launch robot_model:=locobot_px100 use_rviz:=true use_sim:=true
 ```
 
 En otra terminal del locobot ejecutar el script de python, por ejemplo mover la camara a través del siguiente comando, se debe tener en cuenta que se debe posicionar en el directorio de python_demos (~/interbotix_ws/src/interbotix_ros_rovers/interbotix_ros_xslocobots/examples/python_demos)
