@@ -24,7 +24,7 @@ chmod +x xslocobot_remote_install.sh
 ./xslocobot_remote_install.sh -d noetic -b create3
 ```
 
-* El script le pedirá que inserte el nombre de host de la computadora robot (NO del control remoto), por tanto, se debe ingresar: `locobot`
+* El script pedirá que ingrese el nombre de <i>host</i> de la computadora robot (NO del control remoto), por tanto, se debe ingresar: `locobot` y posteriormente, pedirá confirmación de los paquetes a instalar, por tanto, se debe ingresar: `yes`.
 
 Posteriormente a la anterior instalación, se debe comentar la línea `ROS_MASTER_URI = http://<hostname>.local:11311` que se encuentra en el archivo "~/.bashrc"
 
