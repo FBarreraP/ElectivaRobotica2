@@ -173,7 +173,7 @@ Posteriormente, abrir una nueva terminal y correr el nodo a través del siguient
 rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Recibir_Saludo.py)
 ```
 
-<h3>Ejecutar el proyecto con <i>Launch</i><h3>
+<h3>Ejecutar el proyecto con <i>Launch</i></h3>
 
 1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en el terminal
 2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.launch" 
