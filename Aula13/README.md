@@ -189,7 +189,7 @@ Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con sola
 </launch>
 ```
 5. Guardar el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch)
-6. Ejecutar el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch) a través del siguiente comando:
+6. Ejecutar el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch) a través del siguiente comando en cualquier terminal:
 
 ```
  roslaunch NAME_PACKAGE NAME_FILE.launch (ej: roslaunch ejemplos aula13_nodes.launch)
