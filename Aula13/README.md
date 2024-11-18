@@ -175,6 +175,8 @@ rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Recibir_Saludo.py)
 
 <h3>Ejecutar el proyecto con <i>Launch</i></h3>
 
+Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con solamente una línea de comando `roslaunch`, se deben tener en cuenta los siguientes pasos:
+
 1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en el terminal
 2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.launch" 
 3. Abrir el archivo "NAME_FILE.launch" 
