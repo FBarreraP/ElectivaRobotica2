@@ -178,9 +178,9 @@ rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Recibir_Saludo.py)
 Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con solamente una línea de comando `roslaunch`, se deben tener en cuenta los siguientes pasos:
 
 1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en el terminal
-2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.launch" 
-3. Abrir el archivo "NAME_FILE.launch" 
-4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch" para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el launch
+2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch)
+3. Abrir el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch)
+4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el launch
 
 ```
 <launch>
@@ -188,8 +188,8 @@ Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con sola
     <node pkg="ejemplos" type="Nodo_Recibir_Saludo.py" name="Nodo_Recibir_Saludo" output="screen"/>
 </launch>
 ```
-5. Guardar el archivo "NAME_FILE.launch" 
-6. Ejecutar el archivo "NAME_FILE.launch" a través del siguiente comando:
+5. Guardar el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch)
+6. Ejecutar el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch) a través del siguiente comando:
 
 ```
  roslaunch NAME_PACKAGE NAME_FILE.launch (ej: roslaunch ejemplos aula13_nodes.launch)
