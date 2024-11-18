@@ -183,7 +183,10 @@ Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con sola
 4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch" para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el launch
 
 ```
-
+<launch>
+    <node pkg="ejemplos" type="Nodo_Saludo_Conteo.py" name="Nodo_Saludo_Conteo" output="screen"/>
+    <node pkg="ejemplos" type="Nodo_Recibir_Saludo.py" name="Nodo_Recibir_Saludo" output="screen"/>
+</launch>
 ```
 5. Guardar el archivo "NAME_FILE.launch" 
 6. Ejecutar el archivo "NAME_FILE.launch" a través del siguiente comando:
