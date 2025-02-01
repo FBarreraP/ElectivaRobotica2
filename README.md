@@ -47,7 +47,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>04/03/2025</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
     <tr>
-		<td>05/03/2025</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>05/03/2025</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas primer corte</td>
 	</tr>
 </table>
 
@@ -85,7 +85,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>08/04/2025</td> <td>2</td> <td>19</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr><!--semana de parciales del segundo corte--><!--semana de registro de notas del segundo corte-->
 	<tr>
-		<td>09/04/2025</td> <td>2</td> <td>20</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>09/04/2025</td> <td>2</td> <td>20</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas segundo corte</td>
 	</tr>
 </table>
 
@@ -132,7 +132,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>27/05/2025</td> <td>2</td> <td>31</td> <td>16</td> <td>Desarrollo y/o entrega de proyecto</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del segundo corte-->
 	<tr>
-		<td>28/05/2025</td> <td>2</td> <td>32</td> <td>16</td> <td>Desarrollo y/o entrega de proyecto</td>
+		<td>28/05/2025</td> <td>2</td> <td>32</td> <td>16</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas tercer corte</td>
 	</tr>
 </table>
 
