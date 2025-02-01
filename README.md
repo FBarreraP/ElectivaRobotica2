@@ -29,25 +29,25 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>11/02/2025</td> <td>2</td> <td>3</td> <td>2</td> <td>Calibración de datos IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>12/02/2025</td> <td>2</td> <td>4</td> <td>2</td> <td>FESTIVO</td>
-	</tr>
-    <tr>
-		<td>18/02/2025</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>12/02/2025</td> <td>2</td> <td>4</td> <td>2</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>19/02/2025</td> <td>2</td> <td>6</td> <td>3</td> <td>Conexión RPi-STM32-IMU (MPU6050)</td>
+		<td>18/02/2025</td> <td>2</td> <td>6</td> <td>3</td> <td>Conexión RPi-STM32-IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>25/02/2025</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>19/02/2025</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
 		<td>26/02/2025</td> <td>2</td> <td>8</td> <td>4</td> <td>Filtro complementario IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>04/03/2025</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>26/02/2025</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del primer corte-->
 	<tr>
-		<td>05/03/2025</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>04/03/2025</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
+	</tr>
+    <tr>
+		<td>05/03/2025</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 </table>
 
@@ -105,13 +105,13 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>23/04/2025</td> <td>2</td> <td>22</td> <td>11</td> <td>Locobot con Joystick y avance de proyecto</td>
 	</tr>
 	<tr>
-		<td>29/04/2025</td> <td>2</td> <td>23</td> <td>12</td> <td>CONGRESO DE INGENIERÍA ECCI</td>
+		<td>29/04/2025</td> <td>2</td> <td>23</td> <td>12</td> <td>Locobot con SLAM, Rviz y paquete de Python </td>
 	</tr>
 	<tr>
-		<td>30/04/2025</td> <td>2</td> <td>24</td> <td>12</td> <td>CONGRESO DE INGENIERÍA ECCI</td>
+		<td>30/04/2025</td> <td>2</td> <td>24</td> <td>12</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
     <tr>
-		<td>06/05/2025</td> <td>2</td> <td>25</td> <td>13</td> <td>Locobot con SLAM, Rviz y paquete de Python </td>
+		<td>06/05/2025</td> <td>2</td> <td>25</td> <td>13</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
 		<td>07/05/2025</td> <td>2</td> <td>26</td> <td>13</td> <td>Desarrollo y/o entrega de laboratorio</td>
@@ -151,14 +151,14 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Primer (20%)</td>
 		<td>Quices y/o laboratorio</td>
 		<td>20%</td>
-		<td>13/08/2025<br>20/08/2025<br>27/08/2025<br>28/08/2025</td>
+		<td>12/02/2025<br>19/02/2025<br>26/02/2025<br>04/03/2025<br>05/03/2025</td>
 		<td rowspan="4">Presencial</td>
 	</tr>
 	<tr>
 		<td>Segundo (30%)</td>
 		<td>Quices y/o laboratorio</td>
 		<td>30%</td>
-		<td>17/09/2025<br>24/09/2025<br>01/10/2025<br>02/10/2025</td>
+		<td>19/03/2025<br>26/03/2025<br>02/04/2025<br>08/04/2025<br>09/04/2025</td>
 	</tr>
 	<tr>
 		<td rowspan="3">Tercer (50%)</td>
@@ -169,7 +169,7 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
     <tr>
 		<td>Proyecto</td>
 		<td>30%</td>
-		<td>05/11/2025<br>06/11/2025<br>12/11/2025<br>13/11/2025</td>
+		<td>30/04/2025<br>06/05/2025<br>07/05/2025<br>13/05/2025<br>14/05/2025<br>20/05/2025<br>21/05/2025<br>27/05/2025<br>28/05/2025</td>
 	</tr>
 </table>
 
