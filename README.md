@@ -29,25 +29,25 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>11/02/2025</td> <td>2</td> <td>3</td> <td>2</td> <td>Calibración de datos IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>12/02/2025</td> <td>2</td> <td>4</td> <td>2</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>12/02/2025</td> <td>2</td> <td>4</td> <td>2</td> <td>Conexión RPi-STM32-IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>18/02/2025</td> <td>2</td> <td>6</td> <td>3</td> <td>Conexión RPi-STM32-IMU (MPU6050)</td>
+		<td>18/02/2025</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>19/02/2025</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>19/02/2025</td> <td>2</td> <td>6</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>26/02/2025</td> <td>2</td> <td>8</td> <td>4</td> <td>Filtro complementario IMU (MPU6050)</td>
+		<td>25/02/2025</td> <td>2</td> <td>7</td> <td>4</td> <td>Filtro complementario IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>26/02/2025</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>26/02/2025</td> <td>2</td> <td>8</td> <td>4</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del primer corte-->
 	<tr>
-		<td>04/03/2025</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>04/03/2025</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
     <tr>
-		<td>05/03/2025</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas primer corte</td>
+		<td>05/03/2025</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas primer corte</td>
 	</tr>
 </table>
 
