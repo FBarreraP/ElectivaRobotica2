@@ -205,14 +205,22 @@ Nota del curso = (0.2)*NotaCorte1 + (0.3)*NotaCorte2 + (0.5)*NotaCorte3
 	<li> Visual Studio Code</li>
 	<li> Raspberry Pi 3B/3B+/4B con Raspbian</li>
 	<img src="https://www.cnx-software.com/wp-content/uploads/2019/06/Raspberry-Pi-4-vs-Pi-3-Large.jpg" alt="Imagen de Raspberrys Pi 3B y 4B" caption="RPi 3B vs RPi 4B tomado de: https://60a99bedadae98078522-a9b6cded92292ef3bace063619038eb1.ssl.cf2.rackcdn.com/10777Image1.jpg"/>
+	<div align="center">
+		<img src="image.png" width="500" alt="IMU"/>
+		<br>
+		<figcaption>Fuente: https://www.hwlibre.com/como-utilizar-el-sensor-imu-mpu9250-con-arduino/</figcaption>
+	</div>
 	<li> Brazo robótico 5 GDL</li>
 	<img src="https://yorobotics.co/wp-content/uploads/2022/10/BRAZO-ROBOTICO-V2.0-MEJORADO.jpg" alt="brazo robótico 5 GDL" caption="Hola"/>
 	<li> Servomotores SG90 o MG90</li>
     <img src="https://cdn.shopify.com/s/files/1/0069/0028/5529/files/Servos_fb55bae1-aef3-4bd6-bf0f-f2eff21c849a_large.jpg?v=1565803072" alt="servomotores" caption="Hola"/>
     <li> Fuentes de alimentación</li>
     <img src="https://cdnx.jumpseller.com/mactornica/image/9804941/1.jpg?1653696069" alt="Fuente AMS1117" caption="Hola"/>
-    <li> Multimetro</li>
-    <img src="https://electronicasannicolas.com.co/wp-content/uploads/2022/03/MULTIMETRO-DIGITAL-UT33C-UNIT-3641.png" alt="Multimetro UNI-T" caption="Hola"/>
+    <div align="center">
+		<img src="image-2.png" width="500" alt="Multímetro"/>
+		<br>
+		<figcaption>Fuente: https://radiomecano.com.ar/Instrumentos-de-Medicion/90-0223260_TESTER-UNI-T-UT-33C-DIGITAL-CTEMPERATURA.html</figcaption>
+	</div>
     <li> Leds, resistencias, pulsadores, cables, protoboard</li>
     <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR9gkrJHsEK9MCYNnJTZklwsNtW58ZzmrtdPMma9dXKXkLdYbt1PkHeGMi5cwDLLlRiOng2ozwdsB60QtZNCQF4hc3WUnPT6rx9HmCUAt1KuATjyJY9bNNWRA&usqp=CAE" alt="kit de protoboard" caption="Hola"/>
 	<!--
