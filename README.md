@@ -205,6 +205,7 @@ Nota del curso = (0.2)*NotaCorte1 + (0.3)*NotaCorte2 + (0.5)*NotaCorte3
 	<li> Visual Studio Code</li>
 	<li> Raspberry Pi 3B/3B+/4B con Raspbian</li>
 	<img src="https://www.cnx-software.com/wp-content/uploads/2019/06/Raspberry-Pi-4-vs-Pi-3-Large.jpg" alt="Imagen de Raspberrys Pi 3B y 4B" caption="RPi 3B vs RPi 4B tomado de: https://60a99bedadae98078522-a9b6cded92292ef3bace063619038eb1.ssl.cf2.rackcdn.com/10777Image1.jpg"/>
+	<li> IMU (MPU9250)</li>
 	<div align="center">
 		<img src="image.png" width="500" alt="IMU"/>
 		<br>
