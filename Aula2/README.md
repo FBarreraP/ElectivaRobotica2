@@ -80,6 +80,12 @@ I2C (Inter Integrated Circuits) es una comunicación tipo ‘half duplex’ que 
 <img src="Imagenes/image-7.png" alt="Leer I2C"/>
 <br>
 
+<h3>STM32F767ZI</h3>
+
+
+
+
+
 <h3>STM32F303K8</h3>
 
 La información de apoyo puede ser consultada en los manuales de la tarjeta, sin embargo, <a href="https://os.mbed.com/platforms/ST-Nucleo-F303K8/">aquí</a> también se puede encontrar alguna información desde la página de Mbed.
