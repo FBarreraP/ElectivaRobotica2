@@ -102,7 +102,7 @@ Fuente: https://os.mbed.com/platforms/ST-Nucleo-F767ZI/
 Fuente: https://os.mbed.com/platforms/ST-Nucleo-F767ZI/
 </div>
 
-```
+```c++
 //Ejemplo I2C
 //Fabián Barrera Prieto
 //Universidad ECCI
