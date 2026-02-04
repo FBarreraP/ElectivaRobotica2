@@ -82,9 +82,25 @@ I2C (Inter Integrated Circuits) es una comunicación tipo ‘half duplex’ que 
 
 <h3>STM32F767ZI</h3>
 
+La información de apoyo puede ser consultada en los manuales de la tarjeta, sin embargo, <a href="https://os.mbed.com/platforms/ST-Nucleo-F767ZI/">aquí</a> también se puede encontrar alguna información desde la página de Mbed.
 
+<div align="center">
+<img src="image-4.png" alt="CN8 y CN9"/>
+<br>
+<img src="image-5.png" alt="CN7 y CN10"/>
+<br>
+Fuente: https://os.mbed.com/platforms/ST-Nucleo-F767ZI/
+</div>
 
+<h4>Pines Morphos</h4>
 
+<div align="center">
+<img src="image-6.png" alt="CN11"/>
+<br>
+<img src="image-7.png" alt="CN12"/>
+<br>
+Fuente: https://os.mbed.com/platforms/ST-Nucleo-F767ZI/
+</div>
 
 <h3>STM32F303K8</h3>
 
