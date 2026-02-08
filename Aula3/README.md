@@ -246,12 +246,12 @@ int main(){
                 raw_gyroy = GirAcel[10]<<8 | GirAcel[11];
                 raw_gyroz = GirAcel[12]<<8 | GirAcel[13];
                 //SysTick_ms(1);	
-								TIM5->CNT = 0;
-								TIM5->CR1 |= (1<<0); // Enable Counting
-								//while(TIM5->CNT < 16000); //1ms	
-								while(TIM5->CNT < 8000); //0.5ms
-								//while(TIM5->CNT < 128000); //8.51ms=8150us
-								TIM5->CR1 &= ~(1<<0); // Disable Counting	
+                TIM5->CNT = 0;
+                TIM5->CR1 |= (1<<0); // Enable Counting
+                //while(TIM5->CNT < 16000); //1ms	
+                while(TIM5->CNT < 8000); //0.5ms
+                //while(TIM5->CNT < 128000); //8.51ms=8150us
+                TIM5->CR1 &= ~(1<<0); // Disable Counting	
                 //Dados escalados
                 //accelx = raw_accelx*SENSITIVITY_ACCEL;
                 //accely = raw_accely*SENSITIVITY_ACCEL;
@@ -260,15 +260,15 @@ int main(){
                 //gyroy = raw_gyroy*SENSITIVITY_GYRO;
                 //gyroz = raw_gyroz*SENSITIVITY_GYRO;
                 //temp = (raw_temp/SENSITIVITY_TEMP)+21;
-								TIM3->CR1 &= ~(1<<0); // Disable Counting			
-								timer = TIM3->CNT*0.0000000625;
-								cont_timer += timer;
-								//sprintf(text6,"El tiempo es %f segundos \n", timer);
-                //Print(text6, strlen(text6));
-								sprintf(text,"%d \t %.4f \t %.4f \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n",i+1, timer, cont_timer, raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
+                TIM3->CR1 &= ~(1<<0); // Disable Counting			
+                timer = TIM3->CNT*0.0000000625;
+                cont_timer += timer;
+                //sprintf(text6,"El tiempo es %f segundos \n", timer);
+//Print(text6, strlen(text6));
+                sprintf(text,"%d \t %.4f \t %.4f \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n",i+1, timer, cont_timer, raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
                 //sprintf(text,"%d \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \n\r",i+1,accelx, accely, accelz, gyrox, gyroy, gyroz, temp);
                 Print(text, strlen(text));
-								if(cont_timer >= t_fin){
+                    if(cont_timer >= t_fin){
                     cont_timer = 0;
                     Print(text7, strlen(text7));
                     break;
@@ -686,7 +686,7 @@ int main(){
     TIM3->PSC = 24; // Prescale factor 25 for 100ms of time
     TIM3->ARR = 63999; // Maximum count value
 		
-		RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
+    RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
     TIM5->PSC = 24; // Prescale factor 25 for 100ms of time
     TIM5->ARR = 63999; // Maximum count value
     
