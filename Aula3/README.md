@@ -61,8 +61,8 @@ La calibración de un sensor o instrumento de medición consiste en ajustar los 
 #define TEMP_OFFSET           21                      // Valor de offset do Termometro (Datasheet: MPU-6050 Product Specification, pag. 12)
 
 // Offsets de calibração (AQUI DEVEM IR OS VALORES DETERMINADOS EN LA CALIBRACAO PREVIA COM O CÓDIGO "calibracao.ino")
-double offset_accelx = 334.0, offset_accely = -948.0, offset_accelz = 16252.0;
-double offset_gyrox = 111.0, offset_gyroy = 25.0, offset_gyroz = -49.0;
+//double offset_accelx = 334.0, offset_accely = -948.0, offset_accelz = 16252.0;
+//double offset_gyrox = 111.0, offset_gyroy = 25.0, offset_gyroz = -49.0;
 
 // Valores "RAW" de tipo inteiro
 int16_t raw_accelx, raw_accely, raw_accelz;
@@ -80,15 +80,16 @@ uint8_t GirAcel[14];
 uint8_t flag = 0, j, cont = 0;
 int i;
 unsigned char d;
-char text[50], text1[60]={"TESTE DE CONEXAO PARA O GIROSCOPIO E O ACELEROMETRO \n\r"}; 
+char text[100], text1[60]={"TESTE DE CONEXAO PARA O GIROSCOPIO E O ACELEROMETRO \n\r"}; 
 char text2[35]={"Erro de conexao com a MPU6050 \n\r"};
 char text3[55]={"Opaaa. Eu nao sou a MPU6050, Quem sou eu? :S. I am:"};
 char text4[40]={"Conexao bem sucedida com a MPU6050 \n\r"};
 char text5[45]={"Oi, tudo joia?... Eu sou a MPU6050 XD \n\r"};
 unsigned char cmd[1];
 
-float timer = 0.0;
+float timer = 0.0, t_fin = 10.0, cont_timer = 0.0;
 char text6[40];
+char text7[3]={"A\n"};
 
 //I2C
 void ReadI2C1(uint8_t Address, uint8_t Register, uint8_t *Data, uint8_t bytes);
@@ -261,12 +262,17 @@ int main(){
                 //temp = (raw_temp/SENSITIVITY_TEMP)+21;
 								TIM3->CR1 &= ~(1<<0); // Disable Counting			
 								timer = TIM3->CNT*0.0000000625;
-								//timer = TIM3->CNT;
-								sprintf(text6,"El tiempo es %f segundos \n", timer);
-                sprintf(text,"%d \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n",i+1,raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
+								cont_timer += timer;
+								//sprintf(text6,"El tiempo es %f segundos \n", timer);
+                //Print(text6, strlen(text6));
+								sprintf(text,"%d \t %.4f \t %.4f \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n",i+1, timer, cont_timer, raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
                 //sprintf(text,"%d \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \n\r",i+1,accelx, accely, accelz, gyrox, gyroy, gyroz, temp);
-                Print(text6, strlen(text6));
-								Print(text, strlen(text));
+                Print(text, strlen(text));
+								if(cont_timer >= t_fin){
+                    cont_timer = 0;
+                    Print(text7, strlen(text7));
+                    break;
+                }
 								
             }
         }
