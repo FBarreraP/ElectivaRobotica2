@@ -87,105 +87,6 @@ char text4[40]={"Conexao bem sucedida com a MPU6050 \n\r"};
 char text5[45]={"Oi, tudo joia?... Eu sou a MPU6050 XD \n\r"};
 unsigned char cmd[1];
 
-float timer = 0.0, t_fin = 10.0, cont_timer = 0.0;
-char text6[40];
-char text7[3]={"A\n"};
-
-//I2C
-void ReadI2C1(uint8_t Address, uint8_t Register, uint8_t *Data, uint8_t bytes);
-void WriteI2C1(uint8_t Address, uint8_t Register, uint8_t *Data, uint8_t bytes);
-
-void Print(char *data, int n);
-
-void SysTick_Wait(uint32_t n){
-    SysTick->LOAD = n - 1; //15999
-    SysTick->VAL = 0; //Clean the value of Systick counter
-    while (((SysTick->CTRL & 0x00010000) >> 16) == 0); //Check the count flag until it's 1 
-}
-
-void SysTick_ms(uint32_t x){
-    for (uint32_t i = 0; i < x; i++){//x ms
-        SysTick_Wait(16000); //1ms
-    }
-}
-
-extern "C"{
-    void EXTI15_10_IRQHandler(void){
-        EXTI->PR |= 1; //Down flag
-        if(((GPIOC->IDR & (1<<13)) >> 13) == 1){
-            flag = 1;
-        }
-    }
-
-    void USART3_IRQHandler(void){ //Receive interrupt
-        if(((USART3->ISR & 0x20) >> 5) == 1){//Received data is ready to be read (flag RXNE = 1)
-            d = USART3->RDR;//Read the USART receive Data 
-            if(d == 'H'){
-                flag = 1;
-            }
-        }
-    }
-}
-
-int main(){
-//Ejemplo I2C
-//Fabián Barrera Prieto
-//Universidad ECCI
-//STM32F767ZIT6U
-//operation 'or' (|) for set bit and operation 'and' (&) for clear bit
-
-#include <stdio.h>
-#include "stm32f7xx.h"
-#include <string.h>
-
-//MPU6050
-#define MPU6500_address 0x68 // Endereço da MPU6500 (giroscópio e acelerômetro)
-
-// Escalas do girôscopio
-#define    GYRO_FULL_SCALE_250_DPS    0x00 // SCALE_250 (°/s) = 0 (0x00 = 000|00|000)
-#define    GYRO_FULL_SCALE_500_DPS    0x08 // SCALE_500 (°/s) = 1 (0x08 = 000|01|000)
-#define    GYRO_FULL_SCALE_1000_DPS   0x10 // SCALE_1000 (°/s) = 2 (0x10 = 000|10|000)
-#define    GYRO_FULL_SCALE_2000_DPS   0x18 // SCALE_2000 (°/s) = 3 (0x18 = 000|11|000)
-
-// Escalas do acelerômetro
-#define    ACC_FULL_SCALE_2_G        0x00 // SCALE_2_G (g) = 0 (0x00 = 000|00|000)
-#define    ACC_FULL_SCALE_4_G        0x08 // SCALE_4_G (g) = 1 (0x08 = 000|01|000)
-#define    ACC_FULL_SCALE_8_G        0x10 // SCALE_8_G (g) = 2 (0x10 = 000|10|000)
-#define    ACC_FULL_SCALE_16_G       0x18 // SCALE_16_G (g) = 3 (0x18 = 000|11|000)
-
-// Escalas de conversao (As taxas de conversão são especificadas na documentação)
-#define SENSITIVITY_ACCEL     2.0/32768.0             // Valor de conversão do Acelerômetro (g/LSB) para 2g e 16 bits de comprimento da palavra
-#define SENSITIVITY_GYRO      250.0/32768.0           // Valor de conversão do Girôscopio ((°/s)/LSB) para 250 °/s e 16 bits de comprimento da palavra
-#define SENSITIVITY_TEMP      333.87                  // Valor de sensitividade do Termometro (Datasheet: MPU-9250 Product Specification, pag. 12)
-#define TEMP_OFFSET           21                      // Valor de offset do Termometro (Datasheet: MPU-6050 Product Specification, pag. 12)
-
-// Offsets de calibração (AQUI DEVEM IR OS VALORES DETERMINADOS EN LA CALIBRACAO PREVIA COM O CÓDIGO "calibracao.ino")
-//double offset_accelx = 334.0, offset_accely = -948.0, offset_accelz = 16252.0;
-//double offset_gyrox = 111.0, offset_gyroy = 25.0, offset_gyroz = -49.0;
-
-// Valores "RAW" de tipo inteiro
-int16_t raw_accelx, raw_accely, raw_accelz;
-int16_t raw_gyrox, raw_gyroy, raw_gyroz;
-int16_t raw_temp;
-
-// Saídas calibradas
-float accelx, accely, accelz;
-float gyrox, gyroy, gyroz;
-float temp;
-
-uint8_t data[1];
-uint8_t GirAcel[14];
-
-uint8_t flag = 0, j, cont = 0;
-int i;
-unsigned char d;
-char text[100], text1[60]={"TESTE DE CONEXAO PARA O GIROSCOPIO E O ACELEROMETRO \n\r"}; 
-char text2[35]={"Erro de conexao com a MPU6050 \n\r"};
-char text3[55]={"Opaaa. Eu nao sou a MPU6050, Quem sou eu? :S. I am:"};
-char text4[40]={"Conexao bem sucedida com a MPU6050 \n\r"};
-char text5[45]={"Oi, tudo joia?... Eu sou a MPU6050 XD \n\r"};
-unsigned char cmd[1];
-
 float timer = 0.0, t_fin = 1.0, cont_timer = 0.0;
 char text6[40];
 char text7[5]={"A\n"};
@@ -195,6 +96,7 @@ void ReadI2C1(uint8_t Address, uint8_t Register, uint8_t *Data, uint8_t bytes);
 void WriteI2C1(uint8_t Address, uint8_t Register, uint8_t *Data, uint8_t bytes);
 
 void Print(char *data, int n);
+void delay(void);
 
 void SysTick_Wait(uint32_t n){
     SysTick->LOAD = n - 1; //15999
@@ -293,9 +195,9 @@ int main(){
     TIM3->PSC = 24; // Prescale factor 25 for 100ms of time
     TIM3->ARR = 63999; // Maximum count value
 		
-    RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
+		RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
     TIM5->PSC = 24; // Prescale factor 25 for 100ms of time
-    TIM5->ARR = 63999; // Maximum count value
+    TIM5->ARR = 10000000; // Maximum count value
     
 
     USART3->CR1 |= (1<<0);
@@ -335,8 +237,8 @@ int main(){
             flag = 0;
             i = 1;
             while(1){
-                TIM3->CNT = 0;
-                TIM3->CR1 |= (1<<0); // Enable Counting										
+								TIM5->CNT = 0;
+								TIM5->CR1 |= (1<<0); // Enable Counting										
                 ReadI2C1(MPU6500_address, 0x3B, GirAcel, 14);
                 raw_accelx = GirAcel[0]<<8 | GirAcel[1];    
                 raw_accely = GirAcel[2]<<8 | GirAcel[3];
@@ -346,12 +248,7 @@ int main(){
                 raw_gyroy = GirAcel[10]<<8 | GirAcel[11];
                 raw_gyroz = GirAcel[12]<<8 | GirAcel[13];
                 //SysTick_ms(1);	
-                TIM5->CNT = 0;
-                TIM5->CR1 |= (1<<0); // Enable Counting
-                //while(TIM5->CNT < 16000); //1ms	
-                while(TIM5->CNT < 8000); //0.5ms
-                //while(TIM5->CNT < 128000); //8.51ms=8150us
-                TIM5->CR1 &= ~(1<<0); // Disable Counting	
+                delay();
                 //Dados escalados
                 //accelx = raw_accelx*SENSITIVITY_ACCEL;
                 //accely = raw_accely*SENSITIVITY_ACCEL;
@@ -360,11 +257,11 @@ int main(){
                 //gyroy = raw_gyroy*SENSITIVITY_GYRO;
                 //gyroz = raw_gyroz*SENSITIVITY_GYRO;
                 //temp = (raw_temp/SENSITIVITY_TEMP)+21;
-                TIM3->CR1 &= ~(1<<0); // Disable Counting			
-                timer = TIM3->CNT*0.0000000625;
+                TIM5->CR1 &= ~(1<<0); // Disable Counting			
+                timer = TIM5->CNT*0.0000000625;
                 cont_timer += timer;
                 //sprintf(text6,"El tiempo es %f segundos \n", timer);
-                //Print(text6, strlen(text6));
+//Print(text6, strlen(text6));
                 sprintf(text,"%d \t %.4f \t %.4f \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n",i++, timer, cont_timer, raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
                 //sprintf(text,"%d \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \n\r",i+1,accelx, accely, accelz, gyrox, gyroy, gyroz, temp);
                 Print(text, strlen(text));
@@ -460,6 +357,22 @@ void Print(char *data, int n){
     //while((USART3->ISR & 0x80)==0){};
     USART3->TDR = 0x0D; 
     while(((USART3->ISR & 0x80) >> 7) == 0){}
+}
+
+void delay(void){
+	TIM3->CNT = 0;
+	TIM3->CR1 |= (1<<0); // Enable Counting
+	//while(TIM5->CNT < 16000); //1ms	
+	while(TIM3->CNT < 8000); //0.5ms
+	//while(TIM5->CNT < 128000); //8.51ms=8150us
+	TIM3->CR1 &= ~(1<<0); // Disable Counting	
+	
+	for(j=0; j<=7; j++){
+		TIM3->CNT = 0;
+		TIM3->CR1 |= (1<<0); // Enable Counting
+		while(TIM3->CNT < 16000); //1ms	
+		TIM3->CR1 &= ~(1<<0); // Disable Counting	
+	}
 }
 ```
 
