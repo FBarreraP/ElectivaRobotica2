@@ -296,7 +296,7 @@ int main(){
                 cont_timer += timer;
                 //sprintf(text6,"El tiempo es %f segundos \n", timer);
 //Print(text6, strlen(text6));
-                sprintf(text,"%d %.4f %.2f %.2f %.2f %.2f %.2f %.2f \n\r", i, timer, (float)raw_accelx, (float)raw_accely, (float)raw_accelz, (float)raw_gyrox, (float)raw_gyroy, (float)raw_gyroz);
+                sprintf(text,"%d %.4f %.2f %.2f %.2f %.2f %.2f %.2f \n\r", i++, timer, (float)raw_accelx, (float)raw_accely, (float)raw_accelz, (float)raw_gyrox, (float)raw_gyroy, (float)raw_gyroz);
                 //sprintf(text,"%d \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \n\r",i+1,accelx, accely, accelz, gyrox, gyroy, gyroz, temp);
                 Print(text, strlen(text));
                 if(cont_timer >= t_fin){
