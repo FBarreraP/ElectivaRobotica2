@@ -29,12 +29,12 @@ end
 SENSITIVITY_ACCEL = 2.0/32768.0;
 SENSITIVITY_GYRO = 250.0/32768.0;
 
-offset_accelx = 650.00;
-offset_accely = -124.00;
-offset_accelz = 16274.00;
-offset_gyrox = 179.00;
-offset_gyroy = -32.00;
-offset_gyroz = -24.00; 
+offset_accelx = 814.00;
+offset_accely = -144.00;
+offset_accelz = 16256.00;
+offset_gyrox = 203.50;
+offset_gyroy = -40.50;
+offset_gyroz = 0.00;
 
 disp('En sus marcas. Posicione el sensor en la posición inicial')
 pause(); %Aguarda qualquer tecla.
