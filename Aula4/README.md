@@ -1,8 +1,26 @@
-<h1>Aula 6</h1>
+<h1>Aula 4</h1>
 
 Esta clase consiste en realizar la comunicación serial entre la RPi (Raspbian Buster), la STM32 y la MPU6050.
 
-<h3>Comunicación RPi, STM32 y MPU6050</h3>
+<h2>Instalación Ubuntu 22.04 server en RPi</h2>
+
+
+<h3>Instalar escritorio gráfico LXDE</h3>
+
+
+
+Activar la opción WiFi en LXDE 
+
+
+Instalar otros complementos:
+
+- Chromium
+- Visual studio code
+- minicom
+
+
+
+<h2>Comunicación RPi, STM32 y MPU6050</h2>
 
 Lista todos los puertos ejecutar el siguiente comando:
 
@@ -644,7 +662,7 @@ if value == 'S' or value == 's':
     ax3[1,0].set_title('az')
     ax3[1,1].plot(datos2[:,0], datos2[:,(2,3,4)])
     ax3[1,1].set_title('ax, ay y az')
-    h.show()
+    #h.show()
 
     i = plt.figure(4)
     ax4 = i.subplots(2,2)
@@ -657,7 +675,7 @@ if value == 'S' or value == 's':
     ax4[1,0].set_title('gz')
     ax4[1,1].plot(datos2[:,0], datos2[:,(5,6,7)])
     ax4[1,1].set_title('gx, gy y gz')
-    i.show()
+    #i.show()
 
     for i in range(0,3):
         for j in range(0,100):
@@ -676,7 +694,7 @@ if value == 'S' or value == 's':
     ax1[1,0].set_title('az')
     ax1[1,1].plot(datos1[:,0], datos1[:,(2,3,4)])
     ax1[1,1].set_title('ax, ay y az')
-    f.show()
+    #f.show()
 
     g = plt.figure(2)
     ax2 = g.subplots(2,2)
@@ -689,7 +707,9 @@ if value == 'S' or value == 's':
     ax2[1,0].set_title('gz')
     ax2[1,1].plot(datos1[:,0], datos1[:,(5,6,7)])
     ax2[1,1].set_title('gx, gy y gz')
-    g.show()
+    #g.show()
+
+    plt.show()
 
 else:
     print("\nAdios\n")
