@@ -5,20 +5,60 @@ Esta clase consiste en realizar la comunicación serial entre la RPi (Raspbian B
 <h2>Instalación Ubuntu 22.04 server en RPi</h2>
 
 
+Posteriormente a la instalación del Ubuntu 22.04 server, se recomiendan seguir los pasos a través del terminal:
+
+Mostrar interfaces de red del sistema y su estado
+
+```
+ip link
+```
+Para revisar el estado de las redes del sistema  herramienta en terminal con NetworkManager
+
+```
+nmcli device status
+```
+Para mostrar la información detallada de las IP de las redes del sistema
+
+```
+ip a
+```
+
+Para verificar que la RPi esté conectada a internet
+```
+ping -c 4 8.8.8.8
+```
+
+Para actualizar la lista de paquetes disponibles desde los repositorios.
+
+```
+sudo apt update
+```
+
 <h3>Instalar escritorio gráfico LXDE</h3>
 
+```
+sudo apt install -y lxde-core  lxappearance lightdm 
+```
+Posteriormente seleccionar lightdm y en la siguiente ventana marcar las 2 opciones con *
 
+Finalmente reiniciar el sistema operativo
 
-Activar la opción WiFi en LXDE 
+```
+sudo reboot
+```
 
+<h3>Activar la opción WiFi en LXDE</h3> 
+
+Para administrar de forma gráfica las redes del sistema
+```
+sudo apt install network-manager
+```
 
 Instalar otros complementos:
 
 - Chromium
 - Visual studio code
 - minicom
-
-
 
 <h2>Comunicación RPi, STM32 y MPU6050</h2>
 
@@ -27,12 +67,13 @@ Lista todos los puertos ejecutar el siguiente comando:
 ```
 ls /dev
 ```
-
+<!--
 Muestra información sobre los dispositivos COM conectados ejecutar el siguiente comando:
 
 ```
 dmesg | grep tty
 ```
+-->
 
 Lista todas los puertos USB conectados ejecutar el siguiente comando:
 
@@ -64,9 +105,7 @@ Escribe datos en el puerto serial en un segundo terminal ejecutar el siguiente c
 echo 'H' > /dev/ttyACM0
 ```
 
-En sistemas operativos basados en linux (Raspian, Ubuntu, etc.) existen algunos monitores seriales como minicom o screen.
-
-Para instalar minicom ejecutar el siguiente comando:
+En sistemas operativos basados en linux (Raspian, Ubuntu, etc.) existen algunos monitores seriales como minicom o screen. Para instalar minicom ejecutar el siguiente comando:
 
 ```
 sudo apt-get install minicom
