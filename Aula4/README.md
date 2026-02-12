@@ -51,7 +51,7 @@ sudo reboot
 
 Para administrar de forma gráfica las redes del sistema
 ```
-sudo apt install network-manager
+sudo apt install network-manager network-manager-gnome
 ```
 
 Instalar otros complementos:
