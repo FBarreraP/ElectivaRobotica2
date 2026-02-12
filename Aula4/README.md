@@ -358,7 +358,7 @@ int main(){
                 Print(text, strlen(text));
                 if(cont_timer >= t_fin){
                     cont_timer = 0;
-                    Print(text7, strlen(text7));
+                    //Print(text7, strlen(text7));
                     break;
                 }
 								
