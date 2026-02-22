@@ -1,4 +1,4 @@
-<h1>Aula 8</h1>
+<h1>Aula 7</h1>
 
 Esta clase consiste en estimar los ángulos de Euler (Roll y Pitch) a través de fusión sensorial con el filtro complementario 
 
