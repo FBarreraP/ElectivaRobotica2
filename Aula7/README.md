@@ -274,7 +274,7 @@ int main(){
                 cont_timer += timer;
                 //sprintf(text6,"El tiempo es %f segundos \n", timer);
 //Print(text6, strlen(text6));
-                sprintf(text,"%d %.4f %.2f %.2f %.2f %.2f %.2f %.2f \n\r", i++, timer, (float)raw_accelx, (float)raw_accely, (float)raw_accelz, (float)raw_gyrox, (float)raw_gyroy, (float)raw_gyroz);
+                sprintf(text,"%d %.9f %.4f %.2f %.2f %.2f %.2f %.2f %.2f \n\r", i++, timer, cont_timer, (float)raw_accelx, (float)raw_accely, (float)raw_accelz, (float)raw_gyrox, (float)raw_gyroy, (float)raw_gyroz);
                 //sprintf(text,"%d \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \n\r",i+1,accelx, accely, accelz, gyrox, gyroy, gyroz, temp);
                 Print(text, strlen(text));
                 if(cont_timer >= t_fin){
@@ -375,7 +375,7 @@ void delay(void){
 	TIM3->CNT = 0;
 	TIM3->CR1 |= (1<<0); // Enable Counting
 	//while(TIM5->CNT < 16000); //1ms	
-	while(TIM3->CNT < 8000); //0.5ms
+	while(TIM3->CNT < 7344); //0.459ms
 	//while(TIM5->CNT < 128000); //8.51ms=8150us
 	TIM3->CR1 &= ~(1<<0); // Disable Counting	
 	
