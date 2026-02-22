@@ -634,7 +634,7 @@ if value == 'S' or value == 's':
     ax1[1,1].plot(datos1[:,0], datos1[:,4], label='az')
     ax1[1,1].set_title('ax, ay y az')
     ax1[1,1].legend(loc='best')
-    f.show()
+    #f.show()
 
     g = plt.figure(2)
     ax2 = g.subplots(2,2)
@@ -650,7 +650,7 @@ if value == 'S' or value == 's':
     ax2[1,1].plot(datos1[:,0], datos1[:,7], label='gz')
     ax2[1,1].set_title('gx, gy y gz')
     ax2[1,1].legend(loc='best')
-    g.show()
+    #g.show()
 
     #Calibrados
     for i in range(0,3):
@@ -673,7 +673,7 @@ if value == 'S' or value == 's':
     ax3[1,1].plot(datos2[:,0], datos2[:,4], label='az')
     ax3[1,1].set_title('ax, ay y az')
     ax3[1,1].legend(loc='lower right')
-    h.show()
+    #h.show()
 
     i = plt.figure(4)
     ax4 = i.subplots(2,2)
@@ -689,7 +689,7 @@ if value == 'S' or value == 's':
     ax4[1,1].plot(datos2[:,0], datos2[:,7], label='gz')
     ax4[1,1].set_title('gx, gy y gz')
     ax4[1,1].legend(loc='lower left')
-    i.show()
+    #i.show()
 
     #ANGULOS
     Roll[raw][0] = raw
@@ -733,7 +733,7 @@ if value == 'S' or value == 's':
     ax5[1,1].set_xlabel("Muestras")
     ax5[1,1].set_ylabel("Grados")
     ax5[1,1].legend(loc='upper left')
-    j.show()
+    #j.show()
 
     k = plt.figure(6)
     ax6 = k.subplots(2,2)
@@ -757,7 +757,9 @@ if value == 'S' or value == 's':
     ax6[1,1].set_xlabel("Muestras")
     ax6[1,1].set_ylabel("Grados")
     ax6[1,1].legend(loc='upper right')
-    k.show()
+    #k.show()
+
+    plt.show()
 
 else:
     print("\nAdios\n")
