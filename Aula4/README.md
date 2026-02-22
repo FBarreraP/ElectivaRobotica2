@@ -286,7 +286,7 @@ int main(){
     TIM3->PSC = 24; // Prescale factor 25 for 100ms of time
     TIM3->ARR = 63999; // Maximum count value
 		
-		RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
+	RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
     TIM5->PSC = 24; // Prescale factor 25 for 100ms of time
     TIM5->ARR = 10000000; // Maximum count value
     
@@ -328,8 +328,8 @@ int main(){
             flag = 0;
             i = 1;
             while(1){
-								TIM5->CNT = 0;
-								TIM5->CR1 |= (1<<0); // Enable Counting										
+                TIM5->CNT = 0;
+                TIM5->CR1 |= (1<<0); // Enable Counting										
                 ReadI2C1(MPU6500_address, 0x3B, GirAcel, 14);
                 raw_accelx = GirAcel[0]<<8 | GirAcel[1];    
                 raw_accely = GirAcel[2]<<8 | GirAcel[3];
