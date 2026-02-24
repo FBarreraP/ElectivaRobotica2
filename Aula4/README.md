@@ -149,6 +149,18 @@ Finalmente, verificar el estado de VNC
 ```
 systemctl status x11vnc
 ```
+> [!WARNING]  
+> Si aparece el error en VNC viewer en Windows al momento de realizar la comunicación VNC con la RPi, se deben verificar y reiniciar los permisos:
+
+```
+sudo chmod 600 /home/TU_USUARIO/.vnc/passwd
+sudo chown TU_USUARIO:TU_USUARIO /home/TU_USUARIO/.vnc/passwd
+```
+
+```
+sudo systemctl daemon-reload
+sudo systemctl restart x11vnc
+```
 
 <h4>minicom</h4>
 
