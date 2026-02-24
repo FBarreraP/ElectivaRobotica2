@@ -195,7 +195,7 @@ int main(){
     TIM3->PSC = 24; // Prescale factor 25 for 100ms of time
     TIM3->ARR = 63999; // Maximum count value
 		
-		RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
+	RCC->APB1ENR |= (1<<3); //Enable the TIMER5 clock 
     TIM5->PSC = 24; // Prescale factor 25 for 100ms of time
     TIM5->ARR = 10000000; // Maximum count value
     

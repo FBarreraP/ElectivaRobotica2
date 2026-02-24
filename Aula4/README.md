@@ -54,11 +54,67 @@ Para administrar de forma gráfica las redes del sistema
 sudo apt install network-manager network-manager-gnome
 ```
 
+Validar en la siguiente ruta el archivo .yaml
+```
+ls /etc/netplan/
+```
+Posteriormente abrirlo y colocar debajo de la `versión : 2`, en la sección network:
+```
+renderer:NetworkManager
+```
+
+Finalmente, aplicar las modificaciones:
+```
+sudo netplan apply
+```
+
 Instalar otros complementos:
 
-- Chromium
+<h4>x11vnc</h4>
+
+```
+sudo apt update
+sudo apt install -y x11vnc
+```
+Posteriormente a la instalación, agregar la contraseña de VNC:
+```
+x11vnc -storepasswd
+```
+
+<h4>Chromium</h4>
+
+```
+sudo
+```
 - Visual studio code
+```
+sudo apt update
+
+
+```
 - minicom
+
+
+<h3>Forzar la resolución a 1920x1080</h3> 
+
+Entrar al siguiente archivo:
+```
+sudo nano /boot/firmware/config.txt
+```
+
+Agregar al final del archivo los siguientes parámetros:
+
+```
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=82
+```
+
+Finalmente reiniciar:
+
+```
+sudo reboot
+```
 
 <h2>Comunicación RPi, STM32 y MPU6050</h2>
 
