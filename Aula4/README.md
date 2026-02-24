@@ -164,6 +164,9 @@ sudo systemctl restart x11vnc
 
 <h4>minicom</h4>
 
+```
+sudo apt install minicom
+```
 
 <h3>Forzar la resolución a 1920x1080</h3> 
 
