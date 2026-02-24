@@ -70,29 +70,87 @@ sudo netplan apply
 
 Instalar otros complementos:
 
+<h4>Chromium</h4>
+
+```
+sudo apt install chromium-browser
+```
+
+Finalmente, seleccionar OK en las ventanas que aparecen
+
 <h4>x11vnc</h4>
 
 ```
 sudo apt update
 sudo apt install -y x11vnc
 ```
+
 Posteriormente a la instalación, agregar la contraseña de VNC:
+
 ```
 x11vnc -storepasswd
 ```
 
-<h4>Chromium</h4>
+<h4>Visual studio code</h4>
 
-```
-sudo
-```
-- Visual studio code
 ```
 sudo apt update
+sudo apt install -y x11vnc
+```
 
+Seleccionar OK en la ventana que aparece. Posteriormente, crear la contraseña de VNC:
 
 ```
-- minicom
+sudo apt install -y x11vnc
+```
+
+Entrar al archivo de la ruta 
+
+```
+sudo nano /etc/systemd/system/x11vnc.service
+```
+
+Crear el servicio automático y en rfbauth modificar USUARIO por el usuario de la RPi (ej: -rfbauth /home/pi/.vnc/passwd \)
+
+```
+[Unit]
+Description=Start x11vnc at startup
+After=display-manager.service
+Requires=display-manager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc \
+  -auth guess \
+  -forever \
+  -loop \
+  -noxdamage \
+  -repeat \
+  -rfbauth /home/USUARIO/.vnc/passwd \
+  -rfbport 5900 \
+  -shared
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Posteriormente, activar el servicio
+
+```
+sudo systemctl daemon-reload
+sudo systemctl enable x11vnc
+sudo systemctl start x11vnc
+```
+
+Finalmente, verificar el estado de VNC
+
+```
+systemctl status x11vnc
+```
+
+<h4>minicom</h4>
 
 
 <h3>Forzar la resolución a 1920x1080</h3> 
@@ -115,6 +173,9 @@ Finalmente reiniciar:
 ```
 sudo reboot
 ```
+
+> [!TIP]
+> Optional information to help a user be more successful.
 
 <h2>Comunicación RPi, STM32 y MPU6050</h2>
 
