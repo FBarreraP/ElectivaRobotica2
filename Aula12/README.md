@@ -12,7 +12,67 @@ ROS es un Sistema Operativo de Robots, click <a href="https://wiki.ros.org/Distr
 <figcaption>Fuente: https://wiki.ros.org/Distributions</figcaption>
 </div>
 
-<h3>Instalación de Raspbian buster</h3>
+<h3>Comparación entre ROS1 y ROS2</h3>
+
+
+
+
+<h3>Instalación de ROS 2 en Ubuntu 22.04 para RPi 4</h3>
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
+Habilitar el repositorio de ROS2 
+
+```
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+```
+
+```
+sudo apt update && sudo apt install curl -y
+export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
+sudo dpkg -i /tmp/ros2-apt-source.deb
+```
+
+```
+sudo apt update
+sudo apt upgrade
+```
+
+Instalar ROS2 Humble version desktop (recomendado), debido a que contiene: ROS, RViz, demos, tutorials.
+
+```
+sudo apt install ros-humble-desktop
+```
+
+Configurar el entorno para ROS2
+
+```
+source /opt/ros/humble/setup.bash
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+cat .bashrc
+ros2
+source .bashrc
+ros2
+```
+
+Ejemplo
+
+```
+ros2 run demo_nodes_cpp talker
+ros2 run demo_nodes_cpp listener
+```
+
+
+
+<h3>Instalación de Raspbian buster para ROS 1 en RPi 4</h3>
 
 Para instalar ROS en la RPi se debe instalar Raspbian Buster, el cual se puede descargar <a href="https://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/">aquí</a>
 
