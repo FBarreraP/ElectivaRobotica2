@@ -391,10 +391,10 @@ Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con sola
 
  - `ROS 2`
 
- 1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en la terminal
- 2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.py" (ej: aula13_nodes.py)
- 3. Abrir el archivo "NAME_FILE.py" (ej: aula13_nodes.py)
- 4. Agregar las siguientes líneas en el archivo "NAME_FILE.py" (ej: aula13_nodes.py) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el comando launch
+ 1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en la terminal, pero como buena practica se recomienda crear un paquete (ej: <i>bringup</i>) solo para ejecutar el launch
+ 2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
+ 3. Abrir el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
+ 4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el comando launch
 
  ```python
 from launch import LaunchDescription
@@ -418,9 +418,22 @@ def generate_launch_description():
     ])
  ```
 
-5. Guardar el archivo "NAME_FILE.py" (ej: aula13_nodes.py)
-6. Agregar en la opción  en la sección data_files en el archivo setup.py
+5. Guardar el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
+6. Agregar en la sección data_files en el archivo setup.py
 
 ```
-'node_name = package_name.node_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.Nodo_Recibir_Saludo:main',)
+(os.path.join('share', package_name, 'launch'),
+        glob('launch/*.launch.py'))
+```
+
+7. Compilar el proyecto desde la carpeta del <i>workspace</i>, a través del siguiente comando en cualquier terminal:
+
+```
+colcon build --symlink-install
+```
+
+8. Ejecutar el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py), a través del siguiente comando en cualquier terminal:
+
+```
+ros2 launch ejemplos aula13_nodes.launch.py
 ```
