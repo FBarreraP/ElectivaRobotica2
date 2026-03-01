@@ -28,6 +28,20 @@ Antes de crear el <i>workspace</i> se debe verificar que ROS esté cargado, a tr
 ros2
 ```
 
+> [!WARNING]  
+> Si aparece el mensaje ros2: command not found, ejecutar los siguientes comandos para cargar ROS en la terminal actual
+
+```
+source /opt/ros/humble/setup.bash
+```
+
+> [!TIP]  
+> Si se desea cargar ROS permanentemente cada vez que se abra un terminal, se debe ejecutar el siguiente comando en la terminal
+
+```
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+```
+
 Posteriormente, ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i>:
 ```
 mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p ~/aula13_ws/src)
