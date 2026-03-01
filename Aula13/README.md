@@ -100,56 +100,7 @@ colcon build --symlink-install
 
 <h3>Crear un nodo <i>publisher</i></h3>
 
-ROS2 Humble
-
-1. Al momento de compilar de crear el paquete se crea una nueva carpeta con el nombre del paquete dentro del <i>package</i> a utilizar
-2. Ingresar a dicha carpeta
-3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
-4. Abrir el archivo con un editor de texto (ej: nano, visual studio code, entre otros) para editarlo
-
-```python
-#!/usr/bin/env python3
-#coding=utf-8
-
-import rclpy #Crear nodos con ROS en Python
-from rclpy.node import Node
-from std_msgs.msg import String
-
-class Nodo_Saludo_Conteo():
-
-    def __init__(self):
-        super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_conteo
-
-        self.publisher_ = self.create_publisher(String, 'conversacion', 10) #Declara el nodo como publisher con los parÃ¡metros  del nombre del topic, el tipo de dato del mensaje y la cantidad de mensajes en cola
-
-        self.timer = self.create_timer(0.1, self.timer_callback) #Inicializa la frecuencia 10 Hz de ejecuciÃ³n del nodo
-
-        self.cont = 0
-    
-    def timer_callback(self):
-        mensaje = String()
-        mensaje.data = f'Buen dia {self.cont}'
-        self.publisher_.publish(mensaje)
-        self.get_logger().info(mensaje.data)#self.get_logger().info(f'Publicando: "{msg.data}"')
-        self.cont+=1
-        rate.sleep() #Delay de 0.1s
-
-def main(args=None):
-    rclpy.init(args=args)
-    nodo = Nodo_Saludo_Conteo()
-    try:
-        rclpy.spin(nodo)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        nodo.destroy_node()
-        rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
-```
-
-ROS1
+- `ROS1`
 
 1. Crear una nueva carpeta con el nombre scripts dentro del <i>package</i> a utilizar
 2. Ingresar a dicha carpeta
@@ -216,16 +167,68 @@ nano ~/.bashrc
 source /RUTA WORKSPACE/devel/setup.bash (ej: source ~/aula13_ws/devel/setup.bash)
 ```
 
-Para aplicar las modificaciones en el archivo .bashrc, se debe actualizar a través del siguiente comando:
+<!--
+Para aplicar las modificaciones en el archivo .bashrc, se debe abrir una nueva terminal o actualizar a través del siguiente comando:
 
 ```
 source ~/.bashrc
 ```
+--> 
 
 Posteriormente, abrir una nueva terminal y correr el nodo a través del siguiente comando:
 ```
 rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Saludo_Conteo.py)
 ```
+
+- `ROS2`
+
+1. Al momento de compilar de crear el <i>package</i>, se crea una nueva carpeta con el nombre del <i>package</i> dentro del <i>package</i> a utilizar
+2. Ingresar a dicha carpeta
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
+4. Abrir el archivo con un editor de texto (ej: nano, visual studio code, entre otros) para editarlo
+
+```python
+#!/usr/bin/env python3
+#coding=utf-8
+
+import rclpy #Crear nodos con ROS en Python
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class Nodo_Saludo_Conteo():
+
+    def __init__(self):
+        super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_conteo
+
+        self.publisher_ = self.create_publisher(String, 'conversacion', 10) #Declara el nodo como publisher con los parÃ¡metros  del nombre del topic, el tipo de dato del mensaje y la cantidad de mensajes en cola
+
+        self.timer = self.create_timer(0.1, self.timer_callback) #Inicializa la frecuencia 10 Hz de ejecuciÃ³n del nodo
+
+        self.cont = 0
+    
+    def timer_callback(self):
+        mensaje = String()
+        mensaje.data = f'Buen dia {self.cont}'
+        self.publisher_.publish(mensaje)
+        self.get_logger().info(mensaje.data)#self.get_logger().info(f'Publicando: "{msg.data}"')
+        self.cont+=1
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = Nodo_Saludo_Conteo()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+
 
 <h3>Crear un nodo <i>subscriber</i></h3>
 
