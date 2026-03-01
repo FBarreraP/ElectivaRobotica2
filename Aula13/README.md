@@ -195,7 +195,7 @@ import rclpy #Crear nodos con ROS en Python
 from rclpy.node import Node
 from std_msgs.msg import String
 
-class Nodo_Saludo_Conteo():
+class Nodo_Saludo_Conteo(Node):
 
     def __init__(self):
         super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_conteo
