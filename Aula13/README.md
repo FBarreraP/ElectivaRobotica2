@@ -74,14 +74,30 @@ sudo apt install python3-colcon-common-extensions
 
 Ingresar a la carpeta "src" del <i>workspace</i> previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
 
+- `ROS1`
+
 ```
 catkin_create_pkg PACKAGE_NAME depend1 depend2 depend2 ... dependN (ej: catkin_create_pkg ejemplos std_msgs rospy roscpp)
 ```
 
+- `ROS2`
+
+```
+ros2 pkg create PACKAGE_NAME --build-type ament_python --dependencies depend1 depend2 depend2 ... dependN (ej: ros2 pkg create ejemplos std_msgs rclpy rclcpp)
+```
+
 Desde el terminal, retornar a la carpeta del <i>workspace</i> y compilarlo, a través de la siguiente línea de comando, el cual se debe ejecutar cada vez que se crea un nuevo <i>package</i>.
+
+- `ROS1`
 
 ```
 catkin_make
+```
+
+- `ROS2`
+
+```
+colcon build --symlink-install
 ```
 
 <h3>Crear un nodo <i>publisher</i></h3>
