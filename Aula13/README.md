@@ -83,7 +83,7 @@ catkin_create_pkg PACKAGE_NAME depend1 depend2 depend2 ... dependN (ej: catkin_c
 - `ROS2`
 
 ```
-ros2 pkg create PACKAGE_NAME --build-type ament_python --dependencies depend1 depend2 depend2 ... dependN (ej: ros2 pkg create ejemplos std_msgs rclpy rclcpp)
+ros2 pkg create PACKAGE_NAME --build-type ament_python --dependencies depend1 depend2 depend2 ... dependN (ej: ros2 pkg create ejemplos --build-type ament_python --dependencies rclpy rclcpp)
 ```
 
 Desde el terminal, retornar a la carpeta del <i>workspace</i> y compilarlo, a través de la siguiente línea de comando, el cual se debe ejecutar cada vez que se crea un nuevo <i>package</i>.
