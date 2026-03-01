@@ -1,8 +1,6 @@
 <h1>Aula 13</h1>
 
-En esta clase se crean nodos publisher y subscriber con ROS melodic en la Raspberry.
-
-Antes de crear cualquier nodo, se debe tener el espacio de trabajo (<i>workspace</i>) y el paquete (<i>package</i>) ya creado en el PC.
+En esta clase se crea un proyecto (<i>workspace</i>) en ROS1 melodic y ROS2 Humble en la Raspberry Pi 4 con dos nodos (publisher y subscriber). Por tanto, antes de crear cualquier nodo, se debe tener el <i>workspace</i> y el <i>package</i> ya creados y construidos.
 
 <h2>Ejemplo</h2>
 
