@@ -17,6 +17,17 @@ ROS es un Sistema Operativo de Robots, click <a href="https://wiki.ros.org/Distr
 
 
 
+<h2>Comandos de ROS</h2>
+
+interfaces
+doctor -> Configuración de red, versiones de paquetes, información de la plataforma (ej: Linux, aarch64), información de ROS2 (ej: humble, ros2, active), lista de topics
+launch
+run
+pkg
+node
+topic
+
+
 <h3>Instalación de ROS 2 en Ubuntu 22.04 para RPi 4</h3>
 
 ```
@@ -27,6 +38,12 @@ sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
+Posteriormente, verificar que el lenguaje `en_US.UTF-8` quede asignado a través del siguiente comando:
+
+```
+en_US.UTF-8
+```
+
 Habilitar el repositorio de ROS2 
 
 ```
@@ -41,6 +58,8 @@ curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-a
 sudo dpkg -i /tmp/ros2-apt-source.deb
 ```
 
+Antes de instalar ROS2, se deben realizar actualizaciones 
+
 ```
 sudo apt update
 sudo apt upgrade
@@ -52,15 +71,34 @@ Instalar ROS2 Humble version desktop (recomendado), debido a que contiene: ROS, 
 sudo apt install ros-humble-desktop
 ```
 
-Configurar el entorno para ROS2
+Configurar el entorno para ROS2 y ejecutar el contenido de un archivo en la sesión actual a través de la instrucción `source`.
 
 ```
+ros2
 source /opt/ros/humble/setup.bash
+ros2
+exit
+ros2
+```
+Se ejecuta automáticamente cada vez que abres una nueva terminal, es decir, Cada vez que abra la terminal, carga ROS automáticament
+
+```
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+```
+Imprimir el archivo .bashrc y verificar que haya quedado grabado el comando `source /opt/ros/humble/setup.bash`
+
+```
 cat .bashrc
 ros2
 source .bashrc
 ros2
+```
+
+Finalmente, instalar el sistema de compilación:
+
+```
+sudo apt update
+sudo apt install python3-colcon-common-extensions
 ```
 
 Ejemplo

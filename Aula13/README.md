@@ -2,9 +2,7 @@
 
 En esta clase se crean nodos publisher y subscriber con ROS melodic en la Raspberry.
 
-Antes de crear cualquier nodo, se debe tener el espacio de trabajo (<i>workspace</i>) y el paquete (<i>package</i>) ya creado en el PC. El <i>workspace</i> en la Raspberry se debe crear específicamente en la carpeta "root". 
-
-Antes de crear el workspace, ingresar con permisos de super usuario en la terminal.
+Antes de crear cualquier nodo, se debe tener el espacio de trabajo (<i>workspace</i>) y el paquete (<i>package</i>) ya creado en el PC.
 
 <h2>Ejemplo</h2>
 
@@ -24,15 +22,40 @@ Con la herramienta de ROS "rqtgraph"
 
 <h3>Crear un <i>workspace</i></h3>
 
-Ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i> y posteriormente ejecutar la siguiente línea de comando:
+Antes de crear el <i>workspace</i> se debe verificar que ROS esté cargado, a través del siguiente comando en la terminal:
 
+```
+ros2
+```
+
+Posteriormente, ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i>:
 ```
 mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p ~/aula13_ws/src)
 
 cd WORKSPACE_FOLDER_NAME (ej: cd ~/aula13_ws)
+```
+Finalmente, construir el <i>workspace</i>, a través de la siguiente línea de comando:
 
+- `ROS1`
+
+```
 catkin_make
 ```
+
+- `ROS2`
+
+```
+colcon build --symlink-install
+```
+
+> [!WARNING]  
+> Si aparece el mensaje colcon: command not found, ejecutar los siguientes comandos
+
+```
+sudo apt update
+sudo apt install python3-colcon-common-extensions
+```
+
 <h3>Crear un <i>package</i></h3>
 
 Ingresar a la carpeta "src" del <i>workspace</i> previamente creado, posteriormente ejecutar el siguiente comando, teniendo en cuenta como recomendación que el nombre del paquete debe comenzar en minúscula.
@@ -48,6 +71,57 @@ catkin_make
 ```
 
 <h3>Crear un nodo <i>publisher</i></h3>
+
+ROS2 Humble
+
+1. Al momento de compilar de crear el paquete se crea una nueva carpeta con el nombre del paquete dentro del <i>package</i> a utilizar
+2. Ingresar a dicha carpeta
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
+4. Abrir el archivo con un editor de texto (ej: nano, visual studio code, entre otros) para editarlo
+
+```python
+#!/usr/bin/env python3
+#coding=utf-8
+
+import rclpy #Crear nodos con ROS en Python
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class Nodo_Saludo_Conteo():
+
+    def __init__(self):
+        super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_conteo
+
+        self.publisher_ = self.create_publisher(String, 'conversacion', 10) #Declara el nodo como publisher con los parÃ¡metros  del nombre del topic, el tipo de dato del mensaje y la cantidad de mensajes en cola
+
+        self.timer = self.create_timer(0.1, self.timer_callback) #Inicializa la frecuencia 10 Hz de ejecuciÃ³n del nodo
+
+        self.cont = 0
+    
+    def timer_callback(self):
+        mensaje = String()
+        mensaje.data = f'Buen dia {self.cont}'
+        self.publisher_.publish(mensaje)
+        self.get_logger().info(mensaje.data)#self.get_logger().info(f'Publicando: "{msg.data}"')
+        self.cont+=1
+        rate.sleep() #Delay de 0.1s
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = Nodo_Saludo_Conteo()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+ROS1
 
 1. Crear una nueva carpeta con el nombre scripts dentro del <i>package</i> a utilizar
 2. Ingresar a dicha carpeta
