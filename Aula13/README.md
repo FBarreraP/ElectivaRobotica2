@@ -40,13 +40,13 @@ source /opt/ros/humble/setup.bash
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 ```
 
-Posteriormente, ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i>:
+Ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i>:
 ```
 mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p ~/aula13_ws/src)
 
 cd WORKSPACE_FOLDER_NAME (ej: cd ~/aula13_ws)
 ```
-Finalmente, construir el <i>workspace</i>, a través de la siguiente línea de comando:
+Posteriormente, construir el <i>workspace</i>, a través de la siguiente línea de comando:
 
 - `ROS1`
 
@@ -66,6 +66,19 @@ colcon build --symlink-install
 ```
 sudo apt update
 sudo apt install python3-colcon-common-extensions
+```
+
+Finalmente, activar el <i>workspace</i>
+
+```
+source install/setup.bash
+```
+
+> [!TIP]  
+> Si se desea activar el <i>workspace</i> permanentemente cada vez que se abra un terminal, se debe ejecutar el siguiente comando en la terminal
+
+```
+echo "source ~/WORKSPACE_NAME/install/setup.bash" >> ~/.bashrc (ej: echo "source ~/EjemplosROS2/aula13_ws/install/setup.bash" >> ~/.bashrc)
 ```
 
 <h3>Crear un <i>package</i></h3>
@@ -240,17 +253,10 @@ Posteriormente, se debe construir el proyecto al haber actualizado el <i>package
 colcon build --symlink-install
 ```
 
-Finalmente, activar el <i>workspace</i>
+Finalmente, abrir una nueva terminal y ejecutar el nodo a través del siguiente comando:
 
 ```
-source install/setup.bash
-```
-
-> [!TIP]  
-> Si se desea activar el <i>workspace</i> permanentemente cada vez que se abra un terminal, se debe ejecutar el siguiente comando en la terminal
-
-```
-echo "source ~/WORKSPACE_NAME/install/setup.bash" >> ~/.bashrc (ej: echo "source ~/EjemplosROS2/aula13_ws/install/setup.bash" >> ~/.bashrc)
+ros2 run ejemplos Nodo_Saludo_Conteo
 ```
 
 <h3>Crear un nodo <i>subscriber</i></h3>
