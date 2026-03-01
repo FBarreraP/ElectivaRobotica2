@@ -367,12 +367,14 @@ ros2 run ejemplos Nodo_Recibir_Saludo
 
 <h3>Ejecutar el proyecto con <i>Launch</i></h3>
 
-Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con solamente una línea de comando `roslaunch`, se deben tener en cuenta los siguientes pasos:
+Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con solamente una línea de comando `roslaunch` o `ros2 launch`, se deben tener en cuenta los siguientes pasos:
 
-1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en el terminal
+- `ROS 1`
+
+1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en la terminal
 2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch)
 3. Abrir el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch)
-4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el launch
+4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch" (ej: aula13_nodes.launch) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el comando launch
 
 ```
 <launch>
@@ -385,3 +387,40 @@ Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con sola
 
 ```
  roslaunch NAME_PACKAGE NAME_FILE.launch (ej: roslaunch ejemplos aula13_nodes.launch)
+```
+
+ - `ROS 2`
+
+ 1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en la terminal
+ 2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.py" (ej: aula13_nodes.py)
+ 3. Abrir el archivo "NAME_FILE.py" (ej: aula13_nodes.py)
+ 4. Agregar las siguientes líneas en el archivo "NAME_FILE.py" (ej: aula13_nodes.py) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el comando launch
+
+ ```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+
+    return LaunchDescription([
+
+        Node(
+            package='ejemplos',
+            executable='publisher',
+            name='Nodo_Saludo_Conteo'
+        ),
+
+        Node(
+            package='ejemplos',
+            executable='subscriber',
+            name='Nodo_Recibir_Saludo'
+        ),
+    ])
+ ```
+
+5. Guardar el archivo "NAME_FILE.py" (ej: aula13_nodes.py)
+6. Agregar en la opción  en la sección data_files en el archivo setup.py
+
+```
+'node_name = package_name.node_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.Nodo_Recibir_Saludo:main',)
+```
