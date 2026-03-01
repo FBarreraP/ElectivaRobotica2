@@ -228,7 +228,30 @@ if __name__ == '__main__':
     main()
 ```
 
+Agregar la opción console_scripts en la sección entry_points en el archivo setup.py
 
+```
+'node_name = package_name.node_name:main', (ej: Nodo_Saludo_Conteo = ejemplos.Nodo_Saludo_Conteo:main,)
+```
+
+Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
+
+```
+colcon build --symlink-install
+```
+
+Finalmente, activar el <i>workspace</i>
+
+```
+source install/setup.bash
+```
+
+> [!TIP]  
+> Si se desea activar el <i>workspace</i> permanentemente cada vez que se abra un terminal, se debe ejecutar el siguiente comando en la terminal
+
+```
+echo "source ~/WORKSPACE_NAME/install/setup.bash" >> ~/.bashrc (ej: echo "source ~/EjemplosROS2/aula13_ws/install/setup.bash" >> ~/.bashrc)
+```
 
 <h3>Crear un nodo <i>subscriber</i></h3>
 
