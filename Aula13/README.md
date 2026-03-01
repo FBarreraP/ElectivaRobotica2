@@ -208,27 +208,27 @@ import rclpy #Crear nodos con ROS en Python
 from rclpy.node import Node
 from std_msgs.msg import String
 
-class Nodo_Saludo_Conteo(Node):
+class NodoSaludoConteo(Node):
 
     def __init__(self):
-        super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_conteo
+        super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_Saludo_Conteo
 
-        self.publisher_ = self.create_publisher(String, 'conversacion', 10) #Declara el nodo como publisher con los parÃ¡metros  del nombre del topic, el tipo de dato del mensaje y la cantidad de mensajes en cola
+        self.publisher = self.create_publisher(String, 'conversacion', 10) #Declara el nodo como publisher con los parámetros del tipo de dato del mensaje, el nombre del topic y la cantidad de mensajes en cola
 
-        self.timer = self.create_timer(0.1, self.timer_callback) #Inicializa la frecuencia 10 Hz de ejecuciÃ³n del nodo
+        self.timer = self.create_timer(0.1, self.timer_callback) #Inicializa la frecuencia 10 Hz de ejecución del nodo
 
         self.cont = 0
     
     def timer_callback(self):
         mensaje = String()
         mensaje.data = f'Buen dia {self.cont}'
-        self.publisher_.publish(mensaje)
+        self.publisher.publish(mensaje)
         self.get_logger().info(mensaje.data)#self.get_logger().info(f'Publicando: "{msg.data}"')
         self.cont+=1
 
 def main(args=None):
     rclpy.init(args=args)
-    nodo = Nodo_Saludo_Conteo()
+    nodo = NodoSaludoConteo()
     try:
         rclpy.spin(nodo)
     except KeyboardInterrupt:
@@ -241,7 +241,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Agregar la opción console_scripts en la sección entry_points en el archivo setup.py
+Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
 
 ```
 'node_name = package_name.node_name:main', (ej: 'Nodo_Saludo_Conteo = ejemplos.Nodo_Saludo_Conteo:main',)
@@ -260,6 +260,8 @@ ros2 run ejemplos Nodo_Saludo_Conteo
 ```
 
 <h3>Crear un nodo <i>subscriber</i></h3>
+
+- `ROS1`
 
 1. Ingresar a la carpeta "scripts" dentro del <i>package</i> a utilizar
 2. Crear un archivo Nodo_Recibir_Saludo.py
@@ -305,6 +307,62 @@ Posteriormente, abrir una nueva terminal y correr el nodo a través del siguient
 
 ```
 rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Recibir_Saludo.py)
+```
+
+- `ROS2`
+
+1. Entrar a la carpeta con el nombre del <i>package</i> dentro del <i>package</i> a utilizar
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Recibir_Saludo.py)
+4. Abrir el archivo con un editor de texto (ej: nano, visual studio code, entre otros) para editarlo
+
+```python
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class NodoRecibirSaludo(Node):
+
+    def __init__(self):
+        super().__init__('Nodo_Recibir_Saludo')
+
+        self.subscriber = self.create_subscription(String, 'conversacion', self.callback, 10) #Declara el nodo como subscriber con los parámetros del tipo de dato del mensaje, el nombre del topic, la función de interrupción y la cantidad de mensajes en cola
+
+    def callback(self, mensaje):
+        self.get_logger().info(f'Recibido: {mensaje.data}')
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoRecibirSaludo()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
+
+```
+'node_name = package_name.node_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.Nodo_Recibir_Saludo:main',)
+```
+
+Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
+
+```
+colcon build --symlink-install
+```
+
+Finalmente, abrir una nueva terminal y ejecutar el nodo a través del siguiente comando:
+
+```
+ros2 run ejemplos Nodo_Recibir_Saludo
 ```
 
 <h3>Ejecutar el proyecto con <i>Launch</i></h3>
