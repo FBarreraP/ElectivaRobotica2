@@ -91,19 +91,6 @@ Posteriormente a la instalación, agregar la contraseña de VNC:
 x11vnc -storepasswd
 ```
 
-<h4>Visual studio code</h4>
-
-```
-sudo apt update
-sudo apt install -y x11vnc
-```
-
-Seleccionar OK en la ventana que aparece. Posteriormente, crear la contraseña de VNC:
-
-```
-sudo apt install -y x11vnc
-```
-
 Entrar al archivo de la ruta 
 
 ```
@@ -160,6 +147,13 @@ sudo chown TU_USUARIO:TU_USUARIO /home/TU_USUARIO/.vnc/passwd
 ```
 sudo systemctl daemon-reload
 sudo systemctl restart x11vnc
+```
+
+<h4>Visual studio code</h4>
+
+```
+sudo apt update
+sudo apt install -y x11vnc
 ```
 
 <h4>minicom</h4>

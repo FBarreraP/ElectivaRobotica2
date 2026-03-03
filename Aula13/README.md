@@ -406,13 +406,13 @@ def generate_launch_description():
 
         Node(
             package='ejemplos',
-            executable='publisher',
+            executable='Nodo_Saludo_Conteo',
             name='Nodo_Saludo_Conteo'
         ),
 
         Node(
             package='ejemplos',
-            executable='subscriber',
+            executable='Nodo_Recibir_Saludo',
             name='Nodo_Recibir_Saludo'
         ),
     ])
