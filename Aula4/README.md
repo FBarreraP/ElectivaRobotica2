@@ -151,9 +151,37 @@ sudo systemctl restart x11vnc
 
 <h4>Visual studio code</h4>
 
+Instalar dependencias
+
 ```
 sudo apt update
-sudo apt install -y x11vnc
+sudo apt upgrade
+sudo apt install wget gpg -y 
+```
+Agregar clave oficial de Microsoft
+
+```
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+```
+
+Agregar el repositorio ARM64
+
+```
+echo "deb [arch=arm64] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+```
+
+Actualizar repositorios
+
+```
+sudo apt update
+sudo apt upgrade
+```
+
+Instalar visual studio code
+
+```
+sudo apt install code
 ```
 
 <h4>minicom</h4>
