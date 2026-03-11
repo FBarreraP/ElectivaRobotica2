@@ -285,12 +285,26 @@ Los mensajes en ROS pueden ser consultados <a href="https://index.ros.org/p/std_
 <figcaption>Fuente: https://docs.ros.org/en/ros2_packages/rolling/api/std_msgs/interfaces/message_definitions.html</figcaption>
 </div>
 
-<h3>catkin</h3>
+<h3>Compilador del <i>Workspace</i></h3>
 
-`catkin` es el compilador para las versiones de ROS más recientes (ej: Noetic, Melodic, entre otras), así mismo, crea ejecutables de programas. Para utilizar este compilador hay que crear un área de trabajo, en donde estará todo el proyecto (paquetes y nodos). Se recomienda tener un área de trabajo por proyecto.
+El compilador crea ejecutables de programas. Para utilizar este compilador hay que crear un <i>Workspace</i> (espacio de trabajo), en donde estará todo el proyecto (paquetes y nodos). Se recomienda tener un <i>Workspace</i> por proyecto.
+
+- `ROS1`
+
+`catkin` es el compilador para las versiones de ROS1 más recientes (ej: Noetic, Melodic, entre otras).
 
 <div align="center">
-<img src="Imagenes/image-6.png" alt="Catkin"/>
+<img src="Imagenes/image-6.png" alt="catkin"/>
+<br>
+<figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
+</div>
+
+- `ROS2`
+
+`colcon` es el compilador para las versiones de ROS2 más recientes (ej: Kilted, Jazzy, Iron, Humble, entre otras). 
+
+<div align="center">
+<img src="Imagenes/image-18.png" alt="colcon"/>
 <br>
 <figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
 </div>
