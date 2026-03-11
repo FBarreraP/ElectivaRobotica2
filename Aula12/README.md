@@ -50,99 +50,6 @@ rospy.Service() → node.create_service()
 rospy.Rate() → node.create_timer()
 ```
 
-<h2>Comandos de ROS</h2>
-
-interfaces
-doctor -> Configuración de red, versiones de paquetes, información de la plataforma (ej: Linux, aarch64), información de ROS2 (ej: humble, ros2, active), lista de topics
-launch
-run
-pkg
-node
-topic
-
-
-<h3>Instalación de ROS 2 en Ubuntu 22.04 para RPi 4</h3>
-
-```
-sudo apt update
-sudo apt upgrade
-sudo apt install locales
-sudo locale-gen en_US en_US.UTF-8
-sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-export LANG=en_US.UTF-8
-```
-Posteriormente, verificar que el lenguaje `en_US.UTF-8` quede asignado a través del siguiente comando:
-
-```
-en_US.UTF-8
-```
-
-Habilitar el repositorio de ROS2 
-
-```
-sudo apt install software-properties-common
-sudo add-apt-repository universe
-```
-
-```
-sudo apt update && sudo apt install curl -y
-export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
-curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
-sudo dpkg -i /tmp/ros2-apt-source.deb
-```
-
-Antes de instalar ROS2, se deben realizar actualizaciones 
-
-```
-sudo apt update
-sudo apt upgrade
-```
-
-Instalar ROS2 Humble version desktop (recomendado), debido a que contiene: ROS, RViz, demos, tutorials.
-
-```
-sudo apt install ros-humble-desktop
-```
-
-Configurar el entorno para ROS2 y ejecutar el contenido de un archivo en la sesión actual a través de la instrucción `source`.
-
-```
-ros2
-source /opt/ros/humble/setup.bash
-ros2
-exit
-ros2
-```
-Se ejecuta automáticamente cada vez que abres una nueva terminal, es decir, Cada vez que abra la terminal, carga ROS automáticament
-
-```
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-```
-Imprimir el archivo .bashrc y verificar que haya quedado grabado el comando `source /opt/ros/humble/setup.bash`
-
-```
-cat .bashrc
-ros2
-source .bashrc
-ros2
-```
-
-Finalmente, instalar el sistema de compilación:
-
-```
-sudo apt update
-sudo apt install python3-colcon-common-extensions
-```
-
-Ejemplo
-
-```
-ros2 run demo_nodes_cpp talker
-ros2 run demo_nodes_cpp listener
-```
-
-
-
 <h3>Instalación de Raspbian buster para ROS 1 en RPi 4</h3>
 
 Para instalar ROS en la RPi se debe instalar Raspbian Buster, el cual se puede descargar <a href="https://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/">aquí</a>
@@ -247,6 +154,86 @@ Así mismo, si se quiere conocer la versión instala de ROS, ejecutar el siguien
 rosversion -d
 ```
 
+<h3>Instalación de ROS 2 en Ubuntu 22.04 para RPi 4</h3>
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
+Posteriormente, verificar que el lenguaje `en_US.UTF-8` quede asignado a través del siguiente comando:
+
+```
+en_US.UTF-8
+```
+
+Habilitar el repositorio de ROS2 
+
+```
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+```
+
+```
+sudo apt update && sudo apt install curl -y
+export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
+sudo dpkg -i /tmp/ros2-apt-source.deb
+```
+
+Antes de instalar ROS2, se deben realizar actualizaciones 
+
+```
+sudo apt update
+sudo apt upgrade
+```
+
+Instalar ROS2 Humble version desktop (recomendado), debido a que contiene: ROS, RViz, demos, tutorials.
+
+```
+sudo apt install ros-humble-desktop
+```
+
+Configurar el entorno para ROS2 y ejecutar el contenido de un archivo en la sesión actual a través de la instrucción `source`.
+
+```
+ros2
+source /opt/ros/humble/setup.bash
+ros2
+exit
+ros2
+```
+Se ejecuta automáticamente cada vez que abre una nueva terminal, es decir, cada vez que abra la terminal, carga ROS automáticament
+
+```
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+```
+Imprimir el archivo .bashrc y verificar que haya quedado grabado el comando `source /opt/ros/humble/setup.bash`
+
+```
+cat .bashrc
+ros2
+source .bashrc
+ros2
+```
+
+Finalmente, instalar el sistema de compilación:
+
+```
+sudo apt update
+sudo apt install python3-colcon-common-extensions
+```
+
+Ejemplo
+
+```
+ros2 run demo_nodes_cpp talker
+ros2 run demo_nodes_cpp listener
+```
+
 <h2>ROS</h2>
 
 ROS es un sistema operativo de robots. Actualmente, es una colección de frameworks, herramientas (visualizar datos, guardar datos sensores, depurar y simular) y librerías. Una de las principales justificaciones de ROS es crear proyectos complejos de robótica con alta compatibilidad con hardware (Raspberry, PC(Ubuntu), Intel NUC, entre otros) y que sean reutilizables entre diferentes robots, independizando la programación por subsistemas (visión, navegación, comunicación, sensores, actuadores, entre otros) y que a su vez se interconecten entre ellos.
@@ -268,6 +255,17 @@ ROS es un sistema operativo de robots. Actualmente, es una colección de framewo
 <br>
 <figcaption>Fuente: https://robodev.blog/ros-basic-concepts</figcaption>
 </div>
+
+<h3>Comandos de ROS</h3>
+
+- doctor -> Configuración de red, versiones de paquetes, información de la plataforma (ej: Linux, aarch64), información de ROS2 (ej: humble, ros2, active), lista de topics
+- launch -> Ejecuta multiples nodos de ROS definidos en un archivo de lanzamiento (.launch), facilitando la ejecución de proyectos complejos con varios nodos
+- run -> Ejecuta un nodo de un paquete específico
+- pkg -> Crea paquetes en ROS
+- node -> Muestra información de los nodos que están corriendo en ROS
+- topic -> Interactúa con los topics de comunicación entre nodos. Permite publicar, suscribirse, inspeccionar el flujo de mensajes y depurar la comunicación entre nodos.
+
+<h3>Interconexión en ROS</h3>
 
 Otra de las ventajas de ROS es que los subsistemas (<i>packages</i>) están interconectados como grafos (nodos) a través de flechas (mensajes), es decir, es posible ejecutar diferentes programas de manera simultanea (paralelo).
 
