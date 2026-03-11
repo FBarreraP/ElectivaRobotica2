@@ -311,13 +311,28 @@ El compilador crea ejecutables de programas. Para utilizar este compilador hay q
 
 <h3>Packages</h3>
 
-Los paquetes pueden contener ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta, en la cual se deben tener dos archivos (package.xml y CMakeLists.txt), los cuales brindan información sobre el paquete con respecto al propietario, objetivo, dependencias y librerías del paquete. Los paquetes deben estar dentro del área de trabajo.
+Los paquetes deben estar dentro del área de trabajo y contienen ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta. En el paquete está el archivo package.xml que es el que tiene
+
+- `ROS1`
+
+En la carpeta del paquete se debe tener el archivo CMakeLists.txt, el cual brinda información sobre el paquete con respecto al propietario, objetivo, dependencias y nodos ejecutables del paquete. 
 
 <div align="center">
-<img src="Imagenes/image-5.png" alt="Packages"/>
+<img src="Imagenes/image-5.png" alt="Packages ROS1"/>
 <br>
 <figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
 </div>
+
+- `ROS2`
+
+En la carpeta del paquete se deben tener una carpeta con el mismo nombre del paquete en donde se guardarán los códigos de los nodos en Python, además, se debe tener un archivo setup.py que es el que tendrá la información 
+
+<div align="center">
+<img src="Imagenes/image-19.png" alt="Packages ROS2"/>
+<br>
+<figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
+</div>
+
 
 <!--
 Para instalar los paquetes de tutoriales ejecutar el siguiente comando: 
@@ -329,14 +344,30 @@ sudo apt-get install ros-noetic-ros-tutorials
 
 Si se desea ver la lista de los paquetes instalados se debe ejecutar el siguiente comando:
 
+- `ROS1`
+
 ```
 rosls <TAB>
 ```
 
-Si se desea encontrar la ruta de un paquete se debe ejecutar el siguiente comando:
+- `ROS2`
 
 ```
-rospack find roscpp
+ros2 ls <TAB>
+```
+
+Si se desea encontrar la ruta de un paquete específico se debe ejecutar el siguiente comando:
+
+- `ROS1`
+
+```
+rospack find rospy
+```
+
+- `ROS2`
+
+```
+ros2 pack find rclpy
 ```
 
 <h3>Nodes</h3>
@@ -345,7 +376,7 @@ Son programas ejecutables que envían o reciben información a un <i>topic</i>, 
 
 <h3>Topics</h3>
 
-Son el punto intermedio entre el nodo <i>publisher</i> y el nodo <i>suscriber</i>.
+Son el punto intermedio entre el nodo <i>publisher</i> y el nodo <i>suscriber</i>, los cuales permiten depurar la comunicación entre los dos nodos.
 
 <h3>Estructura de directorios</h3>
 
@@ -363,9 +394,7 @@ Son el punto intermedio entre el nodo <i>publisher</i> y el nodo <i>suscriber</i
 
 <h2>Conexiones nodos y topics en ROS</h2>
 
-La comunicación entre nodos es realizada a través de un topic, el cual es un canal de información de un dato de dato específico, el cual es conformado principalmente por el nombre del topic y el mensaje que recibirá (string, int, image, combinación, etc).
-
-Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/o suscribirse a diferentes topics
+La comunicación entre nodos es realizada a través de un topic, el cual es un canal de información de un dato de dato específico, el cual es conformado principalmente por el nombre del topic y el mensaje que recibirá (string, int, image, combinación, etc). Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/o suscribirse a diferentes topics.
 
 <div align="center">
 <img src="Imagenes/image-12.png" alt="Conexiones nodos y topics"/>
@@ -383,6 +412,8 @@ Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/
 
 En terminales independientes correr los siguientes comandos:
 
+- `ROS1`
+
 Nodo maestro
 
 ```
@@ -391,44 +422,100 @@ roscore
 
 Nodo <i>publisher</i>
 
+- `ROS1`
+
 ```
 rosrun roscpp_tutorials talker
 ```
 
+- `ROS2`
+
+```
+ros2 run demo_nodes_cpp talker
+```
+
 Nodo <i>suscriber</i>
+
+- `ROS1`
 
 ```
 rosrun roscpp_tutorials listener
 ```
 
+- `ROS2`
+
+```
+ros2 run demo_nodes_cpp listener
+```
+
 Si se desea depurar la comunicación entre dos nodos (<i>publisher</i> y <i>suscriber</i>) se debe conocer el <i>topic</i> que está intermedio de los dos nodos, para esto se debe desplegar la lista de topics activos a través del siguiente comando:
+
+- `ROS1`
 
 ```
 rostopic list
 ```
 
+- `ROS2`
+
+```
+ros2 topic list
+```
+
 Si se desea mostrar la información de un <i>topic</i> espcífico, en relación al tipo de mensaje, los nodos <i>publishers</i> y los nodos <i>subscribers</i> activos a dicho <i>topic</i>, se debe ejecutar el siguiente comando:
+
+- `ROS1`
 
 ```
 rostopic info /chatter
 ```
 
+- `ROS2`
+
+```
+ros2 topic info /chatter
+```
+
 Si se desea visualizar el mensaje que está llegando a un <i>topic</i> específico, es decir, emulando el nodo <i>subscriber</i>, se debe ejecutar el siguiente comando:
+
+- `ROS1`
 
 ```
 rostopic echo /chatter
 ```
 
+- `ROS2`
+
+```
+ros2 topic echo /chatter
+```
+
 Si se desea visualizar el mensaje que está saliendo de un <i>topic</i> específico, es decir, emulando el nodo <i>publisher</i>, se debe ejecutar el siguiente comando:
+
+- `ROS1`
 
 ```
 rostopic pub /chatter std_msgs/String "data: 'Bom dia, tudo bem?'"
 ```
 
+- `ROS2`
+
+```
+ros2 topic pub /chatter std_msgs/String "data: 'Bom dia, tudo bem?'"
+```
+
 Si se desea observar de manera gráfica la conexión entre nodos y topics, ejecutar el siguiente comando:
+
+- `ROS1`
 
 ```
 rosrun rqt_graph rqt_graph 
+```
+
+- `ROS2`
+
+```
+ros2 run rqt_graph rqt_graph 
 ```
 
 <!--
