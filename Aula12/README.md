@@ -380,6 +380,8 @@ Son el punto intermedio entre el nodo <i>publisher</i> y el nodo <i>suscriber</i
 
 <h3>Estructura de directorios</h3>
 
+- `ROS1`
+
 <div align="center">
 <img src="Imagenes/image-4.png" alt="Estructura gráfica ROS"/>
 <br>
@@ -390,6 +392,14 @@ Son el punto intermedio entre el nodo <i>publisher</i> y el nodo <i>suscriber</i
 <img src="Imagenes/image-7.png" alt="Estructura nivel ROS"/>
 <br>
 <figcaption>Fuente: https://blog.csdn.net/ck784101777/article/details/106297924</figcaption>
+</div>
+
+- `ROS2`
+
+<div align="center">
+<img src="Imagenes/image-20.png" alt="Estructura gráfica ROS"/>
+<br>
+<figcaption>Fuente: https://blog.csdn.net/JeremyZhao1998/article/details/104470039</figcaption>
 </div>
 
 <h2>Conexiones nodos y topics en ROS</h2>
