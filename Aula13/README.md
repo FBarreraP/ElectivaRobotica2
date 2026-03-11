@@ -244,7 +244,7 @@ if __name__ == '__main__':
 Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
 
 ```
-'node_name = package_name.node_name:main', (ej: 'Nodo_Saludo_Conteo = ejemplos.Nodo_Saludo_Conteo:main',)
+'node_name = package_name.file_name:main', (ej: 'Nodo_Saludo_Conteo = ejemplos.Nodo_Saludo_Conteo:main',)
 ```
 
 Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
@@ -350,7 +350,7 @@ if __name__ == '__main__':
 Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
 
 ```
-'node_name = package_name.node_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.Nodo_Recibir_Saludo:main',)
+'node_name = package_name.file_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.Nodo_Recibir_Saludo:main',)
 ```
 
 Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
