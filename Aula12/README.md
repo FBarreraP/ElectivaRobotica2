@@ -1,16 +1,27 @@
 <h1>Aula 12</h1>
 
-En esta clase se presenta una introducción a ROS
+En esta clase se presenta una introducción a Robotic Operative Systema (ROS1 y ROS2) para la RPi 4B (Raspbian Buster y Ubuntu 22.04).
 
 <h2>Introducción a ROS</h2>
 
-ROS es un Sistema Operativo de Robots, click <a href="https://wiki.ros.org/Distributions">aquí</a> para ver las diferentes versiones de ROS.
+ROS es un Sistema Operativo de Robots de código abierto enfocado para proyectos de robótica, que integra frameworks y librerías para el desarrollo de software de robots. ROS es ejecutable en distribuciones de Linux (ej: Raspbian y Ubuntu)
+
+- `ROS1`
 
 <div align="center">
-<img src="Imagenes/image-13.png" alt="Versiones ROS"/>
+<img src="Imagenes/image-13.png" alt="Versiones RO1"/>
 <br>
 <figcaption>Fuente: https://wiki.ros.org/Distributions</figcaption>
 </div>
+
+- `ROS2`
+
+<div align="center">
+<img src="Imagenes/image-15.png" alt="Versiones ROS2"/>
+<br>
+<figcaption>Fuente: https://docs.ros.org/en/jazzy/Releases.html</figcaption>
+</div>
+
 
 <h3>Comparación entre ROS1 y ROS2</h3>
 
