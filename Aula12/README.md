@@ -4,7 +4,7 @@ En esta clase se presenta una introducción a Robotic Operative Systema (ROS1 y 
 
 <h2>Introducción a ROS</h2>
 
-ROS es un Sistema Operativo de Robots de código abierto enfocado para proyectos de robótica, que integra frameworks y librerías para el desarrollo de software de robots. ROS es ejecutable en distribuciones de Linux (ej: Raspbian y Ubuntu)
+ROS es un Sistema Operativo de Robots de código abierto enfocado para proyectos de robótica, que integra frameworks y librerías para el desarrollo de software en paralelo de robots mediante diagrama de grafos. ROS es ejecutable principalmente en distribuciones de Linux (ej: Raspbian y Ubuntu).
 
 - `ROS1`
 
@@ -22,11 +22,33 @@ ROS es un Sistema Operativo de Robots de código abierto enfocado para proyectos
 <figcaption>Fuente: https://docs.ros.org/en/jazzy/Releases.html</figcaption>
 </div>
 
-
 <h3>Comparación entre ROS1 y ROS2</h3>
 
+ROS1 fue creado para la investigación y el desarrollo de prototipos robóticos, mientras que ROS2 fue creado con middleware DDS para mejorar la sincronización en tiempo real, la compatibilidad entre plataformas (ej: Linux, Windows, macOS, RTOS, etc.) y la seguridad de desarrollos de robótica industrial.
 
+<div align="center">
+<img src="Imagenes/image-16.png" alt="ROS1 vs ROS2"/>
+<br>
+<figcaption>Fuente: https://roboticsbiz.com/ros1-vs-ros2-key-differences-benefits-and-why-the-future-belongs-to-ros2/</figcaption>
+</div>
 
+Con respecto al desempeño, `ROS2` es más eficiente que `ROS1`.
+
+<div align="center">
+<img src="Imagenes/image-17.png" alt="ROS1 vs ROS2"/>
+<br>
+<figcaption>Fuente: https://www.robosmiths.com/blog/ros2-vs-ros1-2025</figcaption>
+</div>
+
+Algunos comandos que cambiaron de `ROS1` a `ROS2` son los siguientes:
+
+```
+rospy.init_node() → rclpy.init() + Node class
+rospy.Publisher() → node.create_publisher()
+rospy.Subscriber() → node.create_subscription()
+rospy.Service() → node.create_service()
+rospy.Rate() → node.create_timer()
+```
 
 <h2>Comandos de ROS</h2>
 
