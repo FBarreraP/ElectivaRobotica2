@@ -434,7 +434,7 @@ from glob import glob
 
 7. Agregar en la sección data_files en el archivo setup.py
 
-```
+```python
 (os.path.join('share', package_name, 'launch'),
         glob('launch/*.launch.py'))
 ```
