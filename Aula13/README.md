@@ -193,7 +193,7 @@ rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Saludo_Conteo.py)
 
 1. Al momento de compilar de crear el <i>package</i>, se crea una nueva carpeta con el nombre del <i>package</i> dentro del <i>package</i> a utilizar
 2. Ingresar a dicha carpeta
-3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: nsc.py)
 4. Abrir el archivo con un editor de texto (ej: nano, visual studio code, entre otros) para editarlo
 
 ```python
@@ -237,7 +237,7 @@ if __name__ == '__main__':
 Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
 
 ```
-'node_name = package_name.file_name:main', (ej: 'Nodo_Saludo_Conteo = ejemplos.Nodo_Saludo_Conteo:main',)
+'node_name = package_name.file_name:main', (ej: 'Nodo_Saludo_Conteo = ejemplos.nsc:main',)
 ```
 
 Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
