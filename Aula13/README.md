@@ -42,9 +42,9 @@ echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 Ingresar en una terminal a la carpeta donde se quiere guardar el <i>workspace</i>:
 ```
-mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p ~/aula13_ws/src)
+mkdir -p WORKSPACE_FOLDER_NAME/src (ej: mkdir -p ~/EjemplosROS2/aula13_ws/src)
 
-cd WORKSPACE_FOLDER_NAME (ej: cd ~/aula13_ws)
+cd WORKSPACE_FOLDER_NAME (ej: cd ~/EjemplosROS2/aula13_ws)
 ```
 Posteriormente, construir el <i>workspace</i>, a través de la siguiente línea de comando:
 
