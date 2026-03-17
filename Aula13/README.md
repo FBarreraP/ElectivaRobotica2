@@ -237,7 +237,7 @@ if __name__ == '__main__':
 Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
 
 ```
-'node_name = package_name.file_name:main', (ej: 'Nodo_Saludo_Conteo = ejemplos.nsc:main',)
+'executable_name = package_name.file_name:main', (ej: 'enviar_saludo = ejemplos.nsc:main',)
 ```
 
 Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
@@ -342,7 +342,7 @@ if __name__ == '__main__':
 Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
 
 ```
-'node_name = package_name.file_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.nrs:main',)
+'executable_name = package_name.file_name:main', (ej: 'recibir_saludo = ejemplos.nrs:main',)
 ```
 
 Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
@@ -410,14 +410,14 @@ def generate_launch_description():
 
         Node(
             package='ejemplos',
-            executable='Nodo_Saludo_Conteo',
+            executable='enviar_saludo',
             name='Nodo_Saludo_Conteo',
             output='screen'
         ),
 
         Node(
             package='ejemplos',
-            executable='Nodo_Recibir_Saludo',
+            executable='recibir_saludo',
             name='Nodo_Recibir_Saludo',
             output='screen'
         ),
