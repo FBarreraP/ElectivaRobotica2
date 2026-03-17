@@ -409,14 +409,14 @@ def generate_launch_description():
         Node(
             package='ejemplos',
             executable='nsc',
-            name='Nodo_Saludo_Conteo'
+            name='Nodo_Saludo_Conteo',
             output='screen'
         ),
 
         Node(
             package='ejemplos',
             executable='nrs',
-            name='Nodo_Recibir_Saludo'
+            name='Nodo_Recibir_Saludo',
             output='screen'
         ),
     ])
