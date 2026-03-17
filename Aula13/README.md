@@ -117,7 +117,7 @@ colcon build --symlink-install
 
 1. Crear una nueva carpeta con el nombre scripts dentro del <i>package</i> a utilizar
 2. Ingresar a dicha carpeta
-3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Saludo_Conteo.py)
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: nsc.py)
 4. Abrir el archivo con un editor de texto (nano) en una terminal de super usuario para editarlo
 
 <!--
@@ -136,16 +136,12 @@ import rospy #Crear nodos con ROS
 from std_msgs.msg import String
 
 def Nodo_Saludo_Conteo():
-    rospy.init_node('Nodo_Saludo_Conteo')  #Inicializa el nodo con el nombre Nodo_conteo
-
+    rospy.init_node('nodo_saludo_conteo')  #Inicializa el nodo con el nombre Nodo_conteo
     pub = rospy.Publisher('conversacion', String, queue_size=1) #Declara el nodo como publisher con los parámetros  del nombre del topic, el tipo de dato del mensaje y 
-
     rate = rospy.Rate(10) #Iniciaiza la frecuencia en Hertz de ejecución del nodo
-
     cont = 0
 
     while not rospy.is_shutdown(): #Mientras el nodo no esté apagado, es decir, mientras esté encendido
-
         mensaje = "Buen dia %d" %cont
         #rospy.loginfo(mensaje)
         pub.publish(mensaje)
@@ -208,15 +204,12 @@ import rclpy #Crear nodos con ROS en Python
 from rclpy.node import Node
 from std_msgs.msg import String
 
-class NodoSaludoConteo(Node):
+class NodoPublicador(Node):
 
     def __init__(self):
         super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_Saludo_Conteo
-
         self.publisher = self.create_publisher(String, 'conversacion', 10) #Declara el nodo como publisher con los parámetros del tipo de dato del mensaje, el nombre del topic y la cantidad de mensajes en cola
-
         self.timer = self.create_timer(0.1, self.timer_callback) #Inicializa la frecuencia 10 Hz de ejecución del nodo
-
         self.cont = 0
     
     def timer_callback(self):
@@ -228,7 +221,7 @@ class NodoSaludoConteo(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    nodo = NodoSaludoConteo()
+    nodo = NodoPublicador()
     try:
         rclpy.spin(nodo)
     except KeyboardInterrupt:
