@@ -386,19 +386,21 @@ Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con sola
  1. Crear la carpeta "launch" en la ruta dentro de uno de los paquetes del proyecto en la terminal, pero como buena practica se recomienda crear un paquete (ej: <i>bringup</i>) solo para ejecutar el launch
  2. Ingresar a la carpeta creada en el paso anterior y crear el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
  3. Abrir el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
- 4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el comando launch
+ 4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el comando launch. Para esto es importante tener en cuenta la estructura para cada nodo:
+
+```python
+Node(
+    package='PACKAGE_NAME',
+    executable='EXECUTABLE_NAME', 
+    name='NODE_NAME',
+    output='screen'
+),
+```
 
  > [!TIP]
-> Tener en cuenta la estructura para cada nodo:
->
-> Node(
->    package='PACKAGE_NAME',
->    executable='FILE_NAME',
->    name='NODE_NAME',
->    output='screen'
->),
+ > Los nodos ejecutables de un paquete específico están registrados en el archivo setup.py y se pueden conocer a través del siguiente comando: ros2 pkg executables ejemplos
 
- ```python
+```python
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
@@ -408,14 +410,14 @@ def generate_launch_description():
 
         Node(
             package='ejemplos',
-            executable='nsc',
+            executable='Nodo_Saludo_Conteo',
             name='Nodo_Saludo_Conteo',
             output='screen'
         ),
 
         Node(
             package='ejemplos',
-            executable='nrs',
+            executable='Nodo_Recibir_Saludo',
             name='Nodo_Recibir_Saludo',
             output='screen'
         ),
