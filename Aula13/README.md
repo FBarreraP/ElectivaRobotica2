@@ -427,7 +427,7 @@ def generate_launch_description():
 5. Guardar el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
 6. Agregar las librerías en el encabezado del archivo setup.py
 
-```
+```python
 import os
 from glob import glob
 ```
