@@ -305,7 +305,7 @@ rosrun PACKAGE NODE_FILE.py (ej: rosrun ejemplos Nodo_Recibir_Saludo.py)
 - `ROS2`
 
 1. Entrar a la carpeta con el nombre del <i>package</i> dentro del <i>package</i> a utilizar
-3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: Nodo_Recibir_Saludo.py)
+3. Crear un archivo de tipo python para el nodo <i>publisher</i> (ej: nrs.py)
 4. Abrir el archivo con un editor de texto (ej: nano, visual studio code, entre otros) para editarlo
 
 ```python
@@ -315,11 +315,10 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
-class NodoRecibirSaludo(Node):
+class NodoSuscriptor(Node):
 
     def __init__(self):
         super().__init__('Nodo_Recibir_Saludo')
-
         self.subscriber = self.create_subscription(String, 'conversacion', self.callback, 10) #Declara el nodo como subscriber con los parámetros del tipo de dato del mensaje, el nombre del topic, la función de interrupción y la cantidad de mensajes en cola
 
     def callback(self, mensaje):
@@ -327,7 +326,7 @@ class NodoRecibirSaludo(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    nodo = NodoRecibirSaludo()
+    nodo = NodoSuscriptor()
     try:
         rclpy.spin(nodo)
     except KeyboardInterrupt:
@@ -343,7 +342,7 @@ if __name__ == '__main__':
 Agregar en la opción console_scripts en la sección entry_points en el archivo setup.py
 
 ```
-'node_name = package_name.file_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.Nodo_Recibir_Saludo:main',)
+'node_name = package_name.file_name:main', (ej: 'Nodo_Recibir_Saludo = ejemplos.nrs:main',)
 ```
 
 Posteriormente, se debe construir el proyecto al haber actualizado el <i>package</i> (crear un nodo), para lo cual se debe regresar a la ruta del <i>workspace</i> y ejecutar el siguiente comando:
