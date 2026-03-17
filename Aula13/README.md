@@ -388,14 +388,15 @@ Si se desea ejecutar varios nodos de un mismo <i>workspace</i> en `ROS` con sola
  3. Abrir el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
  4. Agregar las siguientes líneas en el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py) para anidar los nodos de los diferentes <i>packages</i> que se quieren ejecutar con el comando launch
 
- ```
- Node(
-    package='PACKAGE_NAME',
-    executable='FILE_NAME',
-    name='NODE_NAME',
-    output='screen'
-),
- ```
+ > [!TIP]
+> Tener en cuenta la estructura para cada nodo:
+>
+> Node(
+>    package='PACKAGE_NAME',
+>    executable='FILE_NAME',
+>    name='NODE_NAME',
+>    output='screen'
+>),
 
  ```python
 from launch import LaunchDescription
@@ -407,14 +408,16 @@ def generate_launch_description():
 
         Node(
             package='ejemplos',
-            executable='Nodo_Saludo_Conteo',
+            executable='nsc',
             name='Nodo_Saludo_Conteo'
+            output='screen'
         ),
 
         Node(
             package='ejemplos',
-            executable='Nodo_Recibir_Saludo',
+            executable='nrs',
             name='Nodo_Recibir_Saludo'
+            output='screen'
         ),
     ])
  ```
