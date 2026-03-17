@@ -136,7 +136,7 @@ import rospy #Crear nodos con ROS
 from std_msgs.msg import String
 
 def Nodo_Saludo_Conteo():
-    rospy.init_node('nodo_saludo_conteo')  #Inicializa el nodo con el nombre Nodo_conteo
+    rospy.init_node('Nodo_Saludo_Conteo')  #Inicializa el nodo con el nombre Nodo_conteo
     pub = rospy.Publisher('conversacion', String, queue_size=1) #Declara el nodo como publisher con los parámetros  del nombre del topic, el tipo de dato del mensaje y 
     rate = rospy.Rate(10) #Iniciaiza la frecuencia en Hertz de ejecución del nodo
     cont = 0
@@ -207,7 +207,7 @@ from std_msgs.msg import String
 class NodoPublicador(Node):
 
     def __init__(self):
-        super().__init__('Nodo_Saludo_Conteo') #Inicializa el nodo con el nombre Nodo_Saludo_Conteo
+        super().__init__('nodo_saludo_conteo') #Inicializa el nodo con el nombre Nodo_Saludo_Conteo
         self.publisher = self.create_publisher(String, 'conversacion', 10) #Declara el nodo como publisher con los parámetros del tipo de dato del mensaje, el nombre del topic y la cantidad de mensajes en cola
         self.timer = self.create_timer(0.1, self.timer_callback) #Inicializa la frecuencia 10 Hz de ejecución del nodo
         self.cont = 0
@@ -249,7 +249,7 @@ colcon build --symlink-install
 Finalmente, abrir una nueva terminal y ejecutar el nodo a través del siguiente comando:
 
 ```
-ros2 run ejemplos Nodo_Saludo_Conteo
+ros2 run ejemplos nodo_saludo_conteo
 ```
 
 <h3>Crear un nodo <i>subscriber</i></h3>
@@ -318,7 +318,7 @@ from std_msgs.msg import String
 class NodoSuscriptor(Node):
 
     def __init__(self):
-        super().__init__('Nodo_Recibir_Saludo')
+        super().__init__('nodo_recibir_saludo')
         self.subscriber = self.create_subscription(String, 'conversacion', self.callback, 10) #Declara el nodo como subscriber con los parámetros del tipo de dato del mensaje, el nombre del topic, la función de interrupción y la cantidad de mensajes en cola
 
     def callback(self, mensaje):
@@ -354,7 +354,7 @@ colcon build --symlink-install
 Finalmente, abrir una nueva terminal y ejecutar el nodo a través del siguiente comando:
 
 ```
-ros2 run ejemplos Nodo_Recibir_Saludo
+ros2 run ejemplos nodo_recibir_saludo
 ```
 
 <h3>Ejecutar el proyecto con <i>Launch</i></h3>
@@ -411,14 +411,14 @@ def generate_launch_description():
         Node(
             package='ejemplos',
             executable='enviar_saludo',
-            name='Nodo_Saludo_Conteo',
+            name='nodo_saludo_conteo',
             output='screen'
         ),
 
         Node(
             package='ejemplos',
             executable='recibir_saludo',
-            name='Nodo_Recibir_Saludo',
+            name='nodo_recibir_saludo',
             output='screen'
         ),
     ])
