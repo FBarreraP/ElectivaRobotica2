@@ -423,20 +423,27 @@ def generate_launch_description():
  ```
 
 5. Guardar el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py)
-6. Agregar en la sección data_files en el archivo setup.py
+6. Agregar las librerías en el encabezado del archivo setup.py
+
+```
+import os
+from glob import glob
+```
+
+7. Agregar en la sección data_files en el archivo setup.py
 
 ```
 (os.path.join('share', package_name, 'launch'),
         glob('launch/*.launch.py'))
 ```
 
-7. Compilar el proyecto desde la carpeta del <i>workspace</i>, a través del siguiente comando en cualquier terminal:
+8. Compilar el proyecto desde la carpeta del <i>workspace</i>, a través del siguiente comando en cualquier terminal:
 
 ```
 colcon build --symlink-install
 ```
 
-8. Ejecutar el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py), a través del siguiente comando en cualquier terminal:
+9. Ejecutar el archivo "NAME_FILE.launch.py" (ej: aula13_nodes.launch.py), a través del siguiente comando en cualquier terminal:
 
 ```
 ros2 launch ejemplos aula13_nodes.launch.py
