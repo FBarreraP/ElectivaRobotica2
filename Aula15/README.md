@@ -18,7 +18,7 @@ Con la herramienta de ROS "rqtgraph"
 <figcaption>Fuente: Autor</figcaption>
 </div>
 
-Adquisición de datos MPU6050 con STM32F767ZI
+<h3>Adquisición de datos MPU6050 con STM32F767ZI</h3>
 
 ```c++
 //Ejemplo I2C
@@ -368,7 +368,7 @@ void delay(void){
 }
 ```
 
-Adquisición de datos MPU6050 con STM32F303K8
+<h3>Adquisición de datos MPU6050 con STM32F303K8</h3>
 
 ```c++
 //----------------------------------------------------------------------------
@@ -495,7 +495,9 @@ int main(){
 }
 ```
 
-Nodo usuario 
+<h3>Nodo usuario</h3>
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -525,7 +527,50 @@ if __name__ == '__main__':
         pass
 ```
 
-Nodo adquisición de datos IMU6050
+- `ROS2`
+
+```python
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+
+class NodoPublicadorUsuario(Node):
+
+    def __init__(self):
+        super().__init__('np_usuario')
+        self.publisher = self.create_publisher(String, 'tecla', 10)
+        self.timer = self.create_timer(0.1, self.timer_callback)
+
+    def timer_callback(self):
+        value = input("¿Quiere adquirir un dato? S/N: ")
+        mensaje = String()
+        mensaje.data = f'{value}'
+        self.publisher.publish(mensaje)
+        self.get_logger().info(f'Publicando: {value}')
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoPublicadorUsuario()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
+
+<h3>Nodo adquisición de datos IMU6050</h3>
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -581,7 +626,15 @@ if __name__ == '__main__':
         pass
 ```
 
-Nodo gráficas acelerómetros X, Y y Z
+- `ROS2`
+
+```
+
+```
+
+<h3>Nodo gráficas acelerómetros X, Y y Z</h3>
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -656,7 +709,15 @@ if __name__ == '__main__':
     NPS_Acel_Cal()
 ```
 
-Nodo gráficas giróscopios X, Y y Z
+- `ROS2`
+
+```
+
+```
+
+<h3>Nodo gráficas giróscopios X, Y y Z</h3>
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -729,4 +790,10 @@ if __name__ == '__main__':
     hilo2 = threading.Thread(target=grafica)
     hilo2.start()
     NPS_Giro_Cal()
+```
+
+- `ROS2`
+
+```
+
 ```
