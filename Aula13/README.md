@@ -249,7 +249,7 @@ colcon build --symlink-install
 Finalmente, abrir una nueva terminal y ejecutar el nodo a través del siguiente comando:
 
 ```
-ros2 run ejemplos nodo_saludo_conteo
+ros2 run ejemplos enviar_saludo
 ```
 
 <h3>Crear un nodo <i>subscriber</i></h3>
@@ -354,7 +354,7 @@ colcon build --symlink-install
 Finalmente, abrir una nueva terminal y ejecutar el nodo a través del siguiente comando:
 
 ```
-ros2 run ejemplos nodo_recibir_saludo
+ros2 run ejemplos recibir_saludo
 ```
 
 <h3>Ejecutar el proyecto con <i>Launch</i></h3>
