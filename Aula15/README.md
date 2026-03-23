@@ -628,8 +628,65 @@ if __name__ == '__main__':
 
 - `ROS2`
 
-```
+```python
+#!/usr/bin/env python3
 
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import serial
+import numpy as np
+
+
+class NodoPublicadorSuscriptorIMU6050(Node):
+
+    def __init__(self):
+        super().__init__('NPS_IMU6050')
+        self.pub1 = self.create_publisher(String, 'a_xyz_sc', 10)
+        self.pub2 = self.create_publisher(String, 'g_xyz_sc', 10)
+        self.sub = self.create_subscription(String, 'tecla', self.callback, 10)
+        self.datos = np.zeros((300, 8))
+        try:
+            self.s = serial.Serial('/dev/ttyACM0', 9600, 8, 'N', 1)
+            self.get_logger().info("Puerto serial abierto correctamente")
+        except Exception as e:
+            self.get_logger().error(f"Error abriendo serial: {e}")
+
+    def callback(self, mensaje):
+        value = mensaje.data
+        if value.lower() == 's':
+            self.get_logger().info("Capturando datos...")
+            self.s.write(b'H')
+            for i in range(300):
+                rec = self.s.readline()
+                try:
+                    rec = rec.decode("utf-8").strip().split()
+                    self.datos[i][:] = rec
+                    mensaje1 = String()
+                    mensaje2 = String()
+                    mensaje1.data = f"{self.datos[i,0]},{self.datos[i,2]},{self.datos[i,3]},{self.datos[i,4]}"
+                    mensaje2.data = f"{self.datos[i,0]},{self.datos[i,5]},{self.datos[i,6]},{self.datos[i,7]}"
+                    self.pub1.publish(mensaje1)
+                    self.pub2.publish(mensaje2)
+                except Exception as e:
+                    self.get_logger().warn(f"Error procesando dato: {e}")
+            self.get_logger().info("Termina captura")
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoPublicadorSuscriptorIMU6050()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
 ```
 
 <h3>Nodo gráficas acelerómetros X, Y y Z</h3>
