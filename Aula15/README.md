@@ -778,10 +778,8 @@ import matplotlib.pyplot as plt
 import threading
 import numpy as np
 
-
 SENSITIVITY_ACCEL = 2.0 / 32768.0
 offsets = [472.92, -150.92, 177.68]
-
 
 class NodoPublicadorSuscriptorAcelCal(Node):
 
@@ -811,7 +809,6 @@ class NodoPublicadorSuscriptorAcelCal(Node):
         if self.j >= 300:
             self.j = 0
 
-
     def grafica(self):
 
         fig, ax = plt.subplots()
@@ -836,7 +833,6 @@ def main(args=None):
     finally:
         nodo.destroy_node()
         rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()
