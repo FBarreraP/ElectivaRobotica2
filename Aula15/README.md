@@ -928,7 +928,7 @@ import threading
 import numpy as np
 
 SENSITIVITY_GYRO = 250.0/32768.0
-offsets = [472.92, -150.92, 177.68]
+offsets = [176.297, -34.837, -18.207]
 
 class NodoPublicadorSuscriptorGiroCal(Node):
 
