@@ -768,8 +768,78 @@ if __name__ == '__main__':
 
 - `ROS2`
 
-```
+```python
+#!/usr/bin/env python3
 
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import matplotlib.pyplot as plt
+import threading
+import numpy as np
+
+
+SENSITIVITY_ACCEL = 2.0 / 32768.0
+offsets = [472.92, -150.92, 177.68]
+
+
+class NodoPublicadorSuscriptorAcelCal(Node):
+
+    def __init__(self):
+        super().__init__('NPS_Acel_Cal')
+        self.pub = self.create_publisher(String, 'a_xyz_c', 10)
+        self.sub = self.create_subscription(String, 'a_xyz_sc', self.callback, 10)
+        self.j = 0
+        self.datos = np.zeros((300, 4))
+        self.datos1 = np.zeros((300, 4))
+        # Hilo para gráfica
+        self.hilo2 = threading.Thread(target=self.grafica)
+        self.hilo2.daemon = True
+        self.hilo2.start()
+
+    def callback(self, mensaje):
+
+        temp = mensaje.data.split(",")
+        self.datos[self.j][:] = temp
+        self.datos1[self.j][0] = float(self.datos[self.j, 0])
+        for i in range(3):
+            self.datos1[self.j][i+1] = ((float(self.datos[self.j, i+1]) - offsets[i]) * SENSITIVITY_ACCEL)
+        mensaje1 = String()
+        mensaje1.data = f"{self.datos1[self.j,0]},{self.datos1[self.j,1]},{self.datos1[self.j,2]},{self.datos1[self.j,3]}"
+        self.pub.publish(mensaje1)
+        self.j += 1
+        if self.j >= 300:
+            self.j = 0
+
+
+    def grafica(self):
+
+        fig, ax = plt.subplots()
+        while True:
+            ax.clear()
+            ax.set_title('Acelerómetros calibrados XYZ')
+            ax.set_xlabel('muestra')
+            ax.set_ylabel('aceleración (m/s²)')
+            ax.plot(self.datos1[:,0], self.datos1[:,1], '.b', label='ax')
+            ax.plot(self.datos1[:,0], self.datos1[:,2], '.g', label='ay')
+            ax.plot(self.datos1[:,0], self.datos1[:,3], '.r', label='az')
+            ax.legend(loc='best')
+            plt.pause(0.01)
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoPublicadorSuscriptorAcelCal()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
 ```
 
 <h3>Nodo gráficas giróscopios X, Y y Z</h3>
