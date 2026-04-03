@@ -497,6 +497,8 @@ int main(){
 
 Nodo usuario
 
+- `ROS1`
+
 ```python
 #!/usr/bin/env python2
 #coding=utf-8
@@ -525,7 +527,50 @@ if __name__ == '__main__':
         pass
 ```
 
+- `ROS2`
+
+```python
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+
+class NodoPublicadorUsuario(Node):
+
+    def __init__(self):
+        super().__init__('np_usuario')
+        self.publisher = self.create_publisher(String, 'tecla', 10)
+        self.timer = self.create_timer(0.1, self.timer_callback)
+
+    def timer_callback(self):
+        value = input("¿Quiere adquirir un dato? S/N: ")
+        mensaje = String()
+        mensaje.data = f'{value}'
+        self.publisher.publish(mensaje)
+        self.get_logger().info(f'Publicando: {value}')
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoPublicadorUsuario()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
+
 Nodo adquisición de datos IMU6050
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -581,7 +626,72 @@ if __name__ == '__main__':
         pass
 ```
 
+- `ROS2`
+
+```python
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import serial
+import numpy as np
+
+
+class NodoPublicadorSuscriptorIMU6050(Node):
+
+    def __init__(self):
+        super().__init__('NPS_IMU6050')
+        self.pub1 = self.create_publisher(String, 'a_xyz_sc', 10)
+        self.pub2 = self.create_publisher(String, 'g_xyz_sc', 10)
+        self.sub = self.create_subscription(String, 'tecla', self.callback, 10)
+        self.datos = np.zeros((300, 8))
+        try:
+            self.s = serial.Serial('/dev/ttyACM0', 9600, 8, 'N', 1)
+            self.get_logger().info("Puerto serial abierto correctamente")
+        except Exception as e:
+            self.get_logger().error(f"Error abriendo serial: {e}")
+
+    def callback(self, mensaje):
+        value = mensaje.data
+        if value.lower() == 's':
+            self.get_logger().info("Capturando datos...")
+            self.s.write(b'H')
+            for i in range(300):
+                rec = self.s.readline()
+                try:
+                    rec = rec.decode("utf-8").strip().split()
+                    self.datos[i][:] = rec
+                    mensaje1 = String()
+                    mensaje2 = String()
+                    mensaje1.data = f"{self.datos[i,0]},{self.datos[i,2]},{self.datos[i,3]},{self.datos[i,4]}"
+                    mensaje2.data = f"{self.datos[i,0]},{self.datos[i,5]},{self.datos[i,6]},{self.datos[i,7]}"
+                    self.pub1.publish(mensaje1)
+                    self.pub2.publish(mensaje2)
+                except Exception as e:
+                    self.get_logger().warn(f"Error procesando dato: {e}")
+            self.get_logger().info("Termina captura")
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoPublicadorSuscriptorIMU6050()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
+
 Nodo gráficas acelerómetros X, Y y Z
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -659,7 +769,81 @@ if __name__ == '__main__':
         pass
 ```
 
+- `ROS2`
+
+```python
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import matplotlib.pyplot as plt
+import threading
+import numpy as np
+
+SENSITIVITY_ACCEL = 2.0 / 32768.0
+offsets = [472.92, -150.92, 177.68]
+
+class NodoPublicadorSuscriptorAcelCal(Node):
+
+    def __init__(self):
+        super().__init__('NPS_Acel_Cal')
+        self.pub = self.create_publisher(String, 'a_xyz_c', 10)
+        self.sub = self.create_subscription(String, 'a_xyz_sc', self.callback, 10)
+        self.j = 0
+        self.datos = np.zeros((300, 4))
+        self.datos1 = np.zeros((300, 4))
+        # Hilo para gráfica
+        self.hilo2 = threading.Thread(target=self.grafica)
+        self.hilo2.daemon = True
+        self.hilo2.start()
+
+    def callback(self, mensaje):
+
+        temp = mensaje.data.split(",")
+        self.datos[self.j][:] = temp
+        self.datos1[self.j][0] = float(self.datos[self.j, 0])
+        for i in range(3):
+            self.datos1[self.j][i+1] = ((float(self.datos[self.j, i+1]) - offsets[i]) * SENSITIVITY_ACCEL)
+        mensaje1 = String()
+        mensaje1.data = f"{self.datos1[self.j,0]},{self.datos1[self.j,1]},{self.datos1[self.j,2]},{self.datos1[self.j,3]}"
+        self.pub.publish(mensaje1)
+        self.j += 1
+        if self.j >= 300:
+            self.j = 0
+
+    def grafica(self):
+
+        fig, ax = plt.subplots()
+        while True:
+            ax.clear()
+            ax.set_title('Acelerómetros calibrados XYZ')
+            ax.set_xlabel('muestra')
+            ax.set_ylabel('aceleración (m/s²)')
+            ax.plot(self.datos1[:,0], self.datos1[:,1], '.b', label='ax')
+            ax.plot(self.datos1[:,0], self.datos1[:,2], '.g', label='ay')
+            ax.plot(self.datos1[:,0], self.datos1[:,3], '.r', label='az')
+            ax.legend(loc='best')
+            plt.pause(0.01)
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoPublicadorSuscriptorAcelCal()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
 Nodo gráficas giroscopios X, Y y Z
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -737,7 +921,81 @@ if __name__ == '__main__':
         pass
 ```
 
+- `ROS2`
+
+```python
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import matplotlib.pyplot as plt
+import threading
+import numpy as np
+
+SENSITIVITY_GYRO = 250.0/32768.0
+offsets = [176.297, -34.837, -18.207]
+
+class NodoPublicadorSuscriptorGiroCal(Node):
+
+    def __init__(self):
+        super().__init__('NPS_Giro_Cal')
+        self.pub = self.create_publisher(String, 'g_xyz_c', 10)
+        self.sub = self.create_subscription(String, 'g_xyz_sc', self.callback, 10)
+        self.j = 0
+        self.datos = np.zeros((300, 4))
+        self.datos1 = np.zeros((300, 4))
+        # Hilo para gráfica
+        self.hilo2 = threading.Thread(target=self.grafica)
+        self.hilo2.daemon = True
+        self.hilo2.start()
+
+    def callback(self, mensaje):
+
+        temp = mensaje.data.split(",")
+        self.datos[self.j][:] = temp
+        self.datos1[self.j][0] = float(self.datos[self.j, 0])
+        for i in range(3):
+            self.datos1[self.j][i+1] = ((float(self.datos[self.j, i+1]) - offsets[i]) * SENSITIVITY_GYRO)
+        mensaje1 = String()
+        mensaje1.data = f"{self.datos1[self.j,0]},{self.datos1[self.j,1]},{self.datos1[self.j,2]},{self.datos1[self.j,3]}"
+        self.pub.publish(mensaje1)
+        self.j += 1
+        if self.j >= 300:
+            self.j = 0
+
+    def grafica(self):
+
+        fig, ax = plt.subplots()
+        while True:
+            ax.clear()
+            ax.set_title('Giroscopios calibrados XYZ')
+            ax.set_xlabel('muestra')
+            ax.set_ylabel('velocidad angular (°/s)')
+            ax.plot(self.datos1[:,0], self.datos1[:,1], '.b', label='gx')
+            ax.plot(self.datos1[:,0], self.datos1[:,2], '.g', label='gy')
+            ax.plot(self.datos1[:,0], self.datos1[:,3], '.r', label='gz')
+            ax.legend(loc='best')
+            plt.pause(0.01)
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoPublicadorSuscriptorGiroCal()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
 Nodo de ángulo Roll
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -850,7 +1108,123 @@ if __name__ == '__main__':
         pass
 ```
 
+- `ROS2`
+
+```python
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import matplotlib.pyplot as plt
+import threading
+import numpy as np
+import math
+
+class NodoSuscriptorRoll(Node):
+
+    def __init__(self):
+
+        super().__init__('NS_Roll')
+        self.sub1 = self.create_subscription(String, 'a_xyz_c', self.callback1, 10)
+        self.sub2 = self.create_subscription(String, 'g_xyz_c', self.callback2, 10)
+        self.timer = self.create_timer(0.01, self.procesar)
+        # Parámetros filtro complementario
+        self.A = 0.6
+        self.B = 0.4
+        self.dt = 0.01
+        self.rad2deg = 180 / math.pi
+        self.raw = 300
+        # Flags
+        self.flag1 = 0
+        self.flag2 = 0
+        # Índices
+        self.j = 0
+        self.k = 0
+        # Datos
+        self.datos1 = np.zeros((self.raw, 4))
+        self.datos2 = np.zeros((self.raw, 4))
+        self.datos3 = np.zeros((self.raw, 7))
+        self.Roll = np.zeros((self.raw + 1, 4))
+        self.Roll[self.raw][0] = self.raw
+        # Hilo gráfica
+        self.hilo = threading.Thread(target=self.grafica)
+        self.hilo.daemon = True
+        self.hilo.start()
+
+    def callback1(self, mensaje):
+
+        temp = mensaje.data.split(",")
+        self.datos1[self.j, :] = temp
+        self.j += 1
+        self.flag1 = 1
+
+    def callback2(self, mensaje):
+
+        temp = mensaje.data.split(",")
+        self.datos2[self.k, :] = temp
+        self.k += 1
+        self.flag2 = 1
+
+    def procesar(self):
+
+        if self.j == 0 or self.k == 0:
+            return
+
+        if self.j == self.k and self.flag1 and self.flag2:
+            self.flag1 = 0
+            self.flag2 = 0
+            z = self.j - 1
+            # Combinar datos
+            self.datos3[z][0:4] = self.datos1[z, 0:4]
+            self.datos3[z][4:7] = self.datos2[z, 1:4]
+            # Índice
+            self.Roll[z][0] = z
+            # Acelerómetro
+            self.Roll[self.j][1] = math.atan2(self.datos3[z, 2],self.datos3[z, 3])*self.rad2deg
+            # Giroscopio
+            self.Roll[self.k][2] = self.Roll[z][3]+((self.datos3[z, 4]*self.dt)*self.rad2deg)
+            # Filtro complementario
+            self.Roll[self.j][3] = (self.A*self.Roll[self.k][2]+self.B*self.Roll[self.j][1])
+
+        # Evitar overflow
+        if self.j >= self.raw or self.k >= self.raw:
+            self.j = 0
+            self.k = 0
+
+    def grafica(self):
+
+        plt.ion()
+        fig, ax = plt.subplots()
+        while True:
+            ax.clear()
+            ax.set_title('Ángulo Roll')
+            ax.set_xlabel('muestra')
+            ax.set_ylabel('grados (°)')
+            ax.plot(self.Roll[:,1], '-b', label='RA')
+            ax.plot(self.Roll[:,2], '-g', label='RG')
+            ax.plot(self.Roll[:,3], '-r', label='RFC')
+            ax.legend(loc='best')
+            plt.pause(0.01)
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoSuscriptorRoll()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
 Nodo de ángulo Pitch
+
+- `ROS1`
 
 ```python
 #!/usr/bin/env python2
@@ -961,4 +1335,10 @@ if __name__ == '__main__':
         NS_Pitch()
     except rospy.ROSInterruptException:
         pass
+```
+
+- `ROS2`
+
+```python
+
 ```
