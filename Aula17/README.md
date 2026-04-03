@@ -495,7 +495,7 @@ int main(){
 }
 ```
 
-Nodo usuario
+<h3>Nodo usuario</h3>
 
 - `ROS1`
 
@@ -568,7 +568,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Nodo adquisición de datos IMU6050
+<h3>Nodo adquisición de datos IMU6050</h3>
 
 - `ROS1`
 
@@ -689,7 +689,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Nodo gráficas acelerómetros X, Y y Z
+<h3>Nodo gráficas acelerómetros X, Y y Z</h3>
 
 - `ROS1`
 
@@ -841,7 +841,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Nodo gráficas giroscopios X, Y y Z
+<h3>Nodo gráficas giroscopios X, Y y Z</h3>
 
 - `ROS1`
 
@@ -993,7 +993,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Nodo de ángulo Roll
+<h3>Nodo de ángulo Roll</h3>
 
 - `ROS1`
 
@@ -1222,7 +1222,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Nodo de ángulo Pitch
+<h3>Nodo de ángulo Pitch</h3>
 
 - `ROS1`
 
@@ -1340,5 +1340,114 @@ if __name__ == '__main__':
 - `ROS2`
 
 ```python
+#!/usr/bin/env python3
 
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import matplotlib.pyplot as plt
+import threading
+import numpy as np
+import math
+
+
+class NodoSuscriptorPitch(Node):
+
+    def __init__(self):
+
+        super().__init__('NS_Pitch')
+        self.sub1 = self.create_subscription(String, 'a_xyz_c', self.callback1, 10)
+        self.sub2 = self.create_subscription(String, 'g_xyz_c', self.callback2, 10)
+        self.timer = self.create_timer(0.01, self.procesar)
+        # Parámetros filtro complementario
+        self.A = 0.6
+        self.B = 0.4
+        self.dt = 0.01
+        self.rad2deg = 180 / math.pi
+        self.raw = 300
+        # Flags
+        self.flag1 = 0
+        self.flag2 = 0
+        # Índices
+        self.j = 0
+        self.k = 0
+        # Datos
+        self.datos1 = np.zeros((self.raw, 4))
+        self.datos2 = np.zeros((self.raw, 4))
+        self.datos3 = np.zeros((self.raw, 7))
+        self.Pitch = np.zeros((self.raw + 1, 4))
+        self.Pitch[self.raw][0] = self.raw
+        # Hilo gráfica
+        self.hilo = threading.Thread(target=self.grafica)
+        self.hilo.daemon = True
+        self.hilo.start()
+
+    def callback1(self, mensaje):
+
+        temp = mensaje.data.split(",")
+        self.datos1[self.j, :] = temp
+        self.j += 1
+        self.flag1 = 1
+
+    def callback2(self, mensaje):
+
+        temp = mensaje.data.split(",")
+        self.datos2[self.k, :] = temp
+        self.k += 1
+        self.flag2 = 1
+
+    def procesar(self):
+
+        if self.j == 0 or self.k == 0:
+            return
+
+        if self.j == self.k and self.flag1 and self.flag2:
+            self.flag1 = 0
+            self.flag2 = 0
+            z = self.j - 1
+            # Combinar datos
+            self.datos3[z][0:4] = self.datos1[z, 0:4]
+            self.datos3[z][4:7] = self.datos2[z, 1:4]
+            # Índice
+            self.Pitch[z][0] = z
+            # Acelerómetro
+            self.Pitch[self.j][1] = math.atan2(-self.datos3[z, 1],math.sqrt(self.datos3[z, 2]**2+self.datos3[z, 3]**2))*self.rad2deg
+            # Giroscopio
+            self.Pitch[self.k][2] = self.Pitch[z][3]+((self.datos3[z, 5]*self.dt)*self.rad2deg)
+            # Filtro complementario
+            self.Pitch[self.j][3] = (self.A*self.Pitch[self.k][2]+self.B*self.Pitch[self.j][1])
+
+        # Evitar overflow
+        if self.j >= self.raw or self.k >= self.raw:
+            self.j = 0
+            self.k = 0
+
+    def grafica(self):
+
+        plt.ion()
+        fig, ax = plt.subplots()
+        while True:
+            ax.clear()
+            ax.set_title('Ángulo Pitch')
+            ax.set_xlabel('muestra')
+            ax.set_ylabel('grados (°)')
+            ax.plot(self.Pitch[:,1], '-b', label='PA')
+            ax.plot(self.Pitch[:,2], '-g', label='PG')
+            ax.plot(self.Pitch[:,3], '-r', label='PFC')
+            ax.legend(loc='best')
+            plt.pause(0.01)
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = NodoSuscriptorPitch()
+    try:
+        rclpy.spin(nodo)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        nodo.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
 ```
