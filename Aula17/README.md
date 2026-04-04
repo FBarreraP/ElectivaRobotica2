@@ -1367,15 +1367,16 @@ class NodoSuscriptorPitch(Node):
         # Flags
         self.flag1 = 0
         self.flag2 = 0
+        self.ready = 0
         # Índices
         self.j = 0
         self.k = 0
+        self.m = 0
         # Datos
         self.datos1 = np.zeros((self.raw, 4))
         self.datos2 = np.zeros((self.raw, 4))
         self.datos3 = np.zeros((self.raw, 7))
         self.Pitch = np.zeros((self.raw + 1, 4))
-        self.Pitch[self.raw][0] = self.raw
         # Hilo gráfica
         self.hilo = threading.Thread(target=self.grafica)
         self.hilo.daemon = True
@@ -1383,56 +1384,54 @@ class NodoSuscriptorPitch(Node):
 
     def callback1(self, mensaje):
 
-        temp = mensaje.data.split(",")
-        self.datos1[self.j, :] = temp
+        self.datos1[self.j, :] = [float(x) for x in mensaje.data.split(",")]
         self.j += 1
+        if self.j >= self.raw:
+            self.j = 0
         self.flag1 = 1
 
     def callback2(self, mensaje):
 
-        temp = mensaje.data.split(",")
-        self.datos2[self.k, :] = temp
+        self.datos2[self.k, :] = [float(x) for x in mensaje.data.split(",")]
         self.k += 1
+        if self.k >= self.raw:
+            self.k = 0
         self.flag2 = 1
 
     def procesar(self):
 
-        if self.j == 0 or self.k == 0:
-            return
+        if self.flag1 or self.flag2:
+            self.ready = 1
 
-        if self.j == self.k and self.flag1 and self.flag2:
-            self.flag1 = 0
-            self.flag2 = 0
-            z = self.j - 1
+        if self.ready:
+            self.m += 1
+            z = self.m - 1
             # Combinar datos
             self.datos3[z][0:4] = self.datos1[z, 0:4]
             self.datos3[z][4:7] = self.datos2[z, 1:4]
             # Índice
-            self.Pitch[z][0] = z
+            self.Pitch[self.m][0] = self.m
             # Acelerómetro
-            self.Pitch[self.j][1] = math.atan2(-self.datos3[z, 1],math.sqrt(self.datos3[z, 2]**2+self.datos3[z, 3]**2))*self.rad2deg
+            self.Pitch[self.m][1] = math.atan2(-self.datos3[z, 1],math.sqrt(self.datos3[z, 2]**2+self.datos3[z, 3]**2))*self.rad2deg
             # Giroscopio
-            self.Pitch[self.k][2] = self.Pitch[z][3]+((self.datos3[z, 5]*self.dt)*self.rad2deg)
+            self.Pitch[self.m][2] = self.Pitch[z][3]+((self.datos3[z, 5]*self.dt)*self.rad2deg)
             # Filtro complementario
-            self.Pitch[self.j][3] = (self.A*self.Pitch[self.k][2]+self.B*self.Pitch[self.j][1])
+            self.Pitch[self.m][3] = (self.A*self.Pitch[self.m][2]+self.B*self.Pitch[self.m][1])
 
-        # Evitar overflow
-        if self.j >= self.raw or self.k >= self.raw:
-            self.j = 0
-            self.k = 0
+            if self.m >= self.raw:
+                self.m = 0
 
     def grafica(self):
 
-        plt.ion()
         fig, ax = plt.subplots()
         while True:
             ax.clear()
             ax.set_title('Ángulo Pitch')
             ax.set_xlabel('muestra')
             ax.set_ylabel('grados (°)')
-            ax.plot(self.Pitch[:,1], '-b', label='PA')
-            ax.plot(self.Pitch[:,2], '-g', label='PG')
-            ax.plot(self.Pitch[:,3], '-r', label='PFC')
+            ax.plot(self.Pitch[:,0], self.Pitch[:,1], '-b', label='PA')
+            ax.plot(self.Pitch[:,0], self.Pitch[:,2], '-g', label='PG')
+            ax.plot(self.Pitch[:,0], self.Pitch[:,3], '-r', label='PFC')
             ax.legend(loc='best')
             plt.pause(0.01)
 
