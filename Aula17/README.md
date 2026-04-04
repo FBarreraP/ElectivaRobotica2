@@ -1138,72 +1138,71 @@ class NodoSuscriptorRoll(Node):
         # Flags
         self.flag1 = 0
         self.flag2 = 0
+        self.ready = 0
         # Índices
         self.j = 0
         self.k = 0
+        self.m = 0
         # Datos
         self.datos1 = np.zeros((self.raw, 4))
         self.datos2 = np.zeros((self.raw, 4))
         self.datos3 = np.zeros((self.raw, 7))
         self.Roll = np.zeros((self.raw + 1, 4))
-        self.Roll[self.raw][0] = self.raw
-        # Hilo gráfica
+        # Hilo para gráfica
         self.hilo = threading.Thread(target=self.grafica)
         self.hilo.daemon = True
         self.hilo.start()
 
     def callback1(self, mensaje):
 
-        temp = mensaje.data.split(",")
-        self.datos1[self.j, :] = temp
+        self.datos1[self.j, :] = [float(x) for x in mensaje.data.split(",")]
         self.j += 1
+        if self.j >= self.raw:
+            self.j = 0
         self.flag1 = 1
 
     def callback2(self, mensaje):
 
-        temp = mensaje.data.split(",")
-        self.datos2[self.k, :] = temp
+        self.datos2[self.k, :] = [float(x) for x in mensaje.data.split(",")]
         self.k += 1
+        if self.k >= self.raw:
+            self.k = 0
         self.flag2 = 1
 
     def procesar(self):
 
-        if self.j == 0 or self.k == 0:
-            return
+        if self.flag1 or self.flag2:
+            self.ready = 1
 
-        if self.j == self.k and self.flag1 and self.flag2:
-            self.flag1 = 0
-            self.flag2 = 0
-            z = self.j - 1
+        if self.ready:
+            self.m += 1
+            z = self.m - 1
             # Combinar datos
             self.datos3[z][0:4] = self.datos1[z, 0:4]
             self.datos3[z][4:7] = self.datos2[z, 1:4]
             # Índice
-            self.Roll[z][0] = z
+            self.Roll[self.m][0] = self.m
             # Acelerómetro
-            self.Roll[self.j][1] = math.atan2(self.datos3[z, 2],self.datos3[z, 3])*self.rad2deg
+            self.Roll[self.m][1] = math.atan2(self.datos3[z, 2],self.datos3[z, 3])*self.rad2deg
             # Giroscopio
-            self.Roll[self.k][2] = self.Roll[z][3]+((self.datos3[z, 4]*self.dt)*self.rad2deg)
+            self.Roll[self.m][2] = self.Roll[z][3]+((self.datos3[z, 4]*self.dt)*self.rad2deg)
             # Filtro complementario
-            self.Roll[self.j][3] = (self.A*self.Roll[self.k][2]+self.B*self.Roll[self.j][1])
+            self.Roll[self.m][3] = (self.A*self.Roll[self.m][2]+self.B*self.Roll[self.m][1])
 
-        # Evitar overflow
-        if self.j >= self.raw or self.k >= self.raw:
-            self.j = 0
-            self.k = 0
+            if self.m >= self.raw:
+                self.m = 0
 
     def grafica(self):
 
-        plt.ion()
         fig, ax = plt.subplots()
         while True:
             ax.clear()
-            ax.set_title('Ángulo Roll')
+            ax.set_title('Ãngulo Roll')
             ax.set_xlabel('muestra')
-            ax.set_ylabel('grados (°)')
-            ax.plot(self.Roll[:,1], '-b', label='RA')
-            ax.plot(self.Roll[:,2], '-g', label='RG')
-            ax.plot(self.Roll[:,3], '-r', label='RFC')
+            ax.set_ylabel('grados (Â°)')
+            ax.plot(self.Roll[:,0], self.Roll[:,1], '-b', label='RA')
+            ax.plot(self.Roll[:,0], self.Roll[:,2], '-g', label='RG')
+            ax.plot(self.Roll[:,0], self.Roll[:,3], '-r', label='RFC')
             ax.legend(loc='best')
             plt.pause(0.01)
 
