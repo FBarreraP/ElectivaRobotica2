@@ -1197,9 +1197,9 @@ class NodoSuscriptorRoll(Node):
         fig, ax = plt.subplots()
         while True:
             ax.clear()
-            ax.set_title('Ãngulo Roll')
+            ax.set_title('Ángulo Roll')
             ax.set_xlabel('muestra')
-            ax.set_ylabel('grados (Â°)')
+            ax.set_ylabel('grados (°)')
             ax.plot(self.Roll[:,0], self.Roll[:,1], '-b', label='RA')
             ax.plot(self.Roll[:,0], self.Roll[:,2], '-g', label='RG')
             ax.plot(self.Roll[:,0], self.Roll[:,3], '-r', label='RFC')
