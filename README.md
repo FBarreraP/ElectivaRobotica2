@@ -67,16 +67,16 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>15/09/2026</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos (<i>publisher</i> y <i>subscriber</i>)</td>
 	</tr>
 	<tr>
-		<td>17/09/2026</td> <td>2</td> <td>14</td> <td>7</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>17/09/2026</td> <td>2</td> <td>14</td> <td>7</td> <td>IMU (MPU6050) con ROS</td>
 	</tr>
     <tr>
-		<td>22/09/2026</td> <td>2</td> <td>15</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
+		<td>22/09/2026</td> <td>2</td> <td>15</td> <td>8</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
 		<td>24/09/2026</td> <td>2</td> <td>16</td> <td>8</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>29/09/2026</td> <td>2</td> <td>17</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
+		<td>29/09/2026</td> <td>2</td> <td>17</td> <td>9</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
 		<td>01/10/2026</td> <td>2</td> <td>18</td> <td>9</td> <td>Desarrollo y/o entrega de laboratorio</td>
@@ -96,16 +96,16 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>13/10/2026</td> <td>2</td> <td>21</td> <td>11</td> <td>Introducción al Locobot px-100</td>
+		<td>13/10/2026</td> <td>2</td> <td>21</td> <td>11</td> <td>Avance de proyecto</td>
 	</tr>
 	<tr>
-		<td>15/10/2026</td> <td>2</td> <td>22</td> <td>11</td> <td>Locobot con Joystick y avance de proyecto</td>
+		<td>15/10/2026</td> <td>2</td> <td>22</td> <td>11</td> <td>Introducción al Locobot px-100</td>
 	</tr>
 	<tr>
-		<td>20/10/2026</td> <td>2</td> <td>23</td> <td>12</td> <td>Locobot con SLAM, Rviz y paquete de Python</td>
+		<td>20/10/2026</td> <td>2</td> <td>23</td> <td>12</td> <td>Locobot con Joystick</td>
 	</tr>
 	<tr>
-		<td>22/10/2026</td> <td>2</td> <td>24</td> <td>12</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>22/10/2026</td> <td>2</td> <td>24</td> <td>12</td> <td>Locobot con SLAM, Rviz y paquete de Python</td>
 	</tr>
     <tr>
 		<td>27/10/2026</td> <td>2</td> <td>25</td> <td>13</td> <td>Desarrollo y/o entrega de laboratorio</td>
@@ -141,16 +141,16 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 		<td>Corte</td> <td>Actividad</td> <td>Porcentaje 💯</td> <td>Fecha</td> <td>Metodología</td>
 	</tr>
 	<tr>
-		<td>Primer (33%)</td> <td>Quices y/o laboratorio</td> <td>33%</td> <td>17/02/2026<br>18/02/2026<br>25/02/2026<br>03/03/2026<br>04/03/2026</td> <td rowspan="4">Presencial</td>
+		<td>Primer (33%)</td> <td>Quices y/o laboratorio</td> <td>33%</td> <td>20/08/2026<br>25/08/2026<br>27/08/2026<br>01/09/2026<br>03/09/2026</td> <td rowspan="4">Presencial</td>
 	</tr>
 	<tr>
-		<td>Segundo (33%)</td> <td>Quices y/o laboratorio</td> <td>33%</td> <td>18/03/2026<br>25/03/2026<br>08/04/2026<br>14/04/2026<br>15/04/2026</td>
+		<td>Segundo (33%)</td> <td>Quices y/o laboratorio</td> <td>33%</td> <td>24/09/2026<br>29/09/2026<br>01/10/2026<br>06/10/2026<br>08/10/2026</td>
 	</tr>
 	<tr>
-		<td rowspan="3">Tercer (34%)</td> <td>Quices y/o laboratorio</td> <td>14%</td> <td>29/04/2026<br>05/05/2026<br>06/05/2026<br>12/05/2026<br>13/05/2026<br>19/05/2026<br>20/05/2026<br>26/05/2026</td>
+		<td rowspan="3">Tercer (34%)</td> <td>Quices y/o laboratorio</td> <td>14%</td> <td>27/10/2026<br>29/10/2026<br>03/11/2026<br>05/11/2026<br>10/11/2026<br>12/11/2026<br>17/11/2026<br>19/11/2026</td>
 	</tr>
     <tr>
-		<td>Proyecto</td> <td>20%</td> <td>29/04/2026<br>05/05/2026<br>06/05/2026<br>12/05/2026<br>13/05/2026<br>19/05/2026<br>20/05/2026<br>26/05/2026</td>
+		<td>Proyecto</td> <td>20%</td> <td>27/10/2026<br>29/10/2026<br>03/11/2026<br>05/11/2026<br>10/11/2026<br>12/11/2026<br>17/11/2026<br>19/11/2026</td>
 	</tr>
 </table>
 
