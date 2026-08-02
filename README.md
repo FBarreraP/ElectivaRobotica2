@@ -13,126 +13,123 @@ En esta clase se presenta la materia, en cuanto al contenido temático, los mét
 
 <h3>TEMAS 🤓</h3>
 
-<h4>Primer corte</h4>
+<h4>Primer corte 9BN</h4>
 
 <table>
 	<tr>
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>03/02/2026</td> <td>2</td> <td>1</td> <td>1</td> <td>Presentación de la materia</td>
+		<td>04/08/2026</td> <td>2</td> <td>1</td> <td>1</td> <td>Presentación de la materia</td>
 	</tr>
 	<tr>
-		<td>04/02/2026</td> <td>2</td> <td>2</td> <td>1</td> <td>Adquisición de datos IMU (MPU6050)</td>
+		<td>06/08/2026</td> <td>2</td> <td>2</td> <td>1</td> <td>Adquisición de datos IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>10/02/2026</td> <td>2</td> <td>3</td> <td>2</td> <td>Calibración de datos IMU (MPU6050)</td>
+		<td>11/08/2026</td> <td>2</td> <td>3</td> <td>2</td> <td>Calibración de datos IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>11/02/2026</td> <td>2</td> <td>4</td> <td>2</td> <td>Conexión RPi-STM32-IMU (MPU6050)</td>
+		<td>13/08/2026</td> <td>2</td> <td>4</td> <td>2</td> <td>Conexión RPi-STM32-IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>17/02/2026</td> <td>2</td> <td>5</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>18/08/2026</td> <td>2</td> <td>5</td> <td>3</td> <td>Filtro complementario IMU (MPU6050)</td>
 	</tr>
 	<tr>
-		<td>18/02/2026</td> <td>2</td> <td>6</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>20/08/2026</td> <td>2</td> <td>6</td> <td>3</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>24/02/2026</td> <td>2</td> <td>7</td> <td>4</td> <td>Filtro complementario IMU (MPU6050)</td>
+		<td>25/08/2026</td> <td>2</td> <td>7</td> <td>4</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>25/02/2026</td> <td>2</td> <td>8</td> <td>4</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>27/08/2026</td> <td>2</td> <td>8</td> <td>4</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del primer corte-->
 	<tr>
-		<td>03/03/2026</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>01/09/2026</td> <td>2</td> <td>9</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
     <tr>
-		<td>04/03/2026</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas primer corte</td>
+		<td>03/09/2026</td> <td>2</td> <td>10</td> <td>5</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas primer corte</td>
 	</tr>
 </table>
 
-<h4>Segundo corte</h4>
+<h4>Segundo corte 9BN</h4>
 
 <table>
 	<tr>
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>10/03/2026</td> <td>2</td> <td>11</td> <td>6</td> <td>RPi con IoT y socialización del proyecto</td>
+		<td>08/09/2026</td> <td>2</td> <td>11</td> <td>6</td> <td>RPi con IoT y socialización del proyecto</td>
 	</tr>
 	<tr>
-		<td>11/03/2026</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS y "hola mundo" en ROS (depuración)</td>
+		<td>10/09/2026</td> <td>2</td> <td>12</td> <td>6</td> <td>Introducción a ROS y "hola mundo" en ROS (depuración)</td>
 	</tr>
 	<tr>
-		<td>17/03/2026</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos (<i>publisher</i> y <i>subscriber</i>)</td>
+		<td>15/09/2026</td> <td>2</td> <td>13</td> <td>7</td> <td>Creación de nodos (<i>publisher</i> y <i>subscriber</i>)</td>
 	</tr>
 	<tr>
-		<td>18/03/2026</td> <td>2</td> <td>14</td> <td>7</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>17/09/2026</td> <td>2</td> <td>14</td> <td>7</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
     <tr>
-		<td>24/03/2026</td> <td>2</td> <td>15</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
+		<td>22/09/2026</td> <td>2</td> <td>15</td> <td>8</td> <td>IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>25/03/2026</td> <td>2</td> <td>16</td> <td>8</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>24/09/2026</td> <td>2</td> <td>16</td> <td>8</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>31/03/2026<br>01/04/2026</td> <td></td> <td></td> <td></td> <td>SEMANA SANTA</td>
+		<td>29/09/2026</td> <td>2</td> <td>17</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
 	</tr>
 	<tr>
-		<td>07/04/2026</td> <td>2</td> <td>17</td> <td>9</td> <td>Filtro complementario IMU (MPU6050) con ROS</td>
+		<td>01/10/2026</td> <td>2</td> <td>18</td> <td>9</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>08/04/2026</td> <td>2</td> <td>18</td> <td>9</td> <td>Desarrollo y/o entrega de laboratorio</td>
-	</tr>
-	<tr>
-		<td>14/04/2026</td> <td>2</td> <td>19</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>06/10/2026</td> <td>2</td> <td>19</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr><!--semana de parciales del segundo corte--><!--semana de registro de notas del segundo corte-->
 	<tr>
-		<td>15/04/2026</td> <td>2</td> <td>20</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas segundo corte</td>
+		<td>08/10/2026</td> <td>2</td> <td>20</td> <td>10</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas segundo corte</td>
 	</tr>
 </table>
 
-<h4>Tercer corte</h4>
+<h4>Tercer corte 9BN</h4>
 
 <table>
 	<tr>
 		<td>Fecha</td> <td>Horas</td> <td>Clase</td> <td>Semana</td> <td>Actividades</td>
 	</tr>
 	<tr>
-		<td>21/04/2026</td> <td>2</td> <td>21</td> <td>11</td> <td>Introducción al Locobot px-100</td>
+		<td>13/10/2026</td> <td>2</td> <td>21</td> <td>11</td> <td>Introducción al Locobot px-100</td>
 	</tr>
 	<tr>
-		<td>22/04/2026</td> <td>2</td> <td>22</td> <td>11</td> <td>Locobot con Joystick y avance de proyecto</td>
+		<td>15/10/2026</td> <td>2</td> <td>22</td> <td>11</td> <td>Locobot con Joystick y avance de proyecto</td>
 	</tr>
 	<tr>
-		<td>28/04/2026</td> <td>2</td> <td>23</td> <td>12</td> <td>Locobot con SLAM, Rviz y paquete de Python </td>
+		<td>20/10/2026</td> <td>2</td> <td>23</td> <td>12</td> <td>Locobot con SLAM, Rviz y paquete de Python</td>
 	</tr>
 	<tr>
-		<td>29/04/2026</td> <td>2</td> <td>24</td> <td>12</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>22/10/2026</td> <td>2</td> <td>24</td> <td>12</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
     <tr>
-		<td>05/05/2026</td> <td>2</td> <td>25</td> <td>13</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>27/10/2026</td> <td>2</td> <td>25</td> <td>13</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>06/05/2026</td> <td>2</td> <td>26</td> <td>13</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>29/10/2026</td> <td>2</td> <td>26</td> <td>13</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>12/05/2026</td> <td>2</td> <td>27</td> <td>14</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>03/11/2026</td> <td>2</td> <td>27</td> <td>14</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>13/05/2026</td> <td>2</td> <td>28</td> <td>14</td> <td>Desarrollo y/o entrega de laboratorio</td>
+		<td>05/11/2026</td> <td>2</td> <td>28</td> <td>14</td> <td>Desarrollo y/o entrega de laboratorio</td>
 	</tr>
 	<tr>
-		<td>19/05/2026</td> <td>2</td> <td>29</td> <td>15</td> <td>Desarrollo y/o entrega de proyecto</td>
+		<td>10/11/2026</td> <td>2</td> <td>29</td> <td>15</td> <td>Desarrollo y/o entrega de proyecto</td>
 	</tr>
 	<tr>
-		<td>20/05/2026</td> <td>2</td> <td>30</td> <td>15</td> <td>Desarrollo y/o entrega de proyecto</td>
+		<td>12/11/2026</td> <td>2</td> <td>30</td> <td>15</td> <td>Desarrollo y/o entrega de proyecto</td>
 	</tr>
 	<tr>
-		<td>26/05/2026</td> <td>2</td> <td>31</td> <td>16</td> <td>Desarrollo y/o entrega de proyecto</td>
+		<td>17/11/2026</td> <td>2</td> <td>31</td> <td>16</td> <td>Desarrollo y/o entrega de proyecto</td>
 	</tr><!--semana de parciales del primer corte--><!--semana de registro de notas del segundo corte-->
 	<tr>
-		<td>27/05/2026</td> <td>2</td> <td>32</td> <td>16</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas tercer corte</td>
+		<td>19/11/2026</td> <td>2</td> <td>32</td> <td>16</td> <td>Desarrollo y/o entrega de laboratorio<br>Entrega de notas tercer corte</td>
 	</tr>
 </table>
 
@@ -166,6 +163,7 @@ Nota del curso = (0.2)*NotaCorte1 + (0.3)*NotaCorte2 + (0.5)*NotaCorte3
 		<li> Inicio de clases: Quince (15) minutos después de la hora inicial definida de la clase y el control de asistencia se realiza a cada inicio de clase ⌚</li>
 		<li> Fin de clases: Quince (15) minutos antes de la hora final definida de la clase ⏱️</li>
 		<li> Respeto en clase 🤝</li>
+		<li> Seguir el conducto regular (profesor, gestor, director, etc.) 📢</li>
 		<li> No presto mi computador para presentar laboratorios, talleres y/o proyectos 🤦‍♂️</li>
 		<li> Prohibido el uso de celular en quices, parciales y clase 📵</li>
 		<li> Permitidas las salidas al baño 🚻 y a recibir llamadas 📲, en los quices y parciales se debe dejar el celular en el puesto para salir al baño</li>
@@ -173,7 +171,7 @@ Nota del curso = (0.2)*NotaCorte1 + (0.3)*NotaCorte2 + (0.5)*NotaCorte3
 		<li> No es permitido tomar fotos, ni videos en clase 📵. El material de clase está en el siguiente repositorio git: https://github.com/FBarreraP/ElectivaRobotica2 </li>
 		<li> Los laboratorios y el proyecto consistirán únicamente de montaje y podrán ser realizados en grupos de máximo 4 estudiantes 🧍‍♀️🧍‍♂️🧍‍♀️🧍‍♂️🧍‍♀️</li>
 		<li> Los montajes realizados en protoboard no son aceptados con jumpers, por tanto, deben ser realizados con cable UTP y no son compartidos, es decir, un montaje por grupo 🤷‍♂️</li>
-		<li> Los talleres se calificarán con rúbricas de 0.0 a 5.0 con intervalo de 1.0; las cuales tendrán diferentes entregables con fechas fijas de entrega y el orden de entrega de los grupos será definida por el profesor 💥</li> 
+		<li> Los talleres y proyecto se calificarán con rúbricas de 1.0 a 5.0 con intervalo de 1.0; las cuales tendrán diferentes entregables con fechas fijas de entrega y el orden de entrega de los grupos será definida por el profesor 💥</li> 
 		<li> Los parciales y el examen final serán solucionados en hoja examen 📄</li> 
         <li> Uso obligatorio de bata blanca en el laboratorio 🥼</li>
 		<li> Quien llegue tarde se adelanta en el tema visto hasta el momento 🏃‍♂️</li> 
