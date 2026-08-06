@@ -308,8 +308,8 @@ int main(){
         if(flag == 1){
             flag = 0;
             for(i=0; i<=299; i++){
-								TIM3->CNT = 0;
-								TIM3->CR1 |= (1<<0); // Enable Counting										
+                TIM3->CNT = 0;
+                TIM3->CR1 |= (1<<0); // Enable Counting										
                 ReadI2C1(MPU6500_address, 0x3B, GirAcel, 14);
                 raw_accelx = GirAcel[0]<<8 | GirAcel[1];    
                 raw_accely = GirAcel[2]<<8 | GirAcel[3];
@@ -319,11 +319,11 @@ int main(){
                 raw_gyroy = GirAcel[10]<<8 | GirAcel[11];
                 raw_gyroz = GirAcel[12]<<8 | GirAcel[13];
                 //SysTick_ms(1);	
-//							TIM5->CNT = 0;
-//							TIM5->CR1 |= (1<<0); // Enable Counting
-//							while(TIM5->CNT < 33000); //2ms
-//							//while(TIM5->CNT < 136160); //8150us
-//							TIM5->CR1 &= ~(1<<0); // Disable Counting	
+                //TIM5->CNT = 0;
+                //TIM5->CR1 |= (1<<0); // Enable Counting
+                //while(TIM5->CNT < 33000); //2ms
+                //while(TIM5->CNT < 136160); //8150us
+                //TIM5->CR1 &= ~(1<<0); // Disable Counting	
                 //Dados escalados
                 //accelx = raw_accelx*SENSITIVITY_ACCEL;
                 //accely = raw_accely*SENSITIVITY_ACCEL;
@@ -332,15 +332,14 @@ int main(){
                 //gyroy = raw_gyroy*SENSITIVITY_GYRO;
                 //gyroz = raw_gyroz*SENSITIVITY_GYRO;
                 //temp = (raw_temp/SENSITIVITY_TEMP)+21;
-								TIM3->CR1 &= ~(1<<0); // Disable Counting			
-								timer = TIM3->CNT*0.0000000625;
-								//timer = TIM3->CNT;
-								sprintf(text6,"El tiempo es %f segundos \n", timer);
-                sprintf(text,"%d \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n",i+1,raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
+                TIM3->CR1 &= ~(1<<0); // Disable Counting			
+                timer = TIM3->CNT*0.0000000625;
+                //timer = TIM3->CNT;
+                //sprintf(text6,"El tiempo es %f segundos \n", timer);
+                sprintf(text,"%d \t %.4f \t %d \t %d \t %d \t %d \t %d \t %d \t %d \n",i+1,timer, raw_accelx, raw_accely, raw_accelz, raw_gyrox, raw_gyroy, raw_gyroz, raw_temp);
                 //sprintf(text,"%d \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \t %.2f \n\r",i+1,accelx, accely, accelz, gyrox, gyroy, gyroz, temp);
-                Print(text6, strlen(text6));
-								Print(text, strlen(text));
-								
+                //Print(text6, strlen(text6));
+                Print(text, strlen(text));		
             }
         }
     }
