@@ -367,7 +367,7 @@ rospack find rospy
 - `ROS2`
 
 ```
-ros2 pack find rclpy
+ros2 pkg prefix rclpy
 ```
 
 <h3>Nodes</h3>
@@ -404,7 +404,7 @@ Son el punto intermedio entre el nodo <i>publisher</i> y el nodo <i>suscriber</i
 
 <h2>Conexiones nodos y topics en ROS</h2>
 
-La comunicación entre nodos es realizada a través de un topic, el cual es un canal de información de un dato de dato específico, el cual es conformado principalmente por el nombre del topic y el mensaje que recibirá (string, int, image, combinación, etc). Un nodo puede ser publicador y suscriptor, así mismo, un nodo puede publicar y/o suscribirse a diferentes topics.
+La comunicación entre nodos es realizada a través de un topic, el cual es un canal de información de un dato de dato específico. Cada topic está conformado principalmente por el nombre del topic y el mensaje que recibirá/enviará (string, int, image, combinación, etc). Un nodo puede ser publicador y/o suscriptor; de igual manera, un nodo puede publicar y/o suscribirse a diferentes topics.
 
 <div align="center">
 <img src="Imagenes/image-12.png" alt="Conexiones nodos y topics"/>
