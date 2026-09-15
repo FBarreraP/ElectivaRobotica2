@@ -311,7 +311,7 @@ El compilador crea ejecutables de programas. Para utilizar este compilador hay q
 
 <h3>Packages</h3>
 
-Los paquetes deben estar dentro del área de trabajo y contienen ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta. En el paquete está el archivo package.xml que es el que tiene la información esencial del paquete (ej: )
+Los paquetes deben estar dentro del área de trabajo y contienen ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta. En el paquete está el archivo package.xml que es el que tiene la información esencial del paquete (ej: nombre, versión, descripción, mantenedor, licencia, sistema de construcción (`c++` o `python`))
 
 - `ROS1`
 
