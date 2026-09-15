@@ -311,7 +311,7 @@ El compilador crea ejecutables de programas. Para utilizar este compilador hay q
 
 <h3>Packages</h3>
 
-Los paquetes deben estar dentro del área de trabajo y contienen ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta. En el paquete está el archivo package.xml que es el que tiene
+Los paquetes deben estar dentro del área de trabajo y contienen ejecutables, librerías, códigos (scripts) y mucha más información de los subsistemas de un proyecto. Es importante tener en cuenta que un paquete debe contener su propia carpeta. En el paquete está el archivo package.xml que es el que tiene la información esencial del paquete (ej: )
 
 - `ROS1`
 
@@ -325,7 +325,7 @@ En la carpeta del paquete se debe tener el archivo CMakeLists.txt, el cual brind
 
 - `ROS2`
 
-En la carpeta del paquete se deben tener una carpeta con el mismo nombre del paquete en donde se guardarán los códigos de los nodos en Python, además, se debe tener un archivo setup.py que es el que tendrá la información 
+En la carpeta del paquete se debe tener una carpeta con el mismo nombre del paquete en donde se guardarán los códigos de los nodos en Python, además, se debe tener un archivo setup.py que es el que tendrá la información 
 
 <div align="center">
 <img src="Imagenes/image-19.png" alt="Packages ROS2"/>
@@ -347,13 +347,13 @@ Si se desea ver la lista de los paquetes instalados se debe ejecutar el siguient
 - `ROS1`
 
 ```
-rosls <TAB>
+rospack list
 ```
 
 - `ROS2`
 
 ```
-ros2 ls <TAB>
+ros2 pkg list
 ```
 
 Si se desea encontrar la ruta de un paquete específico se debe ejecutar el siguiente comando:
